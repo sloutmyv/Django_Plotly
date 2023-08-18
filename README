@@ -1,5 +1,6 @@
 Django / Pandas / Plotly project from scratch.
 
+1 -----
 To create a project :
 django-admin startproject Django_Plotly
 
@@ -9,5 +10,8 @@ python manage.py startapp main
 To launch the developpement server :
 python manage.py runserver
 
-1 - Create urls.py file in "main" app. indicate to Django_Plotly/urls.py to go
+Create urls.py file in "main" app. indicate to Django_Plotly/urls.py to go
 in main/urls.py and create first link to main/views.py
+
+2 -----
+Render html simple html templates and test template engine basics
