@@ -15,3 +15,9 @@ in main/urls.py and create first link to main/views.py
 
 2 -----
 Render html simple html templates and test template engine basics
+
+3 ------
+Creating models
+add app in INSTALLED_APPS
+python manage.py makemigrations
+python manage.py migrate
