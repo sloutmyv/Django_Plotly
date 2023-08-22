@@ -18,12 +18,14 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views
-from .views import ProfilListView
+from .views import IndexView
 
 app_name = "resume"
 
 urlpatterns = [
-    path("", ProfilListView.as_view(), name='resume-header'),
-    # path('', views.home_view, name='home_view'),
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    path("", IndexView.as_view(), name='resume-header'),
+    ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

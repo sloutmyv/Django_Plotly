@@ -22,5 +22,4 @@ app_name = "main"
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="main_home.html"), name='home-page'),
-    # path('', views.home_view, name='home_view'),
 ]

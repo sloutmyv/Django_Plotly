@@ -16,13 +16,3 @@ class InformationsGenerales(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
-
-    # @property
-    # def age(self):
-    #     today = date.today()
-    #     age = self.birth_date.date()-today
-    #     return age
-# Experiences
-# Formations
-# Compétences
-# Hobbies
