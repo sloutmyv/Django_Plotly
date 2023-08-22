@@ -21,3 +21,6 @@ Creating models
 add app in INSTALLED_APPS
 python manage.py makemigrations
 python manage.py migrate
+
+4 ---- 
+Trying vscode online
