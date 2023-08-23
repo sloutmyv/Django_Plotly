@@ -5,9 +5,6 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from taggit.managers import TaggableManager
 
-
-
-
 # Create your models here.
 class InformationsGenerales(models.Model):
     first_name = models.CharField('Prénom', max_length=200)
@@ -23,7 +20,7 @@ class InformationsGenerales(models.Model):
     class Meta:
         verbose_name = 'Informations générales'
         verbose_name_plural = 'Informations générales'
-    
+
     def __str__(self):
         return self.first_name + " " + self.last_name
 
@@ -42,10 +39,10 @@ class Experiences(models.Model):
         verbose_name = 'Expérience'
         verbose_name_plural = 'Expériences'
         ordering = ["-date_debut"]
-    
+
     def __str__(self):
         return self.fonction
-    
+
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.fonction)
@@ -53,4 +50,38 @@ class Experiences(models.Model):
 
     def get_absolute_url(self):
         return f"/experiences/{self.slug}"
-    
+
+class Formations(models.Model):
+    ecole = models.CharField('Ecole', max_length=200)
+    localisation = models.CharField('Localisation', max_length=200)
+    description = RichTextField(blank=True, null=True)
+    date_debut = models.DateField('Date de début')
+    date_fin = models.DateField('Date fin',blank=True, null=True)
+    slug = models.SlugField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Formation'
+        verbose_name_plural = 'Formations'
+        ordering = ["-date_debut"]
+
+    def __str__(self):
+        return self.ecole
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.ecole)
+        super(Formations, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return f"/ecoles/{self.slug}"
+
+class Skills(models.Model):
+    skill = models.CharField('Compétence', max_length=200)
+
+    class Meta:
+        verbose_name = 'Compétence'
+        verbose_name_plural = 'Compétences'
+        ordering = ["skill"]
+
+    def __str__(self):
+        return self.skill
