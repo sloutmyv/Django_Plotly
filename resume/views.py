@@ -4,7 +4,7 @@ from .models import InformationsGenerales, Experiences, Formations, Skills, Hobb
 
 # Create your views here.
 class IndexView(TemplateView):
-    template_name = 'resume.html'
+    template_name = 'resume/resume.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
