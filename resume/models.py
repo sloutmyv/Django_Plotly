@@ -1,6 +1,9 @@
+# from ckeditor.fields import RichTextField
+from datetime import date
 from django.db import models
 from django.core.validators import RegexValidator
-from datetime import date
+
+
 
 # Create your models here.
 class InformationsGenerales(models.Model):
@@ -20,3 +23,12 @@ class InformationsGenerales(models.Model):
     
     def __str__(self):
         return self.first_name + " " + self.last_name
+
+# def experiences(models.Model):
+#     fonction =
+#     entreprise = 
+#     localisation = 
+#     description = RichTextField(blank=True, null=True)
+#     date_debut = 
+#     date_fin = 
+    
