@@ -22,4 +22,6 @@ app_name = "main"
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="main_home.html"), name='home-page'),
+    path("mentions-legales/", TemplateView.as_view(template_name="main_mentions.html"), name='mentions-legales'),
+    path("politique-confidentialite/", TemplateView.as_view(template_name="main_politique.html"), name='politique-confidentialite'),
 ]

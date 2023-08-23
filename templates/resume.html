@@ -62,9 +62,13 @@
   <div class="row my-auto">
     <h2 class="display-8 sc-title-1-font">COMPETENCES</h2>
     <hr class="hr hr-blurry" />
-    <ul class="list-unstyled card-columns">
+    <ul class="list-unstyled">
     {% for skill in skills %}
-      <li>{{ skill.skill }}</li>
+    {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+      <div class="col-md-4 text-start">
+        <li class="sc-text-1-font">{{ skill.skill }}</li>
+      </div>
+    {%  if forloop.counter|divisibleby:3 or forloop.last %}</div>{%  endif %}
     {% endfor %}
     </ul>
   </div>
@@ -72,6 +76,15 @@
   <div class="row">
     <h2 class="display-8 sc-title-1-font">HOBBIES</h2>
     <hr class="hr hr-blurry" />
+    {% for hobbie in hobbies %}
+    {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+      <div class="col-md-4 text-start">
+      <span class="badge text-dark-emphasis bg-light-subtle rounded-pill sc-text-1-font">
+        <img class="rounded-circle me-1" width="24" height="24" src="{{ hobbie.logo.url }}" alt="{{ hobbie.hobbie }}">{{ hobbie.hobbie }}
+      </span>
+      </div>
+    {%  if forloop.counter|divisibleby:3 or forloop.last %}</div>{%  endif %}
+    {% endfor %}
   </div>
 
 

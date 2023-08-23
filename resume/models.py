@@ -85,3 +85,15 @@ class Skills(models.Model):
 
     def __str__(self):
         return self.skill
+
+class Hobbies(models.Model):
+    hobbie = models.CharField('Hobbie', max_length=200)
+    logo = models.ImageField('Logo', null=True, blank=True, upload_to="resume/images/" )
+
+    class Meta:
+        verbose_name = 'Hobbie'
+        verbose_name_plural = 'Hobbies'
+        ordering = ["hobbie"]
+
+    def __str__(self):
+        return self.hobbie

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import InformationsGenerales, Experiences, Formations, Skills
+from .models import InformationsGenerales, Experiences, Formations, Skills, Hobbies
 
 # Register your models here.
 
@@ -29,3 +29,8 @@ class FormationsAdmin(admin.ModelAdmin):
 class SkillssAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
     list_display=['skill']
+
+@admin.register(Hobbies)
+class HobbiesAdmin(admin.ModelAdmin):
+    readonly_fields = ('id',)
+    list_display=['hobbie']
