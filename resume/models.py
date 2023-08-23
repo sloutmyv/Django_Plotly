@@ -1,8 +1,10 @@
 from ckeditor.fields import RichTextField
 from datetime import date
-from django.db import models
 from django.core.validators import RegexValidator
+from django.db import models
+from django.template.defaultfilters import slugify
 from taggit.managers import TaggableManager
+
 
 
 
@@ -46,8 +48,8 @@ class Experiences(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = slugify(self.name)
-        super(Portfolio, self).save(*args, **kwargs)
+            self.slug = slugify(self.fonction)
+        super(Experiences, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         return f"/experiences/{self.slug}"

@@ -140,3 +140,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # taggit 
 TAGGIT_CASE_INSENSITIVE = True
+
+# ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'removePlugins':'stylesheetparser',
+        'allowedContent': True,
+        }
+    }

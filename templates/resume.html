@@ -13,7 +13,7 @@
         <h1 class="display-2 sc-title-1-font">{{ infogenerales.first_name }} {{ infogenerales.last_name }}</h1>
       </div>
       <div class="row">
-        <p class="fs-6 sc-text-1-font no-margin">{{ infogenerales.birth_date|date:"d/m/Y" }}</p>
+        <p class="fs-6 sc-text-1-font sc-text-1-color no-margin fw-bold">{{ infogenerales.birth_date|date:"d/m/Y" }}</p>
         <p class="fs-6 sc-text-1-font no-margin">{{ infogenerales.email }}</p>
         <p class="fs-6 sc-text-1-font no-margin">{{ infogenerales.phone_number }}</p>
         <p class="fs-6 sc-text-1-font no-margin"><a href="{{ infogenerales.linkedin_resume }}">{{ infogenerales.linkedin_resume }}</a></p>
@@ -21,13 +21,28 @@
       </div>
     </div>
   </div>
+
   <br>
+
   <div class="row">
     <h2 class="display-8 sc-title-1-font">EXPERIENCES</h2>
     <hr class="hr hr-blurry" />
-    
+    {% for exp in experiences %}
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <p class="fs-6 sc-text-1-font sc-text-1-color no-margin fw-bold">{{exp.date_debut|date:"m/Y"}} - {% if exp.is_today %}Aujourd'hui{% else %}{{exp.date_fin|date:"m/Y"}}{% endif %}</p>
+      </div>
+      <div class="col-12 col-md-10">
+        <p class="fs-6 sc-text-1-font"><b>{{ exp.fonction }}</b> - {{ exp.entreprise|upper }}, <i>{{ exp.localisation }}</i></p>
+        <div class="fs-6 sc-text-1-font">{{ exp.description|safe }}</div>
+        <p class="fs-6 sc-text-1-font">Secteurs : {% for tag in exp.secteurs.all %}{{tag}}{% endfor %}</p>
+      </div>
+    </div>
+    {% endfor %}
   </div>
+ 
   <br>
+  
   <div class="row">
     <h2 class="display-8 sc-title-1-font">FORMATIONS</h2>
     <hr class="hr hr-blurry" />

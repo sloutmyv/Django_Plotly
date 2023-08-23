@@ -7,6 +7,9 @@ To create an app (for example "main" app) :
 python manage.py startapp main
 add app in settings/INSTALLED_APPS
 
+Dépendances : 
+pip install -r requirement.txt
+
 To launch the developpement server :
 python manage.py runserver
 
