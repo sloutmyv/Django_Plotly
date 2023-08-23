@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'resume',
+    'ckeditor',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +137,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# taggit 
+TAGGIT_CASE_INSENSITIVE = True

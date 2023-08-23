@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import InformationsGenerales
+from .models import InformationsGenerales, Experiences
 
 # Register your models here.
 
@@ -14,3 +14,8 @@ class InformationsGeneralesAdmin(admin.ModelAdmin):
         form_instance.fields['email'].widget.attrs['placeholder'] = 'example@email.com'
         form_instance.fields['phone_number'].widget.attrs['placeholder'] = '+687XXXXXX'
         return super().render_change_form(request, context, *args, **kwargs)
+
+@admin.register(Experiences)
+class ExperiencesAdmin(admin.ModelAdmin):
+    readonly_fields = ('id',)
+    list_display=['fonction', 'entreprise','date_debut','date_fin']

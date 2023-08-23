@@ -1,7 +1,8 @@
-# from ckeditor.fields import RichTextField
+from ckeditor.fields import RichTextField
 from datetime import date
 from django.db import models
 from django.core.validators import RegexValidator
+from taggit.managers import TaggableManager
 
 
 
@@ -24,11 +25,30 @@ class InformationsGenerales(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-# def experiences(models.Model):
-#     fonction =
-#     entreprise = 
-#     localisation = 
-#     description = RichTextField(blank=True, null=True)
-#     date_debut = 
-#     date_fin = 
+class Experiences(models.Model):
+    fonction = models.CharField('Fonction', max_length=200)
+    entreprise = models.CharField('Entreprise', max_length=200)
+    localisation = models.CharField('Localisation', max_length=200)
+    description = RichTextField(blank=True, null=True)
+    date_debut = models.DateField('Date de début')
+    date_fin = models.DateField('Date fin',blank=True, null=True)
+    secteurs = TaggableManager()
+    is_today = models.BooleanField(default=False)
+    slug = models.SlugField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Expérience'
+        verbose_name_plural = 'Expériences'
+        ordering = ["-date_debut"]
+    
+    def __str__(self):
+        return self.fonction
+    
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.name)
+        super(Portfolio, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return f"/experiences/{self.slug}"
     
