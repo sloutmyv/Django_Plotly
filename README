@@ -1,26 +1,28 @@
 Django / Pandas / Plotly project from scratch.
 
-1 -----
 To create a project :
 django-admin startproject Django_Plotly
 
-To create an app :
+To create an app (for example "main" app) :
 python manage.py startapp main
+add app in settings/INSTALLED_APPS
 
 To launch the developpement server :
 python manage.py runserver
 
-Create urls.py file in "main" app. indicate to Django_Plotly/urls.py to go
-in main/urls.py and create first link to main/views.py
+** Admin **
+Create a superuser
+python manage.py createsuperuser
 
-2 -----
-Render html simple html templates and test template engine basics
-
-3 ------
-Creating models
-add app in INSTALLED_APPS
-python manage.py makemigrations
+** Model **
+When new model is created :
+python manage.py makemingrations
 python manage.py migrate
+python manage.py migrate --run-syncdb
 
-4 ---- 
-Trying vscode online
+register the model in app/admin.py 
+
+** git **
+git status
+git commit -m 'name of commit'
+git push origin master

@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-h1 {
-  font-family: 'Tulpen One', cursive;
+.sc-title-1-font {
+  font-family: 'Montserrat', sans-serif;
+  }
+
+.sc-text-1-font {
+  font-family: 'Montserrat', sans-serif;
+  }
+
+.no-margin {
+    margin: 0px;
   }

@@ -14,5 +14,9 @@ class InformationsGenerales(models.Model):
     linkedin_resume = models.URLField('LinkedIn URL',null=True, blank = True, max_length=200)
     adress = models.CharField('Adresse', null=True, blank = True, max_length=200)
 
+    class Meta:
+        verbose_name = 'Informations générales'
+        verbose_name_plural = 'Informations générales'
+    
     def __str__(self):
         return self.first_name + " " + self.last_name

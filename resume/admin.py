@@ -3,7 +3,6 @@ from .models import InformationsGenerales
 
 # Register your models here.
 
+@admin.register(InformationsGenerales)
 class InformationsGeneralesAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
-
-admin.site.register(InformationsGenerales, InformationsGeneralesAdmin)
