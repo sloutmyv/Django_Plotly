@@ -7,7 +7,7 @@ To create an app (for example "main" app) :
 python manage.py startapp main
 add app in settings/INSTALLED_APPS
 
-Dépendances : 
+Dépendances :
 pip install -r requirement.txt
 
 To launch the developpement server :
@@ -23,9 +23,11 @@ python manage.py makemingrations
 python manage.py migrate
 python manage.py migrate --run-syncdb
 
-register the model in app/admin.py 
+register the model in app/admin.py
 
 ** git **
 git status
 git commit -m 'name of commit'
 git push origin master
+
+test
