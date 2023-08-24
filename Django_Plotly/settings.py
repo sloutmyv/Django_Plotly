@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'resume',
     'ckeditor',
     'taggit',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +139,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# taggit 
+# taggit
 TAGGIT_CASE_INSENSITIVE = True
 
 # ckeditor
