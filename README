@@ -29,6 +29,7 @@ register the model in app/admin.py
 git status
 git commit -m 'name of commit'
 git push origin master
+git pull
 
 ** font **
 https://fonts.google.com/

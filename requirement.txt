@@ -4,6 +4,7 @@ Django==4.2.4
 django-ckeditor==6.7.0
 django-js-asset==2.1.0
 django-taggit==4.0.0
+django-extensions-3.2.3
 matplotlib==3.7.2
 matplotlib-inline==0.1.6
 numpy==1.25.2
