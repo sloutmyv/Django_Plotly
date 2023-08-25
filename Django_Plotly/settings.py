@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'taggit',
     'contact',
+    'dataviz_try',
 ]
 
 MIDDLEWARE = [
