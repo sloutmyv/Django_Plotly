@@ -26,7 +26,12 @@
   transform: translateX(-50%);
 }
 
-/* ------- customize primary button color -------- */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------- customize primary button color --------
 $mynewcolor:#77cccc;
 
 .btn-primary {
@@ -35,4 +40,5 @@ $mynewcolor:#77cccc;
 
 .btn-outline-primary {
     @include button-outline-variant($mynewcolor, #222222, lighten($mynewcolor,5%), $mynewcolor);
-}
+} */
+

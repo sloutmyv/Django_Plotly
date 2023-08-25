@@ -24,6 +24,7 @@ app_name = "contact"
 
 urlpatterns = [
     path("", ContactView.as_view(), name='contact-view'),
+    path("message-envoye/", TemplateView.as_view(template_name="contact/contact_sucess.html"), name='contact-sucess'),
     ]
 
 if settings.DEBUG:
