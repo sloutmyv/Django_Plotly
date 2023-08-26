@@ -10,6 +10,8 @@ class DatavizView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         ME2N = ME2NModel.objects.all()
+        # qs1 = ME2NModel.objects.annotate(sum_tokens=Sum('bids__tokens'))
+        # qs2 = qs1.filter(sum_tokens__gte=100)
 
         fig = px.pie(
                 values=[c.valeur for c in ME2N], 
