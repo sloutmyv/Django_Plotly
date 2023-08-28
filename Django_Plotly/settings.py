@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
 import os
 
@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5)fr9_b#wn$)w732(t885&5x5wgb-2jeyvlz-0$@d)dpe2d)il'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -131,7 +131,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"statics"),
+    os.path.join(BASE_DIR,"static_cdn"),
 ]
 
 
@@ -152,8 +152,11 @@ CKEDITOR_CONFIGS = {
     }
 
 # sendemail
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'clerc.sylv@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+# EMAIL_BACKEND = 'django.core.mail.backend.smtp.Emailbackend'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+    

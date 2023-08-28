@@ -17,20 +17,20 @@ class ContactView(FormView):
         return context
 
     def form_valid(self, form):
-        # subject = "Contact form request" 
-        # cc_myself = form.cleaned_data['cc_myself']
-        # body = {
-		# 	'name': form.cleaned_data['name'], 
-		# 	'email': form.cleaned_data['email'], 
-		# 	'content': form.cleaned_data['content'], 
-		# 	}
-        # message = "\n".join(body.values())
-        # list_destinataire = ['clerc.sylv@gmail.com']
-        # if cc_myself:
-        #     list_destinataire.append(body['email'])
-        # try:
-        #     send_mail(subject, message, body['email'], list_destinataire) 
-        # except BadHeaderError:
-        #     return HttpResponse('Invalid header found.')
+        subject = "Django Dataviz - Contact form request" 
+        cc_myself = form.cleaned_data['cc_myself']
+        body = {
+			'name': form.cleaned_data['name'], 
+			'email': form.cleaned_data['email'], 
+			'content': form.cleaned_data['content'], 
+			}
+        message = "\n".join(body.values())
+        list_destinataire = ['clerc.sylv@gmail.com']
+        if cc_myself:
+            list_destinataire.append(body['email'])
+        try:
+            send_mail(subject, message, body['email'], list_destinataire) 
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
 
         return super(ContactView, self).form_valid(form)
