@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from decouple import config
 from pathlib import Path
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,10 +82,21 @@ WSGI_APPLICATION = 'Django_Plotly.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':{
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME': config('POSTGRE_NAME', default=""),
+        'USER': config('POSTGRE_USER', default=""),
+        'PASSWORD': config('POSTGRE_PASSWORD', default=""),
+        'HOST': config('POSTGRE_HOST', default=""),
+        'PORT':'5432',
     }
 }
 
@@ -145,9 +158,9 @@ AWS_S3_OBJECT_PARAMETERS = {'CacheControl' : 'max-age=86400'}
 AWS_S3_FILE_OVERWRITE = False 
 AWS_DEFAULT_ACL = None
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"staticfiles"),
-] # for searching other statics somewhere in whole project
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,"staticfiles"),
+# ] # for searching other statics somewhere in whole project
 
 AWS_LOCATION = 'static'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
@@ -183,4 +196,7 @@ EMAIL_HOST = config('EMAIL_HOST', default='localhost')
 EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+
+# HEROKU CONFIG
+django_heroku.settings(locals(), staticfiles=False)
     

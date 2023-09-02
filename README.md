@@ -312,13 +312,67 @@ python manage.py collectatics
 ``` 
 
 ### Heroku for hosting
-Local web app → github → Heroku platform
-La mise à jour du repo github permet la mise à jour de l’application sur heroku
-Déploiement sur heroku https://youtu.be/2OHc5EqfX5g?si=2weTY9HA3WDkLjYM
+En prérequis il faut le projet soit sur un répertoire github.
 
-Le basculement sur la bdd postgrsql se fait directement sur heroku avant de cloner le repo.
+Installer les packages :
+``` 
+pip install gunicorn
+pip install django_heroku
+``` 
+A la racine du projet, créer un fichier "runtime.txt"
+Ajouter à ce fichier, la version de python utilisé pour développer l'application "python-3.11.5"
+En cas de doute, taper dans le terminal : 
+```
+python --version 
+``` 
+A la racine du projet, créer un fichier "Procfile".
+Ajouter à ce fichier la commande suivante : 
+```
+web gunicorn <project_name>.wsgi:application --log-file -
+```
+Vérifier l'existance ou créer un fichier "requirements.txt"
+Dans le fichier "settings.py", vérifier ou ajouter les libs suivantes :
+```
+import os
+import django_heroku
+importe dj_database_url
+```
+à la fin de settings.py ajouter la commande suivante :
+```
+django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
+```
 
-Une fois la base postgr créée, on peut charger la base de donnée avec les fonctions de management directement. 
+Sur le site [heroku](https://dashboard.heroku.com/apps) après avoir créer un compte :
+Créer une nouvelle application.
+### PostGres Database
+Aller dans ressource et chercher l'add-ons PostGres au projet.
+Modifier le fichier settings.py au niveau de l'input database avec :
+```
+DATABASES = {
+    'default':{
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME':'',
+        'USER':'',
+        'PASSWORD':'',
+        'HOST':'',
+        'PORT':'',
+    }
+}
+```
+Aller dans la base de données sur le site en cliquant dessus, puis settings, puis view credentials, puis ajouter les NAME, USER ... aux bons endroits (passer par decouple pour plus de sécurité).
+
+Executer les migrations (vers la nouvelle database) :
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py migrate --run-syncdb 
+```
+Il faut ensuite recréer le superuser puis récreer l'ensemble de la base de donnée.
+Il est possible d'importer une sqlite3 sur une postgre en générant un fichier json
+
+Aller sur Heroku Deploy
+Connecter heroku à github et relier au répertoire du projet
 
 ### Domain name
 

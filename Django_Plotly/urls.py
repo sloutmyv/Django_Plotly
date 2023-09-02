@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include("main.urls")),
     path('cv/', include("resume.urls")),
     path('contact/', include("contact.urls")),
-    path('dataviz_try/', include("dataviz_try.urls")),
+    # path('dataviz_try/', include("dataviz_try.urls")),
     path('admin/', admin.site.urls),
 ]
 

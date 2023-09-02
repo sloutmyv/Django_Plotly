@@ -1,0 +1,1 @@
+web gunicorn Django_Plotly.wsgi:application --log-file -
