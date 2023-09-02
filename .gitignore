@@ -16,7 +16,9 @@ db.sqlite3
 db.sqlite3-journal
 media
 static
-static_cdn
 
 # python-decouple
 settings.ini
+
+# Data
+data/
