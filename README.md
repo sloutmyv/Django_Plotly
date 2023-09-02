@@ -218,10 +218,43 @@ Utilisation ASW : https://youtu.be/ahBG_iLbJPM?si=us7zk-C409govBZo
 **Mode opératoire Sur le site AWS3 :**
 - Dans la console selectionner le service S3
 - Créer un compartiment : "Your-bucket"
-- Désactiver “ bloquer tous les accès publique “ car il s”agit d’un hébergement de static pour un site internet.
-- Service “IAM”
-- Créer un nouveau groupe "your-group". Associé la politique d’utilisation : “AmazonS3FullAccess” car l’utilisateur à besoin d’upload/download des données : 
-- Créer un utilisateur à l’associer au groupe
+- Dans autorisation désactiver "Bloquer tous les accès publics"
+- Dans autorisation "Ajouter une stratégie de compartiment"
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AddPerm",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::<your-bucket>*"
+        }
+    ]
+}
+``` 
+- Modifier la politique CORS avec l'extrait de code suivant :
+``` 
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "POST",
+            "GET",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ]
+    }
+] 
+```  
+- Dans le service "IAM", créer un utilisateur et lui associé la politique "AmazonS3FullAccess"
 - Créer un clé d’accès : “Application exécutées en dehors d’AWS” et les copier dans settings.ini
 
 Dans l’environnement virtuel :
@@ -229,12 +262,50 @@ Dans l’environnement virtuel :
 pip install boto3
 pip install django-storages
 ``` 
+Ajouter "storages" au fichier settings.py/INSTALLED_APPS
 
-Dans settings.py et settings.ini : 
+Dans settings.py
 ``` 
-voir exemple
-``` 
+# Amazon AWS S3 config
+AWS_ACCESS_KEY_ID = config('AWS_PUBLIC_ACCESS_KEY', default="NO_KEY")
+AWS_SECRET_ACCESS_KEY = config('AWS_PRIVATE_ACCESS_KEY', default="NO_KEY")
+AWS_STORAGE_BUCKET_NAME = '<your-bucket>'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl' : 'max-age=86400'}
 
+AWS_S3_FILE_OVERWRITE = False 
+AWS_DEFAULT_ACL = None
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,"staticfiles"),
+] # for searching other statics somewhere in whole project
+
+AWS_LOCATION = 'static'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+STATICFILES_STORAGE = 'Django_Plotly.storage_backends.StaticStorage'
+
+# s3 public media settings
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+DEFAULT_FILE_STORAGE = 'Django_Plotly.storage_backends.PublicMediaStorage'
+``` 
+Dans le dossier projet, créer un fichier "storage_backends.py" afin de customiser les dossiers de stockage static et media
+``` 
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = 'static'
+    default_acl = None
+
+
+class PublicMediaStorage(S3Boto3Storage):
+    location = 'media'
+    default_acl = None
+    file_overwrite = False
+
+``` 
 Lancer :
 ``` 
 python manage.py collectatics
