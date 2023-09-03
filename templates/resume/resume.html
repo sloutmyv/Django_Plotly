@@ -30,7 +30,7 @@
     {% for exp in experiences %}
     <div class="row">
       <div class="col-12 col-md-2">
-        <p class="fs-6 sc-text-1-font sc-text-1-color no-margin fw-bold">{{exp.date_debut|date:"m/Y"}} - {% if exp.is_today %}Aujourd'hui{% else %}{{exp.date_fin|date:"m/Y"}}{% endif %}</p>
+        <p class="fs-6 sc-text-1-font sc-text-1-color no-margin fw-bold">{{exp.date_debut|date:"m/Y"}} à {% if exp.is_today %}Aujourd'hui{% else %}{{exp.date_fin|date:"m/Y"}}{% endif %}</p>
       </div>
       <div class="col-12 col-md-10">
         <p class="fs-6 sc-text-1-font"><b>{{ exp.fonction }}</b> - {{ exp.entreprise|upper }}, <i>{{ exp.localisation }}</i></p>
