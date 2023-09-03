@@ -373,6 +373,9 @@ Il est possible d'importer une sqlite3 sur une postgre en générant un fichier 
 
 Aller sur Heroku Deploy
 Connecter heroku à github et relier au répertoire du projet
+Créer les variable caché dans settings.
+
+heroku config:set DISABLE_COLLECTSTATIC=1 pour éviter le bug du collectstatic
 
 ### Domain name
 
