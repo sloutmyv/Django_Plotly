@@ -25,7 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG=True
+if DEBUG:
+    pass
+else:
+    DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -81,22 +85,22 @@ WSGI_APPLICATION = 'Django_Plotly.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default':{
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': config('POSTGRE_NAME', default=""),
-        'USER': config('POSTGRE_USER', default=""),
-        'PASSWORD': config('POSTGRE_PASSWORD', default=""),
-        'HOST': config('POSTGRE_HOST', default=""),
-        'PORT':'5432',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default':{
+            'ENGINE':'django.db.backends.postgresql_psycopg2',
+            'NAME': config('POSTGRE_NAME', default=""),
+            'USER': config('POSTGRE_USER', default=""),
+            'PASSWORD': config('POSTGRE_PASSWORD', default=""),
+            'HOST': config('POSTGRE_HOST', default=""),
+            'PORT':'5432',
     }
 }
 
@@ -135,41 +139,41 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# # En local
-# STATIC_URL = '/static/' # Naming the url pattern
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,"staticfiles"),
-# ] # for searching other statics somewhere in whole project
+if DEBUG:
+    STATIC_URL = '/static/' # Naming the url pattern
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR,"staticfiles"),
+    ] # for searching other statics somewhere in whole project
 
-# STATIC_ROOT = os.path.join(BASE_DIR,'static_cdn') # for deployement with collectstatic
+    STATIC_ROOT = os.path.join(BASE_DIR,'static_cdn') # for deployement with collectstatic
 
-# MEDIA_URL = '/media/' # Naming the url pattern
+    MEDIA_URL = '/media/' # Naming the url pattern
 
-# MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles') # where media will be stored after upload (dev)
+    MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles') # where media will be stored after upload (dev)
 
+else:
+    # Amazon AWS S3 config
+    AWS_ACCESS_KEY_ID = config('AWS_PUBLIC_ACCESS_KEY', default="NO_KEY")
+    AWS_SECRET_ACCESS_KEY = config('AWS_PRIVATE_ACCESS_KEY', default="NO_KEY")
+    AWS_STORAGE_BUCKET_NAME = 's3-django-dataviz-bucket'
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl' : 'max-age=86400'}
 
-# Amazon AWS S3 config
-AWS_ACCESS_KEY_ID = config('AWS_PUBLIC_ACCESS_KEY', default="NO_KEY")
-AWS_SECRET_ACCESS_KEY = config('AWS_PRIVATE_ACCESS_KEY', default="NO_KEY")
-AWS_STORAGE_BUCKET_NAME = 's3-django-dataviz-bucket'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {'CacheControl' : 'max-age=86400'}
+    AWS_S3_FILE_OVERWRITE = False 
+    AWS_DEFAULT_ACL = None
 
-AWS_S3_FILE_OVERWRITE = False 
-AWS_DEFAULT_ACL = None
+    # STATICFILES_DIRS = [
+    #     os.path.join(BASE_DIR,"staticfiles"),
+    # ] # for searching other statics somewhere in whole project
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,"staticfiles"),
-# ] # for searching other statics somewhere in whole project
+    AWS_LOCATION = 'static'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+    STATICFILES_STORAGE = 'Django_Plotly.storage_backends.StaticStorage'
 
-AWS_LOCATION = 'static'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-STATICFILES_STORAGE = 'Django_Plotly.storage_backends.StaticStorage'
-
-# s3 public media settings
-PUBLIC_MEDIA_LOCATION = 'media'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-DEFAULT_FILE_STORAGE = 'Django_Plotly.storage_backends.PublicMediaStorage'
+    # s3 public media settings
+    PUBLIC_MEDIA_LOCATION = 'media'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    DEFAULT_FILE_STORAGE = 'Django_Plotly.storage_backends.PublicMediaStorage'
 
 
 # Default primary key field type

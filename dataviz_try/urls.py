@@ -18,11 +18,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import DatavizView
+from django.views.generic import TemplateView
 
 app_name = "dataviz_try"
 
 urlpatterns = [
     path("", DatavizView.as_view(), name='dataviztry-view'),
+    path("contexte/", TemplateView.as_view(template_name="dataviz_try/contexte.html"), name='contexte'),
+    path("food_trade/", TemplateView.as_view(template_name="dataviz_try/food_trade.html"), name='food-trade'),
+    path("food_security/", TemplateView.as_view(template_name="dataviz_try/food_security.html"), name='food-security'),
+    path("fruits_legumes_nc/", TemplateView.as_view(template_name="dataviz_try/fruits_legumes_nc.html"), name='fruits-legumes-nc'),
+    path("prix_alimentation_nc/", TemplateView.as_view(template_name="dataviz_try/prix_alimentation_nc.html"), name='prix-alimentation-nc'),
     ]
 
 # if settings.DEBUG:

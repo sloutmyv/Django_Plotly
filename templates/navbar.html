@@ -11,6 +11,19 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'main:home-page' %}">Home</a>
           </li>
+        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             DATAVIZ CHALLENGE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'dataviz_try:contexte' %}">Elements de contexte</a></li>
+              <li><a class="dropdown-item" href="{% url 'dataviz_try:food-trade' %}">Food Trade</a></li>
+              <li><a class="dropdown-item" href="{% url 'dataviz_try:food-security' %}">Food Security</a></li>
+              <li><a class="dropdown-item" href="{% url 'dataviz_try:fruits-legumes-nc' %}">Fruits & Légumes en NC</a></li>
+              <li><a class="dropdown-item" href="{% url 'dataviz_try:prix-alimentation-nc' %}">Prix alimentation en NC</a></li>
+           </ul>
+          </li>
           {% comment %} <li class="nav-item">
             <a class="nav-link" href="{% url 'dataviz_try:dataviztry-view' %}">DATAVIZ_TRY</a>
           </li> {% endcomment %}
