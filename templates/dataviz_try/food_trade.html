@@ -1,7 +1,371 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-<h1 class="sc-text-1-font">FOOD TRADE</h1>
+<div class="container text-center">
+    <div class="row">
+      <div class="col sc-text-1-font">
+        <br>
+        <h1 class="food-trade-color-1"><b>FOOD TRADE</b></h1>
+    </div>
+    <div class="row sc-text-1-font">
+        <div class="col">
+            <p>La base de données : <a href="https://stats.pacificdata.org/vis?tm=trade&pg=0&snb=14&df%5Bds%5D=ds%3ASPC2&df%5Bid%5D=DF_TRADE_FOOD&df%5Bag%5D=SPC&df%5Bvs%5D=1.0&pd=%2C2018&dq=A.Q.AS%2BCK%2BFJ%2BFM%2BGU%2BKI%2BMH%2BMP%2BNC%2BNR%2BNU%2BPF%2BPG%2BPN%2BPW%2BSB%2BTK%2BTO%2BTV%2BVU%2BWF%2BWS.AU_NZ.10%2B11%2B12%2B15%2B16%2B17%2B18%2B19%2B20%2B21%2B22%2B24%2B02%2B03%2B04%2B07%2B08%2B09&ly%5Bcl%5D=TIME_PERIOD&ly%5Brw%5D=COMMODITY&to%5BTIME_PERIOD%5D=false">"Pacific food and beverage trade : The Pacific Food Trade Database"</a></p>
+            <br>
+            <br>
+        </div>
+      </div>
+    </div>
 </div>
+
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        <h4 class="food-trade-color-4 sc-text-1-font"><b>Description de la structure de données</b></h4>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        <div class="row sc-text-1-font">
+            <div class="col">
+                <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
+                <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
+                    que celles importantse pour l'extraction d'une information.
+                 </p>
+            </div>
+        </div>
+        <div class="row sc-text-1-font">
+            <div class="col">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Colonne</th>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DATAFLOW</td>
+                            <td>Composée d'une unique valeur "SPC:DF_TRADE_FOOD(1.0)"</td>
+                        </tr>
+                        <tr>
+                            <td>FREQ: Frequency</td>
+                            <td>Composée d'une unique valeur "A: Annual"</td>
+                        </tr>
+                        <tr>
+                        <td>INDICATOR: Indicator</td>
+                        <td>Composée d'une unique valeur "Q: Quantity"</td>
+                        </tr>
+                        <tr>
+                        <td class="table-success">IMPORTER: Importer</td>
+                        <td class="table-success">13 pays importateurs : 'CK: Cook Islands’,'MH: Marshall Islands','TO: Tonga','VU: Vanuatu','KI: Kiribati','NC: New Caledonia','NR: Nauru',
+                            'FM: Federated State of Micronesia','PW: Palau','NU: Niue','PG: Papua New Guinea', 'WS: Samoa','FJ: Fiji’, 'SB: Solomon Islands', 
+                            'PF: French Polynesia','TV: Tuvalu','WF: Wallis and Futuna Islands','TK: Tokelau'</td>
+                        </tr>
+                        <tr>
+                            <td>EXPORTER: Exporter</td>
+                            <td>Composée d'une unique valeur "AU_NZ: Australia and New Zealand"</td>
+                        </tr>
+                        <tr>
+                            <td class="table-success">COMMODITY: Commodity</td>
+                            <td class="table-success">18 catégories de produits alimentaires : '02: Meat and edible meat offal', '03: Fish, crustaceans, molluscs, aquatic invertebrates ne',
+                            '04: Dairy products, eggs, honey, edible animal product nes','07: Edible vegetables and certain roots and tubers',
+                            '08: Edible fruit, nuts, peel of citrus fruit, melons', '09: Coffee, tea, mate and spices','10: Cereals', 
+                            '11: Milling products, malt, starches, inulin, wheat glute','12: Oil seed, oleagic fruits, grain, seed, fruit, etc, ne', 
+                            '15: Animal,vegetable fats and oils, cleavage products, et', '16: Meat, fish and seafood food preparations nes', 
+                            '17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations','19: Cereal, flour, starch, milk preparations and products',
+                            '20: Vegetable, fruit, nut, etc food preparations','21: Miscellaneous edible preparations','22: Beverages, spirits and vinegar',
+                            '24: Tobacco and manufactured tobacco substitutes'</td>
+                        </tr>
+                        <tr>
+                            <td class="table-success">TIME_PERIOD: Time</td>
+                            <td class="table-success">23 ans de données (1995 à 2018)</td>
+                        </tr>
+                        <tr>
+                            <td class="table-success">OBS_VALUE</td>
+                            <td class="table-success">Valeur de quantité échangé</td>
+                        </tr>
+                        <tr>
+                            <td>UNIT_MEASURE: Unit of measure</td>
+                            <td>Unité de quantité en Tonnes</td>
+                        </tr>
+                        <tr>
+                            <td>UNIT_MULT: Unit multiplier</td>
+                            <td>Sans objet</td>
+                        </tr>
+                        <tr>
+                            <td>OBS_STATUS: Observation Status</td>
+                            <td>Sans objet</td>
+                        </tr>
+                        <tr>
+                            <td>DATA_SOURCE: Data source</td>
+                            <td>Sans objet</td>
+                        </tr>
+                        <tr>
+                            <td>OBS_COMMENT: Comment</td>
+                            <td>Sans objet</td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class='col-lg-4'></div>
+        </div>
+        <div class="row sc-text-1-font">
+            <div class="col">
+                <br>
+                <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessous.<br>
+                    les dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
+                    La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
+                    A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                </p>
+                <br>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Analyse n°1 : Importateurs & Quantités totales</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8">
+                    <img src={% static 'img/food-trade-1.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et du type de produits importés.<br>
+                       La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
+                       est de <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
+                       La Papouasie Nouvelle Guinée, Fidji et la Nouvelle-Calédonie représente à eux seul <b class="food-trade-color-4">80 %</b> du marché.<br>
+                    <br>
+                    <i class="fa-regular fa-lightbulb"></i> Il serait interessant par la suite de mettre en perspective les quantités importées par rapport à la population de ces pays.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Analyse n°2 : Type de produits & Quantités totales</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et des pays importateur.<br>
+                       La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
+                       reste la même <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
+                       <br>
+                       Plus de <b class="food-trade-color-4">50 %</b> de la marchandise importée rentre dans la catégorie céréales</b>.<br>
+                       <br>
+                       <b class="food-trade-color-4">5</b> types de produits représentent <b class="food-trade-color-4">80 %</b> des importations.<br>
+                       <ul>
+                        <li>Les Céréales</li>
+                        <li>La viande</li>
+                        <li>Les légumes</li>
+                        <li>Produits laitiers, œufs, miel & autres produits d'orgine animale comestibles</li>
+                        <li>Dérivés des céréales</li>
+                       </ul>
+                       <br>
+                       <i class="fa-regular fa-lightbulb"></i> Pour aller plus loin, on pourra s'interroger si cette distribution est la même pour chaque pays importateur.
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <img src={% static 'img/food-trade-2.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Analyse n°3 : Type de produits & Quantités totales par Importateurs</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col">
+                    <img src={% static 'img/food-trade-3.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+            <div class="row sc-text-1-font">
+                <div class="col">
+                    <p>Dans cette partie, on complique un peu les choses en regardant la valeur totale d'import en <b class="food-trade-color-4">deux dimensions</b> : 
+                       par <b>type de produits</b> et par <b>pays importateurs</b>.<br>
+                       <br>
+                       <b><i class="fa-solid fa-glasses"></i> Comment lire le visuel ?</b><br>
+                       <ul>
+                        <li>En ordonnée/verticalement : Les types de produits</li>
+                        <li>En abscisse/horizontalement : Les pays importateurs</li>
+                        <li>Pour faciliter la lecture, toutes les valeurs sont données en pourcentage du total d'import par pays.</li>
+                        <li>La premier colonne est le % total par type de produits sommé pour tous les pays. Les valeurs sont donc indentiques à celles observées dans camembert de l'analyse précédente.</li>
+                        <li>Les types de produit sont classés par ordre décroissant (de haut en bas) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
+                        <li>Les pays importateurs sont classés par ordre décroissant (de gauche à droite) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
+                       </ul>
+                        <br>
+                        <b>Analyse</b><br>
+                        <p>Aucun pays n'a la même répartition d'import que le classement moyen observé dans la premier colonne et dans l'analyse précédente.<br>
+                        Pour la majorité de pays étudié, <b class="food-trade-color-4">80%</b> des imports sont répartis sur <b class="food-trade-color-4">5</b> types de produits ou moins.<br>
+                        Le top 5 moyen des types de produits importés visualisés à l'analyse n°2 est fortement inflencé par les gros pays importateurs. Il n'est pas
+                        représentatif de l'ensemble des habitudes des autres îles du pacifiques.<br>
+                        La Polynésie Française ou le Vanuatu sont deux exemples de pays qui ont une distribution d'import plus varié et moins basé sur un monoproduit.
+                        </p>
+                        <br>
+                        <br>
+                       <i class="fa-regular fa-lightbulb"></i> Les 3 analyses précendes ne prennent pas en compte l'évolution des imports dans le temps. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Analyse n°4 : Evolution des Quantités totales sur 23 ans</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <img src={% static 'img/food-trade-4.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-trade-5.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans cette analyse on insert enfin la notion d'évolution dans le <b class="food-trade-color-4">temps</b><br>
+                       <br>
+                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                        <p>Sur le visuel du haut : 
+                            <ul>
+                                <li>en jaune la quantité totale exportée par le groupe Australie/Nouvelle-Zelande par ans.</li>
+                                <li>en vert l'écart à la moyenne en % par pays et par année.
+                            </ul>
+                        </p>
+                        <p>Sur le visuel du bas : 
+                            <ul><li>la part de l'écart type dans la moyenne en % pour chaque importateur sur la période de 23 ans.</li></ul></p>
+                        <br>
+                        <b>Analyse</b><br>
+                        <p>Sur<b class="food-trade-color-4">23 ans</b>, la quantité échangée par an a <b class="food-trade-color-4">doublée</b>.<br>
+                           Cela signifie biensur qu'en moyenne, l'ensemble des pays importent plus, mais on constate également une dispertion plus importante des quantités 
+                           importées à mesure que le temps passe. En effet, en 1995 l'ensemble des pays sont plutôt proches de leur moyennes (courbes centrées/regroupée autour de 0), 
+                            beaucoup moins en 2018. Les nombreux pics observés sont autant d'instabilités d'import significatives et témoignant potentiellement d'instabilités
+                            d'approvisionnement. Soit du coté importateurs, soit du coté exportateurs.<br>
+                        <br>
+                        L'écart type est une representation de l'écart moyen à la moyenne. L'écart type / la moyenne représente en pourcentage la part de l'écart type
+                        dans la moyenne. Plus cette valeur est petite, plus l'importateur à tendance à être constant dans ses volumes d'importation. Palau à une politique 
+                        d'importation très volatile quand Samoa est beaucoup plus constant chaque année sur ses volumes importés.
+                        <br>
+                        <br>
+                       <i class="fa-regular fa-lightbulb"></i> Il peut être interessant de comparer l'évolution démographique à l'évolution des quantités importées par année
+                       pour potentielement y déceler une correlation. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true" aria-controls="panelsStayOpen-collapseSix">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Analyse n°5 : Evolution des Quantités par Type de produit sur 23 ans</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                        <p>Sur le visuel du haut : 
+                            <ul>
+                                <li>Pour chaque type de produit, la quantité en tonnes d'export dans les îles de pacifique par année.</li>
+                            </ul>
+                        </p>
+                        <p>Sur le visuel du bas : 
+                            <ul><li>Pour les Céréales seulement, la quantité importée par an par chaque pays étudiés.</li></ul></p>
+                        <br>
+                        <b>Analyse</b><br>
+                        <p>Il semble maintenant évident que ce qui dicte l'évolution globale de la quantité exportés (observée dans l'analyse n°5) est 
+                            l'augmentation des échanges de céréales. L'évolution du reste des types de produits semble bien marginale même si observable
+                            à la hausse sur 23 ans. L'échange de céréales à quasiment été multiplié par <b class="food-trade-color-4">3</b>.<br>
+                        <br>
+                            En discrétisant nos observation seulement sur les céréales, on observe que 2 pays conduisent à cette augmentation : La Papouasie-Nouvelle-Guinée et Fidji.
+                        <br>
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <img src={% static 'img/food-trade-6.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-trade-7.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="true" aria-controls="panelsStayOpen-collapseSeven">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Analyse n°6 : Impact de la démographie sur les observations</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                        <p>Sur le visuel du haut : 
+                            <ul>
+                                <li>Pour chaque type de produit, la quantité en tonnes d'export dans les îles de pacifique par année.</li>
+                            </ul>
+                        </p>
+                        <p>Sur le visuel du bas : 
+                            <ul><li>Pour les Céréales seulement, la quantité importée par an par chaque pays étudiés.</li></ul></p>
+                        <br>
+                        <b>Analyse</b><br>
+                        <p>Il semble maintenant évident que ce qui dicte l'évolution globale de la quantité exportés (observée dans l'analyse n°5) est 
+                            l'augmentation des échanges de céréales. L'évolution du reste des types de produits semble bien marginale même si observable
+                            à la hausse sur 23 ans. L'échange de céréales à quasiment été multiplié par <b class="food-trade-color-4">3</b>.<br>
+                        <br>
+                            En discrétisant nos observation seulement sur les céréales, on observe que 2 pays conduisent à cette augmentation : La Papouasie-Nouvelle-Guinée et Fidji.
+                        <br>
+                    </p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <img src={% static 'img/food-trade-6.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-trade-7.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
 {% endblock %}
