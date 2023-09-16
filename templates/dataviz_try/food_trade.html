@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col sc-text-1-font">
         <br>
-        <h1 class="food-trade-color-1"><b>FOOD TRADE</b></h1>
+        <h1 class="food-trade-color-1"><b>Food Trade</b></h1>
     </div>
     <div class="row sc-text-1-font">
         <div class="col">
@@ -18,7 +18,6 @@
     </div>
 </div>
 
-
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
@@ -26,7 +25,7 @@
         <h4 class="food-trade-color-4 sc-text-1-font"><b>Description de la structure de données</b></h4>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
       <div class="accordion-body">
         <div class="row sc-text-1-font">
             <div class="col">
@@ -295,17 +294,29 @@
             <div class="row sc-text-1-font">
                 <div class="col-lg-4 justify-content-center align-self-center">
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
-                        <p>Sur le visuel du haut : 
+                       <p>Sur le visuel du haut : 
+                            <ul>
+                                <li>Pour chaque type de produit, le taux de variation depuis l'origine de la quantité dans les îles de pacifique par année.</li>
+                            </ul>
+                        </p>
+                        <p>Sur le visuel du milieu : 
                             <ul>
                                 <li>Pour chaque type de produit, la quantité en tonnes d'export dans les îles de pacifique par année.</li>
                             </ul>
                         </p>
                         <p>Sur le visuel du bas : 
-                            <ul><li>Pour les Céréales seulement, la quantité importée par an par chaque pays étudiés.</li></ul></p>
+                            <ul>
+                                <li>Pour les Céréales seulement, la quantité importée par an par chaque pays étudiés.</li>
+                            </ul>
+                        </p>
                         <br>
                         <b>Analyse</b><br>
-                        <p>Il semble maintenant évident que ce qui dicte l'évolution globale de la quantité exportés (observée dans l'analyse n°5) est 
-                            l'augmentation des échanges de céréales. L'évolution du reste des types de produits semble bien marginale même si observable
+                        <p> Sur la figure du haut, la courbe en pointillée noir montre un taux de variation d'import total de <b class="food-trade-color-4">100%</b>, c'est à dire un 
+                            <b class="food-trade-color-4">doublement</b> de la quantité totale importée. Certain produit comme les Céréales et les fruits 
+                            ont triplé en volume (taux de variation de 200%), d'autres comme le tabac ont chuté de 50-60% par rapport à l'origine.<br>
+                            <br>
+                            La figure du milieu met en évidence que l'évolution globale de la quantité exportées est dicté par
+                            l'augmentation des échanges de <b class="food-trade-color-4">céréales</b>. L'évolution du reste des types de produits semble bien marginale même si observable
                             à la hausse sur 23 ans. L'échange de céréales à quasiment été multiplié par <b class="food-trade-color-4">3</b>.<br>
                         <br>
                             En discrétisant nos observation seulement sur les céréales, on observe que 2 pays conduisent à cette augmentation : La Papouasie-Nouvelle-Guinée et Fidji.
@@ -313,6 +324,9 @@
                     </p>
                 </div>
                 <div class="col-lg-8">
+                    <div class="row">
+                        <img src={% static 'img/food-trade-8.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
                     <div class="row">
                         <img src={% static 'img/food-trade-6.png' %} class="img-fluid" alt="Responsive image">
                     </div>
@@ -334,38 +348,89 @@
     <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
         <div class="accordion-body">
             <div class="row sc-text-1-font">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <img src={% static 'img/food-trade-9.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-trade-10.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
+                        <p>Pour cette analyse, une seconde base de données à été utilisé. Il s'agit de la population totale par année et par pays 
+                            disponible sur le site de la banque mondiale : <a href="https://donnees.banquemondiale.org/indicator/SP.POP.TOTL">ici</a>.<br>
+                            A savoir, les données ne sont pas disponible pour : CK: Cook Islands, NU: Niue, WF: Wallis and Futuna Islands, TK: Tokelau. L'analyse
+                            est donc partielle par rapport au référentiel initial.</p>
+                        <br>
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
-                        <p>Sur le visuel du haut : 
+                        <p>Le visuel du haut est composé de deux graphiques : 
                             <ul>
-                                <li>Pour chaque type de produit, la quantité en tonnes d'export dans les îles de pacifique par année.</li>
+                                <li>La population cumulée des îles du pacifique sur la période.</li>
+                                <li>Le taux de variation de la population par pays.</li>
                             </ul>
                         </p>
                         <p>Sur le visuel du bas : 
-                            <ul><li>Pour les Céréales seulement, la quantité importée par an par chaque pays étudiés.</li></ul></p>
+                            <ul><li>Une matrice donnant pour chaque pays et pour chaque années la quantité importée en kg/habitant.</li></ul></p>
                         <br>
                         <b>Analyse</b><br>
-                        <p>Il semble maintenant évident que ce qui dicte l'évolution globale de la quantité exportés (observée dans l'analyse n°5) est 
-                            l'augmentation des échanges de céréales. L'évolution du reste des types de produits semble bien marginale même si observable
-                            à la hausse sur 23 ans. L'échange de céréales à quasiment été multiplié par <b class="food-trade-color-4">3</b>.<br>
+                        <p>La Papouasie-Nouvelle-Guiné est de loin le pays ayant le plus d'habitant et possédant la croissance démographique la plus importante 
+                            sur l'ensemble de la période. La population a <b class="food-trade-color-4">doublé</b> en 23 ans et le pays tire à lui tout seul l'augmentation
+                            de population globale de la région. Il est intéressant de noté que les Iles Marshall et la Micronésie ont, sur 23 ans, une croissance démographique
+                            quasi nulle ou négative.<br>
                         <br>
-                            En discrétisant nos observation seulement sur les céréales, on observe que 2 pays conduisent à cette augmentation : La Papouasie-Nouvelle-Guinée et Fidji.
+                        La carte de chaleur nous rèvele qu'il y a une forte disparitée dans la quantité d'importation par personne et par pays. Cela permet de comprendre 
+                        que la Papousasie-Nouvelle-Guinée se classe premier importateur par son poids en population, alors que Fidji et la Nouvelle-Calédonie sont sur le podium également 
+                        par la grande quantité importée par personnes. 
                         <br>
+                        <br>
+                        <i class="fa-regular fa-lightbulb"></i> Cette analyse répond à certaines questions mais soulève également beaucoup d'interrogations annexes :
+                        <ul>
+                            <li>Quel est l'impact du PIB par pays dans leur capacité à importer ?</li>
+                            <li>Quelle stratégie de résilience pour les pays ayant d'enormes quantités importée par personne ?</li>
+                            <li>Quelle sont les part d'alimentation locale dans les différents pays ?</li>
+                        </ul>
                     </p>
-                </div>
-                <div class="col-lg-8">
-                    <div class="row">
-                        <img src={% static 'img/food-trade-6.png' %} class="img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="row">
-                        <img src={% static 'img/food-trade-7.png' %} class="img-fluid" alt="Responsive image">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsehuit" aria-expanded="true" aria-controls="panelsStayOpen-collapsehuit">
+            <h4 class="food-trade-color-4 sc-text-1-font"><b>Conclusions</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsehuit" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col justify-content-center align-self-center">
+                        <p>Les 6 analyses graphiques ci-dessous nous ont permis de comprendre mieux le sujet de l'importation de nourriture dans les iles
+                            du pacifique. Voici un résumé des points principaux à retenir :
+                            <ul>
+                                <li>3 des 13 pays étudiés représente 80% des importations de la zone en quantité : La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle Calédonie.</li>
+                                <li>La moitié des tonnes échangées sont des céréales. 5 des 13 catégories de produits représente 80% des échanges.</li>
+                                <li>Toutes les iles du pacifique n'ont pas les mêmes habitudes d'importation en terme de produit. Mais dans la majorité des cas, un des types
+                                    de produit représente plus de 20-30% du total des importations.
+                                </li>
+                                <li>Sur 23 ans, la quantité importée à doublée.</li>
+                                <li>La volatilité des quantités importés est assez important d'une année à l'autre pour la majorité des pays. Ceci pourrait pottentiellement se justifier
+                                    par des evenement exogènes impactant la ressource locale.
+                                </li>
+                                <li>La quantité globale importée a doublée. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, fruits), d'autres 
+                                    ont diminué de moitié (tabac).
+                                </li>
+                                <li>La population a augmenté de 80% dans la région sur la période étudié. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
+                                    Toutefois, les pays importe en moyenne plus de 2018 qu'en 2015 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
+                                    mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier les chiffres sur les années covid.
+                                </li>
+                            </ul>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
+</div>
 {% endblock %}

@@ -1,7 +1,191 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-<h1 class="sc-text-1-font">FOOD SECURITY</h1>
+<div class="container text-center">
+    <div class="row">
+      <div class="col sc-text-1-font">
+        <br>
+        <h1 class="food-security-color-1"><b>Food Security</b></h1>
+    </div>
+    <div class="row sc-text-1-font">
+        <div class="col">
+            <p>La base de données : <a href="https://stats.pacificdata.org/vis?tm=food%20security&pg=0&snb=17&df[ds]=ds%3ASPC2&df[id]=DF_FOOD_SECURITY_HIES_3&df[ag]=SPC&df[vs]=1.0&pd=%2C&dq=A........&ly[cl]=INDICATOR&ly[rw]=FOOD&to[TIME_PERIOD]=false">"Food security: Nutritional facts by type of food, by geography, sex, age and urbanization (Kiribati, Solomon Islands and Vanuatu)"</a></p>
+            <br>
+            <br>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h4 class="food-security-color-2 sc-text-1-font"><b>Description de la structure de données</b></h4>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <div class="row sc-text-1-font">
+              <div class="col">
+                  <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
+                  <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
+                      que celles importantse pour l'extraction d'une information.
+                   </p>
+              </div>
+          </div>
+          <div class="row sc-text-1-font">
+              <div class="col">
+                  <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Colonne</th>
+                          <th scope="col">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>DATAFLOW</td>
+                              <td>Composée d'une unique valeur "SPC:DF_TRADE_FOOD(1.0)"</td>
+                          </tr>
+                          <tr>
+                              <td>FREQ: Frequency</td>
+                              <td>Composée d'une unique valeur "A: Annual"</td>
+                          </tr>
+                          <tr>
+                          <td>INDICATOR: Indicator</td>
+                          <td>Composée d'une unique valeur "Q: Quantity"</td>
+                          </tr>
+                          <tr>
+                          <td class="table-success">IMPORTER: Importer</td>
+                          <td class="table-success">13 pays importateurs : 'CK: Cook Islands’,'MH: Marshall Islands','TO: Tonga','VU: Vanuatu','KI: Kiribati','NC: New Caledonia','NR: Nauru',
+                              'FM: Federated State of Micronesia','PW: Palau','NU: Niue','PG: Papua New Guinea', 'WS: Samoa','FJ: Fiji’, 'SB: Solomon Islands', 
+                              'PF: French Polynesia','TV: Tuvalu','WF: Wallis and Futuna Islands','TK: Tokelau'</td>
+                          </tr>
+                          <tr>
+                              <td>EXPORTER: Exporter</td>
+                              <td>Composée d'une unique valeur "AU_NZ: Australia and New Zealand"</td>
+                          </tr>
+                          <tr>
+                              <td class="table-success">COMMODITY: Commodity</td>
+                              <td class="table-success">18 catégories de produits alimentaires : '02: Meat and edible meat offal', '03: Fish, crustaceans, molluscs, aquatic invertebrates ne',
+                              '04: Dairy products, eggs, honey, edible animal product nes','07: Edible vegetables and certain roots and tubers',
+                              '08: Edible fruit, nuts, peel of citrus fruit, melons', '09: Coffee, tea, mate and spices','10: Cereals', 
+                              '11: Milling products, malt, starches, inulin, wheat glute','12: Oil seed, oleagic fruits, grain, seed, fruit, etc, ne', 
+                              '15: Animal,vegetable fats and oils, cleavage products, et', '16: Meat, fish and seafood food preparations nes', 
+                              '17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations','19: Cereal, flour, starch, milk preparations and products',
+                              '20: Vegetable, fruit, nut, etc food preparations','21: Miscellaneous edible preparations','22: Beverages, spirits and vinegar',
+                              '24: Tobacco and manufactured tobacco substitutes'</td>
+                          </tr>
+                          <tr>
+                              <td class="table-success">TIME_PERIOD: Time</td>
+                              <td class="table-success">23 ans de données (1995 à 2018)</td>
+                          </tr>
+                          <tr>
+                              <td class="table-success">OBS_VALUE</td>
+                              <td class="table-success">Valeur de quantité échangé</td>
+                          </tr>
+                          <tr>
+                              <td>UNIT_MEASURE: Unit of measure</td>
+                              <td>Unité de quantité en Tonnes</td>
+                          </tr>
+                          <tr>
+                              <td>UNIT_MULT: Unit multiplier</td>
+                              <td>Sans objet</td>
+                          </tr>
+                          <tr>
+                              <td>OBS_STATUS: Observation Status</td>
+                              <td>Sans objet</td>
+                          </tr>
+                          <tr>
+                              <td>DATA_SOURCE: Data source</td>
+                              <td>Sans objet</td>
+                          </tr>
+                          <tr>
+                              <td>OBS_COMMENT: Comment</td>
+                              <td>Sans objet</td>
+                          </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class='col-lg-4'></div>
+          </div>
+          <div class="row sc-text-1-font">
+              <div class="col">
+                  <br>
+                  <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessous.<br>
+                      les dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
+                      La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
+                      A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                  </p>
+                  <br>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+              <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°1 : Importateurs & Quantités totales</b></h4>
+          </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+              <div class="row sc-text-1-font">
+                  <div class="col-lg-8">
+                      <img src={% static 'img/food-trade-1.png' %} class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="col-lg-4 justify-content-center align-self-center">
+                      <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et du type de produits importés.<br>
+                         La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
+                         est de <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
+                         La Papouasie Nouvelle Guinée, Fidji et la Nouvelle-Calédonie représente à eux seul <b class="food-trade-color-4">80 %</b> du marché.<br>
+                      <br>
+                      <i class="fa-regular fa-lightbulb"></i> Il serait interessant par la suite de mettre en perspective les quantités importées par rapport à la population de ces pays.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsehuit" aria-expanded="true" aria-controls="panelsStayOpen-collapsehuit">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Conclusions</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsehuit" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col justify-content-center align-self-center">
+                        <p>Les 6 analyses graphiques ci-dessous nous ont permis de comprendre mieux le sujet de l'importation de nourriture dans les iles
+                            du pacifique. Voici un résumé des points principaux à retenir :
+                            <ul>
+                                <li>3 des 13 pays étudiés représente 80% des importations de la zone en quantité : La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle Calédonie.</li>
+                                <li>La moitié des tonnes échangées sont des céréales. 5 des 13 catégories de produits représente 80% des échanges.</li>
+                                <li>Toutes les iles du pacifique n'ont pas les mêmes habitudes d'importation en terme de produit. Mais dans la majorité des cas, un des types
+                                    de produit représente plus de 20-30% du total des importations.
+                                </li>
+                                <li>Sur 23 ans, la quantité importée à doublée.</li>
+                                <li>La volatilité des quantités importés est assez important d'une année à l'autre pour la majorité des pays. Ceci pourrait pottentiellement se justifier
+                                    par des evenement exogènes impactant la ressource locale.
+                                </li>
+                                <li>La quantité globale importée a doublée. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, fruits), d'autres 
+                                    ont diminué de moitié (tabac).
+                                </li>
+                                <li>La population a augmenté de 80% dans la région sur la période étudié. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
+                                    Toutefois, les pays importe en moyenne plus de 2018 qu'en 2015 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
+                                    mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier les chiffres sur les années covid.
+                                </li>
+                            </ul>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 {% endblock %}
