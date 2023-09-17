@@ -29,9 +29,11 @@
       <div class="accordion-body">
         <div class="row sc-text-1-font">
             <div class="col">
+                <p>Cette base de données enregistre pour 18 pays du pacifique, les quantités importées depuis l'ensemble Australie/Nouvelle-Zelande par type de produit 
+                    sur une période de 23 ans (de 1995 à 2018).</p>
                 <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
                 <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
-                    que celles importantse pour l'extraction d'une information.
+                    que celles importantes pour l'extraction d'une information.
                  </p>
             </div>
         </div>
@@ -59,9 +61,28 @@
                         </tr>
                         <tr>
                         <td class="table-success">IMPORTER: Importer</td>
-                        <td class="table-success">13 pays importateurs : 'CK: Cook Islands’,'MH: Marshall Islands','TO: Tonga','VU: Vanuatu','KI: Kiribati','NC: New Caledonia','NR: Nauru',
-                            'FM: Federated State of Micronesia','PW: Palau','NU: Niue','PG: Papua New Guinea', 'WS: Samoa','FJ: Fiji’, 'SB: Solomon Islands', 
-                            'PF: French Polynesia','TV: Tuvalu','WF: Wallis and Futuna Islands','TK: Tokelau'</td>
+                        <td class="table-success">18 pays importateurs : 
+                            <ul>
+                                <li>CK: Cook Islands</li>
+                                <li>FJ: Fiji</li>
+                                <li>FM: Federated State of Micronesia</li>
+                                <li>KI: Kiribati</li>
+                                <li>MH: Marshall Islands</li>
+                                <li>NC: New Caledonia</li>
+                                <li>NR: Nauru</li>
+                                <li>NU: Niue'</li>
+                                <li>PG: Papua New Guinea</li>
+                                <li>PF: French Polynesia</li>
+                                <li>PW: Palau</li>
+                                <li>SB: Solomon Islands</li>
+                                <li>TK: Tokelau</li>
+                                <li>TO: Tonga</li>
+                                <li>TV: Tuvalu</li>
+                                <li>VU: Vanuatu</li>
+                                <li>WF: Wallis and Futuna Islands</li>
+                                <li>WS: Samoa</li>
+                            </ul>
+                        </td>
                         </tr>
                         <tr>
                             <td>EXPORTER: Exporter</td>
@@ -69,22 +90,36 @@
                         </tr>
                         <tr>
                             <td class="table-success">COMMODITY: Commodity</td>
-                            <td class="table-success">18 catégories de produits alimentaires : '02: Meat and edible meat offal', '03: Fish, crustaceans, molluscs, aquatic invertebrates ne',
-                            '04: Dairy products, eggs, honey, edible animal product nes','07: Edible vegetables and certain roots and tubers',
-                            '08: Edible fruit, nuts, peel of citrus fruit, melons', '09: Coffee, tea, mate and spices','10: Cereals', 
-                            '11: Milling products, malt, starches, inulin, wheat glute','12: Oil seed, oleagic fruits, grain, seed, fruit, etc, ne', 
-                            '15: Animal,vegetable fats and oils, cleavage products, et', '16: Meat, fish and seafood food preparations nes', 
-                            '17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations','19: Cereal, flour, starch, milk preparations and products',
-                            '20: Vegetable, fruit, nut, etc food preparations','21: Miscellaneous edible preparations','22: Beverages, spirits and vinegar',
-                            '24: Tobacco and manufactured tobacco substitutes'</td>
+                            <td class="table-success">18 catégories de produits alimentaires : 
+                                <ul>
+                                    <li>02: Meat and edible meat offal</li>
+                                    <li>03: Fish, crustaceans, molluscs, aquatic invertebrates ne</li>
+                                    <li>04: Dairy products, eggs, honey, edible animal product nes</li>
+                                    <li>07: Edible vegetables and certain roots and tubers</li>
+                                    <li>08: Edible fruit, nuts, peel of citrus fruit, melons</li>
+                                    <li>09: Coffee, tea, mate and spices</li>
+                                    <li>10: Cereals</li>
+                                    <li>11: Milling products, malt, starches, inulin, wheat glute</li>
+                                    <li>12: Oil seed, oleagic fruits, grain, seed, fruit, etc, ne</li>
+                                    <li>15: Animal,vegetable fats and oils, cleavage products, et</li>
+                                    <li>16: Meat, fish and seafood food preparations nes</li>
+                                    <li>17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations</li>
+                                    <li>19: Cereal, flour, starch, milk preparations and products</li>
+                                    <li>20: Vegetable, fruit, nut, etc food preparations</li>
+                                    <li>21: Miscellaneous edible preparations</li>
+                                    <li>22: Beverages, spirits and vinegar</li>
+                                    <li>24: Tobacco and manufactured tobacco substitutes</li>
+                                    <li>02: Meat and edible meat offal</li> 
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <td class="table-success">TIME_PERIOD: Time</td>
-                            <td class="table-success">23 ans de données (1995 à 2018)</td>
+                            <td class="table-success">23 ans de données (de 1995 à 2018)</td>
                         </tr>
                         <tr>
                             <td class="table-success">OBS_VALUE</td>
-                            <td class="table-success">Valeur de quantité échangé</td>
+                            <td class="table-success">Valeur de quantité échangée</td>
                         </tr>
                         <tr>
                             <td>UNIT_MEASURE: Unit of measure</td>
@@ -114,10 +149,10 @@
         <div class="row sc-text-1-font">
             <div class="col">
                 <br>
-                <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessous.<br>
-                    les dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
+                <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessus.<br>
+                    Les 3 dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
                     La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
-                    A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                    A nous de décortiquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
                 </p>
                 <br>
             </div>
@@ -141,7 +176,7 @@
                     <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et du type de produits importés.<br>
                        La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
                        est de <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
-                       La Papouasie Nouvelle Guinée, Fidji et la Nouvelle-Calédonie représente à eux seul <b class="food-trade-color-4">80 %</b> du marché.<br>
+                       La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle-Calédonie représentent à eux seuls <b class="food-trade-color-4">80 %</b> du marché.<br>
                     <br>
                     <i class="fa-regular fa-lightbulb"></i> Il serait interessant par la suite de mettre en perspective les quantités importées par rapport à la population de ces pays.
                     </p>
@@ -161,11 +196,11 @@
         <div class="accordion-body">
             <div class="row sc-text-1-font">
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et des pays importateur.<br>
+                    <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et des pays importateurs.<br>
                        La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
                        reste la même <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
                        <br>
-                       Plus de <b class="food-trade-color-4">50 %</b> de la marchandise importée rentre dans la catégorie céréales</b>.<br>
+                       Plus de <b class="food-trade-color-4">50 %</b> de la marchandise importée rentre dans la catégorie <b class="food-trade-color-4">céréales</b>.<br>
                        <br>
                        <b class="food-trade-color-4">5</b> types de produits représentent <b class="food-trade-color-4">80 %</b> des importations.<br>
                        <ul>
@@ -176,7 +211,7 @@
                         <li>Dérivés des céréales</li>
                        </ul>
                        <br>
-                       <i class="fa-regular fa-lightbulb"></i> Pour aller plus loin, on pourra s'interroger si cette distribution est la même pour chaque pays importateur.
+                       <i class="fa-regular fa-lightbulb"></i> Pour aller plus loin, on pourrait s'interroger si cette distribution est la même pour chaque pays importateur.
                     </p>
                 </div>
                 <div class="col-lg-8">
@@ -207,17 +242,18 @@
                        <br>
                        <b><i class="fa-solid fa-glasses"></i> Comment lire le visuel ?</b><br>
                        <ul>
-                        <li>En ordonnée/verticalement : Les types de produits</li>
-                        <li>En abscisse/horizontalement : Les pays importateurs</li>
+                        <li>En ordonnée/verticalement : les types de produits</li>
+                        <li>En abscisse/horizontalement : les pays importateurs</li>
                         <li>Pour faciliter la lecture, toutes les valeurs sont données en pourcentage du total d'import par pays.</li>
-                        <li>La premier colonne est le % total par type de produits sommé pour tous les pays. Les valeurs sont donc indentiques à celles observées dans camembert de l'analyse précédente.</li>
+                        <li>La première colonne est le % total par type de produits sommé pour tous les pays. Les valeurs sont donc indentiques à celles observées dans camembert de l'analyse précédente.</li>
                         <li>Les types de produit sont classés par ordre décroissant (de haut en bas) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
                         <li>Les pays importateurs sont classés par ordre décroissant (de gauche à droite) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
+                        <li>Le total de chaque colonne est logiquement égale à 100%</li>
                        </ul>
                         <br>
                         <b>Analyse</b><br>
-                        <p>Aucun pays n'a la même répartition d'import que le classement moyen observé dans la premier colonne et dans l'analyse précédente.<br>
-                        Pour la majorité de pays étudié, <b class="food-trade-color-4">80%</b> des imports sont répartis sur <b class="food-trade-color-4">5</b> types de produits ou moins.<br>
+                        <p>Aucun pays n'a la même répartition d'import que le classement moyen observé dans la première colonne et dans l'analyse précédente.<br>
+                        Pour la majorité des pays étudiés, <b class="food-trade-color-4">80%</b> des imports sont répartis sur <b class="food-trade-color-4">5</b> types de produits ou moins.<br>
                         Le top 5 moyen des types de produits importés visualisés à l'analyse n°2 est fortement inflencé par les gros pays importateurs. Il n'est pas
                         représentatif de l'ensemble des habitudes des autres îles du pacifiques.<br>
                         La Polynésie Française ou le Vanuatu sont deux exemples de pays qui ont une distribution d'import plus varié et moins basé sur un monoproduit.
@@ -250,12 +286,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Dans cette analyse on insert enfin la notion d'évolution dans le <b class="food-trade-color-4">temps</b><br>
+                    <p>Dans cette analyse on insere enfin la notion d'évolution dans le <b class="food-trade-color-4">temps</b><br>
                        <br>
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                         <p>Sur le visuel du haut : 
                             <ul>
-                                <li>en jaune la quantité totale exportée par le groupe Australie/Nouvelle-Zelande par ans.</li>
+                                <li>en jaune la quantité totale exportée par le groupe Australie/Nouvelle-Zelande par an.</li>
                                 <li>en vert l'écart à la moyenne en % par pays et par année.
                             </ul>
                         </p>
@@ -265,7 +301,7 @@
                         <b>Analyse</b><br>
                         <p>Sur<b class="food-trade-color-4">23 ans</b>, la quantité échangée par an a <b class="food-trade-color-4">doublée</b>.<br>
                            Cela signifie biensur qu'en moyenne, l'ensemble des pays importent plus, mais on constate également une dispertion plus importante des quantités 
-                           importées à mesure que le temps passe. En effet, en 1995 l'ensemble des pays sont plutôt proches de leur moyennes (courbes centrées/regroupée autour de 0), 
+                           importées à mesure que le temps passe. En effet, en 1995 l'ensemble des pays sont plutôt proches de leur moyennes (courbes centrées/regroupées autour de 0), 
                             beaucoup moins en 2018. Les nombreux pics observés sont autant d'instabilités d'import significatives et témoignant potentiellement d'instabilités
                             d'approvisionnement. Soit du coté importateurs, soit du coté exportateurs.<br>
                         <br>
@@ -312,10 +348,10 @@
                         <br>
                         <b>Analyse</b><br>
                         <p> Sur la figure du haut, la courbe en pointillée noir montre un taux de variation d'import total de <b class="food-trade-color-4">100%</b>, c'est à dire un 
-                            <b class="food-trade-color-4">doublement</b> de la quantité totale importée. Certain produit comme les Céréales et les fruits 
+                            <b class="food-trade-color-4">doublement</b> de la quantité totale importée. Certain produit comme les céréales et les fruits 
                             ont triplé en volume (taux de variation de 200%), d'autres comme le tabac ont chuté de 50-60% par rapport à l'origine.<br>
                             <br>
-                            La figure du milieu met en évidence que l'évolution globale de la quantité exportées est dicté par
+                            La figure du milieu met en évidence que l'évolution globale de la quantité exportée est dictée par
                             l'augmentation des échanges de <b class="food-trade-color-4">céréales</b>. L'évolution du reste des types de produits semble bien marginale même si observable
                             à la hausse sur 23 ans. L'échange de céréales à quasiment été multiplié par <b class="food-trade-color-4">3</b>.<br>
                         <br>
@@ -357,9 +393,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
-                        <p>Pour cette analyse, une seconde base de données à été utilisé. Il s'agit de la population totale par année et par pays 
+                        <p>Pour cette analyse, une seconde base de données à été utilisée. Il s'agit de la population totale par année et par pays 
                             disponible sur le site de la banque mondiale : <a href="https://donnees.banquemondiale.org/indicator/SP.POP.TOTL">ici</a>.<br>
-                            A savoir, les données ne sont pas disponible pour : CK: Cook Islands, NU: Niue, WF: Wallis and Futuna Islands, TK: Tokelau. L'analyse
+                            A savoir, les données ne sont pas disponibles pour : CK: Cook Islands, NU: Niue, WF: Wallis and Futuna Islands, TK: Tokelau. L'analyse
                             est donc partielle par rapport au référentiel initial.</p>
                         <br>
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
@@ -373,9 +409,9 @@
                             <ul><li>Une matrice donnant pour chaque pays et pour chaque années la quantité importée en kg/habitant.</li></ul></p>
                         <br>
                         <b>Analyse</b><br>
-                        <p>La Papouasie-Nouvelle-Guiné est de loin le pays ayant le plus d'habitant et possédant la croissance démographique la plus importante 
+                        <p>La Papouasie-Nouvelle-Guinée est de loin le pays ayant le plus d'habitant et possédant la croissance démographique la plus importante 
                             sur l'ensemble de la période. La population a <b class="food-trade-color-4">doublé</b> en 23 ans et le pays tire à lui tout seul l'augmentation
-                            de population globale de la région. Il est intéressant de noté que les Iles Marshall et la Micronésie ont, sur 23 ans, une croissance démographique
+                            de population globale de la région. Il est intéressant de noter que les Iles Marshall et la Micronésie ont, sur 23 ans, une croissance démographique
                             quasi nulle ou négative.<br>
                         <br>
                         La carte de chaleur nous rèvele qu'il y a une forte disparitée dans la quantité d'importation par personne et par pays. Cela permet de comprendre 
@@ -418,11 +454,11 @@
                                 <li>La volatilité des quantités importés est assez important d'une année à l'autre pour la majorité des pays. Ceci pourrait pottentiellement se justifier
                                     par des evenement exogènes impactant la ressource locale.
                                 </li>
-                                <li>La quantité globale importée a doublée. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, fruits), d'autres 
+                                <li>La quantité globale importée a doublé. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, fruits), d'autres 
                                     ont diminué de moitié (tabac).
                                 </li>
                                 <li>La population a augmenté de 80% dans la région sur la période étudié. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
-                                    Toutefois, les pays importe en moyenne plus de 2018 qu'en 2015 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
+                                    Toutefois, les pays importent en moyenne plus de 2018 qu'en 1995 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
                                     mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier les chiffres sur les années covid.
                                 </li>
                             </ul>

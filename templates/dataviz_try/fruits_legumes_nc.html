@@ -29,12 +29,17 @@
         <div class="accordion-body">
           <div class="row sc-text-1-font">
               <div class="col">
-                  <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
-                  <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
-                      que celles importantse pour l'extraction d'une information.
-                   </p>
+                  <p>La base de données est composée de deux fichiers presque identiques (en orange sont identifiés ci-dessous les colonnes qui diffères).<br>
+                     Ces bases de données référencent les quantités et valeurs de fruits et légumes en <b class="fruits-color-1">Nouvelle-Calédonie</b>.<br>
+                     Le premier que nous nommerons <b class="fruits-color-2">FL_1</b> est composé de 13 colonnes et 5132 lignes.<br>
+                     Le second que nous nommerons <b class="fruits-color-2">FL_2</b> est composé de 13 colonnes et 278 lignes.</p>
               </div>
           </div>
+          <div class="row sc-text-1-font">
+            <div class="col">
+                <h3>FL_1</h3>
+            </div>
+        </div>
           <div class="row sc-text-1-font">
               <div class="col">
                   <table class="table table-hover">
@@ -46,65 +51,64 @@
                       </thead>
                       <tbody>
                           <tr>
-                              <td>DATAFLOW</td>
-                              <td>Composée d'une unique valeur "SPC:DF_TRADE_FOOD(1.0)"</td>
+                              <td class="table-warning">annee</td>
+                              <td class="table-warning">11 ans de données (2012 à 2023)</td>
                           </tr>
                           <tr>
-                              <td>FREQ: Frequency</td>
-                              <td>Composée d'une unique valeur "A: Annual"</td>
+                              <td class="table-warning">mois</td>
+                              <td class="table-warning">Les mois de l'année numérotés de 1 à 12</td>
                           </tr>
                           <tr>
-                          <td>INDICATOR: Indicator</td>
-                          <td>Composée d'une unique valeur "Q: Quantity"</td>
+                          <td class="table-warning"><span style="color: #F05500">regroupement1</span></td>
+                          <td class="table-warning">Les types de fruits et légumes : 
+                            <ul>
+                                <li>Les légumes (27) : AIL, AUBERGINE, AUTRES LEGUMES, AVOCAT, BROCOLI, CAROTTE, CELERI, CHOUCHOUTE, CHOU DE CHINE, CHOU FLEUR, CHOU ROUGE, 
+                                    CHOU VERT ET BLANC, CONCOMBRE, COURGETTE, HARICOT VERT ET BEURRE, MAIS DOUX, OIGNONS, OIGNONS VERT, PASTEQUE, PATATES DOUCES, 
+                                    PERSIL CHINOIS, PERSIL FRANCAIS, POIREAU, POIVRONS, RADIS, SALADES, TOMATES</li>
+                                <li>Les fruits (16) : ANANAS, AUTRES FRUITS, BANANE DESSERT, CITRON ET LIME, LETCHI, MANDARINE, MANGUE, MELON, NECTARINE, NAVET, ORANGE, 
+                                    PAMPLEMOUSSE ET POMELO, PAPAYE, POMME CANELLE, POMME LIANE, TANGELO</li>
+                            <ul>
+                          </td>
                           </tr>
                           <tr>
-                          <td class="table-success">IMPORTER: Importer</td>
-                          <td class="table-success">13 pays importateurs : 'CK: Cook Islands’,'MH: Marshall Islands','TO: Tonga','VU: Vanuatu','KI: Kiribati','NC: New Caledonia','NR: Nauru',
-                              'FM: Federated State of Micronesia','PW: Palau','NU: Niue','PG: Papua New Guinea', 'WS: Samoa','FJ: Fiji’, 'SB: Solomon Islands', 
-                              'PF: French Polynesia','TV: Tuvalu','WF: Wallis and Futuna Islands','TK: Tokelau'</td>
+                          <td class="table-warning">regroupement2</td>
+                          <td class="table-warning">2 catégories : TOTAL LEGUMES, TOTAL FRUITS (HORS VANILLE)</td>
                           </tr>
                           <tr>
-                              <td>EXPORTER: Exporter</td>
-                              <td>Composée d'une unique valeur "AU_NZ: Australia and New Zealand"</td>
+                              <td class="table-warning">poids_enquete_kg</td>
+                              <td class="table-warning">Mesure poids enquête producteur en kg</td>
                           </tr>
                           <tr>
-                              <td class="table-success">COMMODITY: Commodity</td>
-                              <td class="table-success">18 catégories de produits alimentaires : '02: Meat and edible meat offal', '03: Fish, crustaceans, molluscs, aquatic invertebrates ne',
-                              '04: Dairy products, eggs, honey, edible animal product nes','07: Edible vegetables and certain roots and tubers',
-                              '08: Edible fruit, nuts, peel of citrus fruit, melons', '09: Coffee, tea, mate and spices','10: Cereals', 
-                              '11: Milling products, malt, starches, inulin, wheat glute','12: Oil seed, oleagic fruits, grain, seed, fruit, etc, ne', 
-                              '15: Animal,vegetable fats and oils, cleavage products, et', '16: Meat, fish and seafood food preparations nes', 
-                              '17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations','19: Cereal, flour, starch, milk preparations and products',
-                              '20: Vegetable, fruit, nut, etc food preparations','21: Miscellaneous edible preparations','22: Beverages, spirits and vinegar',
-                              '24: Tobacco and manufactured tobacco substitutes'</td>
+                              <td class="table-warning">poids_mg_kg</td>
+                              <td class="table-warning">Mesure poids marché de gros en kg</td>
                           </tr>
                           <tr>
-                              <td class="table-success">TIME_PERIOD: Time</td>
-                              <td class="table-success">23 ans de données (1995 à 2018)</td>
+                              <td class="table-warning">valeur_tot_mg_fr</td>
+                              <td class="table-warning">Mesure valeurs marché de gros en xpf</td>
                           </tr>
                           <tr>
-                              <td class="table-success">OBS_VALUE</td>
-                              <td class="table-success">Valeur de quantité échangé</td>
+                              <td class="table-warning">valeur_moy'</td>
+                              <td class="table-warning">Mesure calculée valeur_tot_mg_fr/poids_mg_kg en xpf/kg</td>
                           </tr>
                           <tr>
-                              <td>UNIT_MEASURE: Unit of measure</td>
-                              <td>Unité de quantité en Tonnes</td>
+                              <td class="table-warning"><span style="color: #F05500">besoin_marche_t</span></td>
+                              <td class="table-warning">Mesure besoin du marché en tonnes</td>
                           </tr>
                           <tr>
-                              <td>UNIT_MULT: Unit multiplier</td>
-                              <td>Sans objet</td>
+                              <td class="table-warning">quotas_date_debut</td>
+                              <td class="table-warning">Date début des quotas</td>
                           </tr>
                           <tr>
-                              <td>OBS_STATUS: Observation Status</td>
-                              <td>Sans objet</td>
+                              <td class="table-warning">quotas_date_fin</td>
+                              <td class="table-warning">Date fin des quotas</td>
                           </tr>
                           <tr>
-                              <td>DATA_SOURCE: Data source</td>
-                              <td>Sans objet</td>
+                              <td class="table-warning">quotas_contingent_t</td>
+                              <td class="table-warning">Mesure quotas validé en tonnes</td>
                           </tr>
                           <tr>
-                              <td>OBS_COMMENT: Comment</td>
-                              <td>Sans objet</td>
+                              <td class="table-warning">quotas_realise_t</td>
+                              <td class="table-warning">Mesure qutoas réalisé en tonnes</td>
                           </tr>
                       </tbody>
                     </table>
@@ -114,14 +118,97 @@
           <div class="row sc-text-1-font">
               <div class="col">
                   <br>
-                  <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessous.<br>
-                      les dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
-                      La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
-                      A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                  <p>Dans <b class="fruits-color-2">FL_1</b>, ci-dessus, toutes les colonnes peuvent être utiles à l'analyse.<br>
+                     Les dimensions d'analyses sont les colonnes : annee, mois, regroupement 1 et 2 et enventuellement dates quotas début et fin<br>
+                     Les valeurs mesurées sont des quantités en poids ou une valorisation.<br>
+                     A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
                   </p>
                   <br>
               </div>
           </div>
+          <div class="row sc-text-1-font">
+            <div class="col">
+                <h3>FL_2</h3>
+            </div>
+        </div>
+        <div class="row sc-text-1-font">
+            <div class="col">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Colonne</th>
+                        <th scope="col">Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-warning">annee</td>
+                            <td class="table-warning">11 ans de données (2012 à 2023)</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">mois</td>
+                            <td class="table-warning">Les mois de l'année numérotés de 1 à 12</td>
+                        </tr>
+                        <tr>
+                        <td class="table-warning">regroupement2</td>
+                        <td class="table-warning">2 catégories : TOTAL LEGUMES, TOTAL FRUITS (HORS VANILLE)</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">poids_enquete_kg</td>
+                            <td class="table-warning">Mesure poids enquête producteur en kg</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">poids_mg_kg</td>
+                            <td class="table-warning">Mesure poids marché de gros en kg</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">valeur_tot_mg_fr</td>
+                            <td class="table-warning">Mesure valeur marché de gros en xpf</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">valeur_moy'</td>
+                            <td class="table-warning">Mesure calculée valeur_tot_mg_fr/poids_mg_kg en xpf/kg</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning"><span style="color: #F05500">indice_isee</span></td>
+                            <td class="table-warning">Mesure indice isee image de la variation des prix en NC</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning"><span style="color: #F05500">indice_mg</span></td>
+                            <td class="table-warning">Mesure indice mg image de la variation des prix en NC</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">quotas_date_debut</td>
+                            <td class="table-warning">Date début des quotas</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">quotas_date_fin</td>
+                            <td class="table-warning">Date fin des quotas</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">quotas_contingent_t</td>
+                            <td class="table-warning">Mesure quotas validé en tonnes</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">quotas_realise_t</td>
+                            <td class="table-warning">Mesure qutoas réalisé en tonnes</td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class='col-lg-4'></div>
+        </div>
+        <div class="row sc-text-1-font">
+            <div class="col">
+                <br>
+                <p>Dans <b class="fruits-color-2">FL_2</b>, ci-dessus, toutes les colonnes peuvent être utiles à l'analyse.<br>
+                   Les dimensions d'analyses sont les colonnes : annee, mois, regroupement 2 et enventuellement dates quotas début et fin<br>
+                   Les valeurs mesurées sont des quantités en poids, la valorisation ou des indices.<br>
+                   A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                </p>
+                <br>
+            </div>
+        </div>
         </div>
       </div>
     </div>

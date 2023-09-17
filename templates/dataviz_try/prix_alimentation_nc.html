@@ -29,9 +29,13 @@
         <div class="accordion-body">
           <div class="row sc-text-1-font">
               <div class="col">
-                  <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
-                  <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
-                      que celles importantse pour l'extraction d'une information.
+                  <p>Cette base de donnée référence dans le détail l'ensemble des produits vendus dans les enseignent de <b class="prix-color-4">Nouvelle-Calédonie</b>.<br>
+                    La base de données est composée de 12 fichiers ayant des colonnes identiques, un par année de 2012 à 2023.<br>
+                     L'ensemble de ces fichiers pèsent <b class="prix-color-4">16.7 Go</b> en format csv. Pour plus de facilité dans le traitement, nous allons fusionner l'ensemble dans un même 
+                     Dataframe et appliquer quelques traitement permettant d'alléger l'ensemble.<br>
+                     La base de données totale est composée de <b class="prix-color-4">30</b> colonnes et <b class="prix-color-4">51'882'946</b> lignes.<br>
+                     Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
+                      que celles importantes pour l'extraction d'une information. 
                    </p>
               </div>
           </div>
@@ -46,66 +50,125 @@
                       </thead>
                       <tbody>
                           <tr>
-                              <td>DATAFLOW</td>
-                              <td>Composée d'une unique valeur "SPC:DF_TRADE_FOOD(1.0)"</td>
+                              <td>CODE_PRODUIT</td>
+                              <td>Mesure des différents code des produits</td>
                           </tr>
                           <tr>
-                              <td>FREQ: Frequency</td>
-                              <td>Composée d'une unique valeur "A: Annual"</td>
+                              <td>NOM</td>
+                              <td>Mesure designation des produits</td>
                           </tr>
                           <tr>
-                          <td>INDICATOR: Indicator</td>
-                          <td>Composée d'une unique valeur "Q: Quantity"</td>
+                            <td class="table-danger">SECTEUR_CONSO</td>
+                            <td class="table-danger">Dimension secteur de consommation : 10 valeurs</td>
                           </tr>
                           <tr>
-                          <td class="table-success">IMPORTER: Importer</td>
-                          <td class="table-success">13 pays importateurs : 'CK: Cook Islands’,'MH: Marshall Islands','TO: Tonga','VU: Vanuatu','KI: Kiribati','NC: New Caledonia','NR: Nauru',
-                              'FM: Federated State of Micronesia','PW: Palau','NU: Niue','PG: Papua New Guinea', 'WS: Samoa','FJ: Fiji’, 'SB: Solomon Islands', 
-                              'PF: French Polynesia','TV: Tuvalu','WF: Wallis and Futuna Islands','TK: Tokelau'</td>
+                            <td class="table-danger">SOUS_SECTEUR_CONSO</td>
+                            <td class="table-danger">Dimension sous secteur de consommation : 53 valeurs</td>
                           </tr>
                           <tr>
-                              <td>EXPORTER: Exporter</td>
-                              <td>Composée d'une unique valeur "AU_NZ: Australia and New Zealand"</td>
+                              <td class="table-danger">FAMILLE_PRODUIT</td>
+                              <td class="table-danger">Dimension famille de produit : 116 valeurs</td>
                           </tr>
                           <tr>
-                              <td class="table-success">COMMODITY: Commodity</td>
-                              <td class="table-success">18 catégories de produits alimentaires : '02: Meat and edible meat offal', '03: Fish, crustaceans, molluscs, aquatic invertebrates ne',
-                              '04: Dairy products, eggs, honey, edible animal product nes','07: Edible vegetables and certain roots and tubers',
-                              '08: Edible fruit, nuts, peel of citrus fruit, melons', '09: Coffee, tea, mate and spices','10: Cereals', 
-                              '11: Milling products, malt, starches, inulin, wheat glute','12: Oil seed, oleagic prix, grain, seed, fruit, etc, ne', 
-                              '15: Animal,vegetable fats and oils, cleavage products, et', '16: Meat, fish and seafood food preparations nes', 
-                              '17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations','19: Cereal, flour, starch, milk preparations and products',
-                              '20: Vegetable, fruit, nut, etc food preparations','21: Miscellaneous edible preparations','22: Beverages, spirits and vinegar',
-                              '24: Tobacco and manufactured tobacco substitutes'</td>
+                              <td class="table-danger">SOUS_FAMILLE</td>
+                              <td class="table-danger">Dimension sous famille de produit : 324 valeurs</td>
                           </tr>
                           <tr>
-                              <td class="table-success">TIME_PERIOD: Time</td>
-                              <td class="table-success">23 ans de données (1995 à 2018)</td>
+                              <td class="table-danger">VARIETE</td>
+                              <td class="table-danger">Dimension variété de produit : 1177 valeurs</td>
                           </tr>
                           <tr>
-                              <td class="table-success">OBS_VALUE</td>
-                              <td class="table-success">Valeur de quantité échangé</td>
+                              <td class="table-danger">CATEGORIE</td>
+                              <td class="table-danger">Dimension catégories produit : LOCAL, IMPORT, SERVICE</td>
                           </tr>
                           <tr>
-                              <td>UNIT_MEASURE: Unit of measure</td>
-                              <td>Unité de quantité en Tonnes</td>
+                              <td class="table-danger">DEPARTEMENT</td>
+                              <td class="table-danger">Dimension département produit : Sec, Surgelé, Frais, NaN</td>
                           </tr>
                           <tr>
-                              <td>UNIT_MULT: Unit multiplier</td>
-                              <td>Sans objet</td>
+                              <td class="table-warning">MARQUES</td>
+                              <td class="table-warning">Dimension marque du produit</td>
                           </tr>
                           <tr>
-                              <td>OBS_STATUS: Observation Status</td>
-                              <td>Sans objet</td>
+                              <td class="table-danger">CONDITIONNEMENT</td>
+                              <td class="table-danger">Mesure conditionnement du produit</td>
                           </tr>
                           <tr>
-                              <td>DATA_SOURCE: Data source</td>
-                              <td>Sans objet</td>
+                              <td>COND_UNITE_LIBELLE_LONG</td>
+                              <td>Unité de conditionnement en lettre</td>
                           </tr>
                           <tr>
-                              <td>OBS_COMMENT: Comment</td>
-                              <td>Sans objet</td>
+                              <td class="table-danger">COND_UNITE_LIBELLLE_COURT</td>
+                              <td class="table-danger">Unité de conditionnement</td>
                           </tr>
+                          <tr>
+                            <td>GENCODE</td>
+                            <td>Dimension codification produit</td>
+                        </tr>
+                        <tr>
+                            <td class="table-danger">PRIX_RELEVE</td>
+                            <td class="table-danger">Mesure tarif de vente en xpf</td>
+                        </tr>
+                        <tr>
+                            <td >DATE_RELEVE</td>
+                            <td>Mesure date de releve de la transaction</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">PROMOTION</td>
+                            <td class="table-warning">Dimension promotion</td>
+                        </tr>
+                        <tr>
+                            <td class="table-warning">TOP 500</td>
+                            <td class="table-warning">Dimension top 500</td>
+                        </tr>
+                        <tr>
+                            <td>TYPE_RELEVE</td>
+                            <td>Dimension type de relève</td>
+                        </tr>
+                        <tr>
+                            <td class="table-danger">RAISON_SOCIALE</td>
+                            <td class="table-danger">Dimension lieu de vente : 753 valeurs</td>
+                        </tr>
+                        <tr>
+                            <td>RIDET</td>
+                            <td>Dimension Ridet lieu de vente</td>
+                        </tr>
+                        <tr>
+                            <td>TYPE_ADRESSE</td>
+                            <td>Dimension type adresse</td>
+                        </tr>
+                        <tr>
+                            <td>NUM_VOIE</td>
+                            <td>Numéro de la voie (adresse)</td>
+                        </tr>
+                        <tr>
+                            <td>TYPE_VOIE</td>
+                            <td>Type de la voie (adresse)</td>
+                        </tr>
+                        <tr>
+                            <td>NOM_VOIE</td>
+                            <td>Nom de la voie (adresse)</td>
+                        </tr>
+                        <tr>
+                            <td>COMPLEMENT_ADRESSE</td>
+                            <td>Complément d'adresse</td>
+                        </tr>
+                        <tr>
+                            <td class="table-danger">QUARTIER</td>
+                            <td class="table-danger">Quartier : 50 valeurs</td>
+                        </tr>
+                        <tr>
+                            <td>CODE_POSTAL</td>
+                            <td>CP</td>
+                        </tr>
+                        <tr>
+                            <td class="table-danger">COMMUNE</td>
+                            <td class="table-danger">Commune : 33 valeurs</td>
+                        </tr>
+                        <tr>
+                            <td class="table-danger">point_geo</td>
+                            <td class="table-danger">Coordonnées géographique</td>
+                        </tr>
                       </tbody>
                     </table>
               </div>
@@ -114,11 +177,10 @@
           <div class="row sc-text-1-font">
               <div class="col">
                   <br>
-                  <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessous.<br>
-                      les dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
-                      La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
-                      A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
-                  </p>
+                  <p>Le nombre important de colonne impose de faire des choix : 14 colonnes sont selectionnées. Elles sont surlignées en rouge dans le tableau ci-dessus.<br>
+                     Les 3 colonnes surlignés en jaune ne feront pas partie de l'analyse mais pourrait être étudiées également. Le reste n'est pas représentatif d'informations suplémentaires<br>
+                     Il y a beaucoup de dimensions et peu de mesure.<br>
+                     A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.</p>
                   <br>
               </div>
           </div>

@@ -29,7 +29,7 @@
         <div class="accordion-body">
           <div class="row sc-text-1-font">
               <div class="col">
-                  <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
+                  <p>La base de données est composée de 18 colonnes et 9119 lignes.</p>
                   <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
                       que celles importantse pour l'extraction d'une information.
                    </p>
@@ -47,65 +47,156 @@
                       <tbody>
                           <tr>
                               <td>DATAFLOW</td>
-                              <td>Composée d'une unique valeur "SPC:DF_TRADE_FOOD(1.0)"</td>
+                              <td>Composée d'une unique valeur "SPC:DF_FOOD_SECURITY_HIES_3(1.0)"</td>
                           </tr>
                           <tr>
                               <td>FREQ: Frequency</td>
                               <td>Composée d'une unique valeur "A: Annual"</td>
                           </tr>
                           <tr>
-                          <td>INDICATOR: Indicator</td>
-                          <td>Composée d'une unique valeur "Q: Quantity"</td>
+                          <td class="table-primary">TIME_PERIOD: Time</td>
+                          <td class="table-primary">2 valeurs : 2012, 2019</td>
                           </tr>
                           <tr>
-                          <td class="table-success">IMPORTER: Importer</td>
-                          <td class="table-success">13 pays importateurs : 'CK: Cook Islands’,'MH: Marshall Islands','TO: Tonga','VU: Vanuatu','KI: Kiribati','NC: New Caledonia','NR: Nauru',
-                              'FM: Federated State of Micronesia','PW: Palau','NU: Niue','PG: Papua New Guinea', 'WS: Samoa','FJ: Fiji’, 'SB: Solomon Islands', 
-                              'PF: French Polynesia','TV: Tuvalu','WF: Wallis and Futuna Islands','TK: Tokelau'</td>
+                          <td class="table-primary">GEO_PICT: Pacific Island Countries and territories</td>
+                          <td class="table-primary">23 valeurs, 3 pays et leur régions concernées :
+                            <ul>  
+                            <li>KI: Kiribati (KI-A: Northern Kiribati, KI-B: South Tarawa, KI-C: Central Kiribati, KI-D: Southern Kiribati, KI-E: Line & Phoenix)</li> 
+                            <li>SB: Solomon Islands (SB-1: Choiseul, SB-2: Western, SB-3: Isabel, SB-4: Central, SB-5: Rennell-Bell, SB-6: Guadalcanal, SB-7: Malaita, SB-8: Makira-Ulawa, SB-9: Temotu, SB-10: Honiara)</li> 
+                            <li>VU: Vanuatu (VU-1: Torba, VU-2: Sanma, VU-3: Penama, VU-4: Malampa, VU-5: Shefa, VU-6: Tafea)</li>
+                            </ul>
+                        </td>
                           </tr>
                           <tr>
-                              <td>EXPORTER: Exporter</td>
-                              <td>Composée d'une unique valeur "AU_NZ: Australia and New Zealand"</td>
+                              <td class="table-primary">INDICATOR: Indicator</td>
+                              <td class="table-primary">8 indicateurs : 
+                                <ul>
+                                <li>CONSGTAVG: Percentage of households who consumed more than the average number of products consumed in the group</li>
+                                <li>AQAA: Average quantity as acquired</li>
+                                <li>AVGEQ: Average edible quantity</li>
+                                <li>AVGDEC: Average Dietary Energy Consumption</li>
+                                <li>AVGEXP: Average expenditures</li>
+                                <li>CONSAL1: Percentage of HH who consumed at least one product of the group</li>
+                                <li>CONSLTAVG: Percentage of households who consumed less than the average number of products consumed in the group</li>
+                                <li>AVGNPRDCONS: Average number of products consumed by household by food group</li>
+                                </ul>
+                              </td>
                           </tr>
                           <tr>
-                              <td class="table-success">COMMODITY: Commodity</td>
-                              <td class="table-success">18 catégories de produits alimentaires : '02: Meat and edible meat offal', '03: Fish, crustaceans, molluscs, aquatic invertebrates ne',
-                              '04: Dairy products, eggs, honey, edible animal product nes','07: Edible vegetables and certain roots and tubers',
-                              '08: Edible fruit, nuts, peel of citrus fruit, melons', '09: Coffee, tea, mate and spices','10: Cereals', 
-                              '11: Milling products, malt, starches, inulin, wheat glute','12: Oil seed, oleagic fruits, grain, seed, fruit, etc, ne', 
-                              '15: Animal,vegetable fats and oils, cleavage products, et', '16: Meat, fish and seafood food preparations nes', 
-                              '17: Sugars and sugar confectionery','18: Cocoa and cocoa preparations','19: Cereal, flour, starch, milk preparations and products',
-                              '20: Vegetable, fruit, nut, etc food preparations','21: Miscellaneous edible preparations','22: Beverages, spirits and vinegar',
-                              '24: Tobacco and manufactured tobacco substitutes'</td>
+                              <td class="table-primary">SEX: Sex</td>
+                              <td class="table-primary">3 dimensions :
+                                <ul>
+                                    <li>F: Female</li>
+                                    <li>M: Male</li>
+                                    <li>_T: Total</li>
+                                </ul>
+                            </td>
                           </tr>
                           <tr>
-                              <td class="table-success">TIME_PERIOD: Time</td>
-                              <td class="table-success">23 ans de données (1995 à 2018)</td>
+                              <td class="table-primary">AGE: Age</td>
+                              <td class="table-primary">4 dimensions :
+                                <ul>
+                                    <li>Y15T24: 15-24</li>
+                                    <li>Y25T59: 25-59</li>
+                                    <li>Y60T999: 60+</li>
+                                    <li>_T: All ages</li>
+                                </ul>
+                            </td>
                           </tr>
                           <tr>
-                              <td class="table-success">OBS_VALUE</td>
-                              <td class="table-success">Valeur de quantité échangé</td>
+                              <td class="table-primary">URBANIZATION: Urbanization</td>
+                              <td class="table-primary">3 dimensions :
+                                <ul>
+                                    <li>U: Urban</li>
+                                    <li>R: Rural</li>
+                                    <li>_T: National</li>
+                                </ul>
+                            </td>
                           </tr>
                           <tr>
-                              <td>UNIT_MEASURE: Unit of measure</td>
-                              <td>Unité de quantité en Tonnes</td>
+                              <td class="table-primary">POVERTY: Poverty</td>
+                              <td class="table-primary">3 dimensions : 
+                                <ul>
+                                    <li>NOP: No poverty</li>
+                                    <li>POV: Poverty</li>
+                                    <li>_T: Total</li>
+                                </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="table-primary">FOOD_SECURITY: Food security</td>
+                            <td class="table-primary">3 dimensions :
+                                <ul>
+                                    <li>FOODSEC: Food secure or mildly food insecur</li>
+                                    <li>FOODINS: Moderately or severely food insecure</li>
+                                    <li>_T: Total</li>
+                                </ul>
+                            </td>
+                        </tr>
+                          <tr>
+                              <td class="table-primary">FOOD: Food category</td>
+                              <td class="table-primary">21 types de produits : 
+                                <ul>
+                                    <li>1: Cereals and cereal products</li>
+                                    <li>2: Roots and tubers</li>
+                                    <li>3: Sugars and syrups</li>
+                                    <li>4: Pulses</li>
+                                    <li>5: Oils crops</li>
+                                    <li>6: Vegetables and vegetable products</li>
+                                    <li>7: Fruits and fruit products</li>
+                                    <li>8: Stimulants</li>
+                                    <li>9: Spices and additive</li>
+                                    <li>10: Alcoholic beverages</li>
+                                    <li>11: Meat and meat products</li>
+                                    <li>12: Eggs</li>
+                                    <li>13: Fish and fish products</li>
+                                    <li>14: Milk and cheese</li>
+                                    <li>15: Vegetable oils and fats</li>
+                                    <li>16: Oils and fats</li>
+                                    <li>17: Non alcoholoc beverages/li>
+                                    <li>18: Miscellaneous and prepared foods</li>
+                                    <li>19: Meals consumed away from home</li>
+                                    <li>20: Tobacco/kava</li>
+                                    <li>21: Tree nuts</li>
+                                </ul>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td class="table-primary">OBS_VALUE</td>
+                              <td class="table-primary">Valeur/quantité</td>
+                          </tr>
+                          <tr>
+                              <td td class="table-primary">UNIT_MEASURE: Unit of measure</td>
+                              <td td class="table-primary">5 unités de mesures : 
+                                <ul>
+                                    <li>N: units</li>
+                                    <li>G_POP_DAY: g/capita/day</li>
+                                    <li>KCAL_POP_DAY: kcal/capita/day</li>
+                                    <li>USD_POP_DAY: $/capita/day</li>
+                                    <li>PERCENT: percent</li>
+                                </ul>
+                            </td>
                           </tr>
                           <tr>
                               <td>UNIT_MULT: Unit multiplier</td>
                               <td>Sans objet</td>
                           </tr>
                           <tr>
-                              <td>OBS_STATUS: Observation Status</td>
-                              <td>Sans objet</td>
-                          </tr>
-                          <tr>
-                              <td>DATA_SOURCE: Data source</td>
-                              <td>Sans objet</td>
-                          </tr>
-                          <tr>
-                              <td>OBS_COMMENT: Comment</td>
-                              <td>Sans objet</td>
-                          </tr>
+                            <td>OBS_STATUS: Observation Status</td>
+                            <td>Sans objet</td>
+                        </tr>
+                        <tr>
+                            <td>DATA_SOURCE: Data source</td>
+                            <td>Sans objet</td>
+                        </tr>
+                        <tr>
+                            <td>OBS_COMMENT: Comment</td>
+                            <td>Sans objet</td>
+                        </tr>
+                        <tr>
+                            <td>CONF_STATUS: Confidentiality status</td>
+                            <td>Sans objet</td>
+                        </tr>    
                       </tbody>
                     </table>
               </div>
@@ -114,11 +205,25 @@
           <div class="row sc-text-1-font">
               <div class="col">
                   <br>
-                  <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessous.<br>
-                      les dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
-                      La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
-                      A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                  <p>Dans cette base de données, <b class="food-security-color-4">11</b> colonnes sont utiles. Elles sont surlignées en bleu dans le tableau ci-dessus.<br>
+                     Cette base de données est plus complexe que les autres, elles contient un nombre important de dimensions (<b class="food-security-color-4">10</b>) qui sont 
+                     tout autant d'angles d'analyse différents.<br>
+                     De plus, la valeur mesurée est également dans plusieurs unités.<br>
+                     A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
                   </p>
+                  <p>Quelques précisions suplémentaires sur la colonne <b class="food-security-color-4">INDICATOR: Indicator</b> : 
+                    <ul>
+                        <li>CONSGTAVG (%): Pourcentage des ménages ayant consommés plus que le nombre moyen de produits consommés dans le groupe'</li>
+                        <li>AQAA (g/capita/day): Quantité moyenne telle qu'acquise</li>
+                        <li>AVGEQ (g/capita/day): Quantité comestible moyenne (AQAA - pertes)</li>
+                        <li>AVGDEC (kcal/capita/day) : Consommation énergétique alimentaire moyenne</li>
+                        <li>AVGEXP (dollar/capita/day) : Dépenses moyennes</li>
+                        <li>CONSAL1 (%): Pourcentage de ménages ayant consommé au moins un produit du groupe</li>
+                        <li>CONSLTAVG: Pourcentage de ménages ayant consommé moins que le nombre moyen de produits consommés dans le groupe</li>
+                        <li>AVGNPRDCONS: Nombre moyen de produits consommés par ménage par groupe alimentaire</li>
+                        <li>CONSGTAVG + CONSLTAVG = CONSAL1</li>
+                        <li>1 - CONSAL1 = % des ménages n'ayant consommés aucun produit dans le groupe</li>
+                    </ul>         
                   <br>
               </div>
           </div>

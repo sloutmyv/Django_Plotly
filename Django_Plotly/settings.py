@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG=False
+DEBUG = False
 if DEBUG:
     pass
 else:
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'Django_Plotly.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,15 +94,15 @@ if DEBUG:
     }
 else:
     DATABASES = {
-        'default':{
-            'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': config('POSTGRE_NAME', default=""),
             'USER': config('POSTGRE_USER', default=""),
             'PASSWORD': config('POSTGRE_PASSWORD', default=""),
             'HOST': config('POSTGRE_HOST', default=""),
-            'PORT':'5432',
+            'PORT': '5432',
+        }
     }
-}
 
 
 # Password validation
@@ -140,16 +140,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 if DEBUG:
-    STATIC_URL = '/static/' # Naming the url pattern
+    STATIC_URL = '/static/'  # Naming the url pattern
     STATICFILES_DIRS = [
-        os.path.join(BASE_DIR,"staticfiles"),
-    ] # for searching other statics somewhere in whole project
+        os.path.join(BASE_DIR, "staticfiles"),
+    ]  # for searching other statics somewhere in whole project
 
-    STATIC_ROOT = os.path.join(BASE_DIR,'static_cdn') # for deployement with collectstatic
+    # for deployement with collectstatic
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
-    MEDIA_URL = '/media/' # Naming the url pattern
+    MEDIA_URL = '/media/'  # Naming the url pattern
 
-    MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles') # where media will be stored after upload (dev)
+    # where media will be stored after upload (dev)
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 else:
     # Amazon AWS S3 config
@@ -157,9 +159,9 @@ else:
     AWS_SECRET_ACCESS_KEY = config('AWS_PRIVATE_ACCESS_KEY', default="NO_KEY")
     AWS_STORAGE_BUCKET_NAME = 's3-django-dataviz-bucket'
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl' : 'max-age=86400'}
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-    AWS_S3_FILE_OVERWRITE = False 
+    AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
 
     # STATICFILES_DIRS = [
@@ -187,15 +189,15 @@ TAGGIT_CASE_INSENSITIVE = True
 # ckeditor
 CKEDITOR_CONFIGS = {
     'default': {
-        'removePlugins':'stylesheetparser',
+        'removePlugins': 'stylesheetparser',
         'allowedContent': True,
-        }
     }
+}
 
 # sendemail
 # EMAIL_BACKEND = 'django.core.mail.backend.smtp.Emailbackend'
-EMAIL_USE_TLS=True
-EMAIL_USE_SSL=False
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 EMAIL_HOST = config('EMAIL_HOST', default='localhost')
 EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
@@ -203,4 +205,3 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 
 # HEROKU CONFIG
 django_heroku.settings(locals(), staticfiles=False)
-    
