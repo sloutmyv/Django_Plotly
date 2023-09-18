@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG:
     pass
 else:
@@ -166,7 +166,7 @@ else:
 
     # STATICFILES_DIRS = [
     #     os.path.join(BASE_DIR,"staticfiles"),
-    # ] # for searching other statics somewhere in whole project
+    # ] # for searching other statics somewhere in whole project a commenter en import github pour heroku, mais nécéssaire pour les collecstatic AWS
 
     AWS_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'

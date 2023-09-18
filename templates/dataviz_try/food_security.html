@@ -29,6 +29,8 @@
         <div class="accordion-body">
           <div class="row sc-text-1-font">
               <div class="col">
+                  <p>Cette base de donnée concerne 3 pays : KI: Kiribati, SB: Solomon Islands, VU: Vanuatu. Elle regroupe une serie d'indictateurs sur 
+                    la propension des populations selon certains critères (age, sexe, lieu de résidence...) à accéder la nouriture et à quel type de produits. </p>
                   <p>La base de données est composée de 18 colonnes et 9119 lignes.</p>
                   <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
                       que celles importantse pour l'extraction d'une information.
@@ -54,8 +56,10 @@
                               <td>Composée d'une unique valeur "A: Annual"</td>
                           </tr>
                           <tr>
-                          <td class="table-primary">TIME_PERIOD: Time</td>
-                          <td class="table-primary">2 valeurs : 2012, 2019</td>
+                          <td>TIME_PERIOD: Time</td>
+                          <td>2 valeurs : 2012 (uniquement pour SB: Solomon Islands ), 2019 (uniquement pour KI: Kiribati et VU: Vanuatu).<br> 
+                            La colonne 'TIME_PERIOD: Time' ne regroupe qu'une année de mesure par pays étudié. Elle n'est, à ce titre, pas porteuse de données 
+                            particulières notamment pour une évolution dans le temps.</td>
                           </tr>
                           <tr>
                           <td class="table-primary">GEO_PICT: Pacific Island Countries and territories</td>
@@ -86,8 +90,8 @@
                               <td class="table-primary">SEX: Sex</td>
                               <td class="table-primary">3 dimensions :
                                 <ul>
-                                    <li>F: Female</li>
-                                    <li>M: Male</li>
+                                    <li>F: Female (non applicable pour les régions)</li>
+                                    <li>M: Male (non applicable pour les régions)</li>
                                     <li>_T: Total</li>
                                 </ul>
                             </td>
@@ -96,9 +100,9 @@
                               <td class="table-primary">AGE: Age</td>
                               <td class="table-primary">4 dimensions :
                                 <ul>
-                                    <li>Y15T24: 15-24</li>
-                                    <li>Y25T59: 25-59</li>
-                                    <li>Y60T999: 60+</li>
+                                    <li>Y15T24: 15-24 (non applicable pour les régions)</li>
+                                    <li>Y25T59: 25-59 (non applicable pour les régions)</li>
+                                    <li>Y60T999: 60+ (non applicable pour les régions)</li>
                                     <li>_T: All ages</li>
                                 </ul>
                             </td>
@@ -107,8 +111,8 @@
                               <td class="table-primary">URBANIZATION: Urbanization</td>
                               <td class="table-primary">3 dimensions :
                                 <ul>
-                                    <li>U: Urban</li>
-                                    <li>R: Rural</li>
+                                    <li>U: Urban (non applicable pour les régions KI: Kiribati & SB: Solomon Islands)</li>
+                                    <li>R: Rural (non applicable pour les régions  KI: Kiribati & SB: Solomon Islands )</li>
                                     <li>_T: National</li>
                                 </ul>
                             </td>
@@ -117,8 +121,8 @@
                               <td class="table-primary">POVERTY: Poverty</td>
                               <td class="table-primary">3 dimensions : 
                                 <ul>
-                                    <li>NOP: No poverty</li>
-                                    <li>POV: Poverty</li>
+                                    <li>NOP: No poverty (non applicable pour les régions)</li>
+                                    <li>POV: Poverty (non applicable pour les régions)</li>
                                     <li>_T: Total</li>
                                 </ul>
                             </td>
@@ -127,8 +131,8 @@
                             <td class="table-primary">FOOD_SECURITY: Food security</td>
                             <td class="table-primary">3 dimensions :
                                 <ul>
-                                    <li>FOODSEC: Food secure or mildly food insecur</li>
-                                    <li>FOODINS: Moderately or severely food insecure</li>
+                                    <li>FOODSEC: Food secure or mildly food insecure (non applicable pour les régions)</li>
+                                    <li>FOODINS: Moderately or severely food insecure (non applicable pour les régions)</li>
                                     <li>_T: Total</li>
                                 </ul>
                             </td>
@@ -172,7 +176,7 @@
                                     <li>N: units</li>
                                     <li>G_POP_DAY: g/capita/day</li>
                                     <li>KCAL_POP_DAY: kcal/capita/day</li>
-                                    <li>USD_POP_DAY: $/capita/day</li>
+                                    <li>USD_POP_DAY: $/capita/day donné en monaie locale respectivement dollar australien, dollar Salomon et Vatu puis convertis en XPF dans nos visuels.</li>
                                     <li>PERCENT: percent</li>
                                 </ul>
                             </td>
@@ -211,50 +215,243 @@
                      De plus, la valeur mesurée est également dans plusieurs unités.<br>
                      A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
                   </p>
-                  <p>Quelques précisions suplémentaires sur la colonne <b class="food-security-color-4">INDICATOR: Indicator</b> : 
+                  <p>Précisions suplémentaires sur la colonne <b class="food-security-color-4">INDICATOR: Indicator</b> : 
                     <ul>
-                        <li>CONSGTAVG (%): Pourcentage des ménages ayant consommés plus que le nombre moyen de produits consommés dans le groupe'</li>
                         <li>AQAA (g/capita/day): Quantité moyenne telle qu'acquise</li>
                         <li>AVGEQ (g/capita/day): Quantité comestible moyenne (AQAA - pertes)</li>
                         <li>AVGDEC (kcal/capita/day) : Consommation énergétique alimentaire moyenne</li>
-                        <li>AVGEXP (dollar/capita/day) : Dépenses moyennes</li>
+                        <li>AVGEXP (dollar/capita/day) : Dépenses moyennes (converties en XPF/capita/day)</li>
                         <li>CONSAL1 (%): Pourcentage de ménages ayant consommé au moins un produit du groupe</li>
-                        <li>CONSLTAVG: Pourcentage de ménages ayant consommé moins que le nombre moyen de produits consommés dans le groupe</li>
-                        <li>AVGNPRDCONS: Nombre moyen de produits consommés par ménage par groupe alimentaire</li>
+                        <li>CONSLTAVG (%): Pourcentage de ménages ayant consommé moins que le nombre moyen de produits consommés dans le groupe</li>
+                        <li>CONSGTAVG (%): Pourcentage des ménages ayant consommés plus que le nombre moyen de produits consommés dans le groupe</li>
+                        <li>AVGNPRDCONS (Unité): Nombre moyen de produits consommés par ménage par groupe alimentaire</li>
                         <li>CONSGTAVG + CONSLTAVG = CONSAL1</li>
                         <li>1 - CONSAL1 = % des ménages n'ayant consommés aucun produit dans le groupe</li>
                     </ul>         
-                  <br>
+                </p>
               </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="accordion-item">
       <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-              <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°1 : Importateurs & Quantités totales</b></h4>
+              <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°1 : Chiffres journaliers par pays et par ménages</b></h4>
           </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
               <div class="row sc-text-1-font">
-                  <div class="col-lg-8">
-                      <img src={% static 'img/food-trade-1.png' %} class="img-fluid" alt="Responsive image">
+                  <div class="col-lg-8 justify-content-center align-self-center">
+                      <img src={% static 'img/food-security-1.png' %} class="img-fluid" alt="Responsive image">
                   </div>
                   <div class="col-lg-4 justify-content-center align-self-center">
-                      <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et du type de produits importés.<br>
-                         La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
-                         est de <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
-                         La Papouasie Nouvelle Guinée, Fidji et la Nouvelle-Calédonie représente à eux seul <b class="food-trade-color-4">80 %</b> du marché.<br>
-                      <br>
-                      <i class="fa-regular fa-lightbulb"></i> Il serait interessant par la suite de mettre en perspective les quantités importées par rapport à la population de ces pays.
+                      <p>Dans ces visuels, nous nous concentrons sur les 3 pays dans leur ensemble sans prendre en compte les différentes mailles 
+                        de catégories sociales (age, sex, situations...)<br>
+
+                        
+                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                        <ul>
+                            <li>[1] En haut à gauche l'indicateur : AVGDEC - Consommation énergétique alimentaire moyenne</li>
+                            <li>[2] En haut au milieu l'indicateur : AVGEQ - Quantité comestible moyenne (AQAA - pertes)</li>
+                            <li>[3] En haut à droite l'indicateur : AVGEXP - Dépenses moyennes</li>
+                            <li>[4] En bas à gauche : la quantité energétique par gramme comestible</li>
+                            <li>[5] En bas au milieu  : la quantité energétique par kcal/XPF</li>
+                            <li>[6] En bas à droite : la quantité comestible par g/XPF</li>
+                        </ul>
+                        <b>Analyse</b><br>
+                         Les 3 pays étudiés ont une consommation énérgétique journalière relativement semblable avec une légère différentce pour les îles Salomon (-5%) cf [1].<br>
+                         En revanche la quantité comestible est assez différente entre les 3 pays [2] ce qui explique la relative "efficacité energétique" de Kiribati par rapport 
+                         au Vanuatu [4].
+                         Les aliments consommés à Kiribati sont plus "riches" en energie, la population en consomme moins pour un même apport final total.<br>
+                         Les dépenses liées à la nouriture sont également hétérogènes [3]. Les visuels [5] et [6] exposent l'energie et la quantité par Francs dépensés. Ici les 
+                         îles Salomon en ont plus pour leur argent ce qui leur permet au final de dépenser moins. Attention, d'autres facteurs peuvent influencer le montant des dépenses.
+                         Rapellons également que les mesure pour les îles Salomon datent de 2012 contre 2019 pour les deux autres pays.<br>
                       </p>
                   </div>
               </div>
           </div>
       </div>
   </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsetree" aria-expanded="true" aria-controls="panelsStayOpen-collapsetree">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°2 : Chiffres journaliers par pays et par ménages et par type de produit</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsetree" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-5 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays dans leur ensemble sans prendre en compte les différentes mailles 
+                      de catégories sociales (age, sex, situations...)<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                          <li>[1] En haut l'indicateur : AVGDEC - Consommation énergétique alimentaire moyenne</li>
+                          <li>[2] Au milieu l'indicateur : AVGEQ - Quantité comestible moyenne (AQAA - pertes)</li>
+                          <li>[3] En bas l'indicateur : AVGEXP - Dépenses moyennes</li>
+                      </ul>
+                      Toutes les valeurs des visuels sont en % du total par pays. Cela signifie que la somme des valeurs de chaque colonne est 100.<br>
+                      Les type de produits sont classés par ordre décroissant sur le total de l'apport energétique sur l'ensemble des 3 pays. C'est à dire, par exemple, que "1 Cereals and cereal products" est le produit qui apporte
+                      le plus de kcal/capita/day pour l'ensemble des 3 pays. Ce classement sera gardé pour l'ensemble des visuels concernant les catégories de produits.<br>
+                      Il est facile de revenir aux valeurs réelles en multipliant les % par les valeurs de l'analyse n°1.<br><br>
+                      <b>Analyse</b><br>
+                       Pour les 3 pays, il ressort que les <b class="food-security-color-3">"1 Cereals and cereal products"</b> et <b class="food-security-color-3">"2 Roots and tubers"</b> ressortent assez nettement comme produits de base dans l'alimentation des populations.<br>
+                       Le Vanuatu semble diversifier un peu plus les types de produits.<br>
+                       <b class="food-security-color-3">"6 Vegetables and vegetable products"</b> n'arrive qu'en 6em place en terme d'apport energétique et représente quand même le 2em centre de coût en moyenne.<br>
+                       <br>
+                       <i class="fa-regular fa-lightbulb"></i> Les indicateurs calculés de l'analyse n°3 permettront de jauger l'efficacité energétique et financière des type de produit.<br>
+                    </p>
+                </div>
+                <div class="col-lg-7 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-2.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-3.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-4.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="true" aria-controls="panelsStayOpen-collapsefour">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°3 : Accès aux différentes catégories de produits par pays</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-5.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-6.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays dans leur ensemble sans prendre en compte les différentes mailles 
+                      de catégories sociales (age, sex, situations...)<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                          <li>[1] En haut l'indicateur : AVGNPRDCONS, le nombre moyen de produits consommés par catégorie et par ménages</li>
+                          <li>[2] En bas l'indicateur : CONSGTAVG & CONSLTAVG, le % des ménages avant accès à respectivement plus ou moins le nombre moyen de produits AVGNPRDCONS, la courbe en noire est 
+                            la part de chaque catégories de produits en % dans l'apport energétique pour chaque pays (cf visuel n°1 de l'analyse n°2 ci-dessus).
+                          </li>
+                      </ul>
+                      Pour information, CONSGTAVG + CONSLTAVG = CONSAL1 le % de ménage ayant accès a <b class="food-security-color-3">au moins 1</b> produit par catégorie.<br>
+                      <b class="food-security-color-3">NO ACCESS</b> = 1 - CONSAL1, les ménages n'ayant pas accès aux produits de cette catégorie en rouge ici.<br><br>
+                      <b>Analyse</b><br>
+                       On constate, pour chaque pays, que la moyenne du nombre de produits consommés est généralement plus élevée pour les produits représentant une part importante 
+                       de l'apport energétique (ce qui est une bonne nouvelle).<br>
+                       On constate également que la où l'apport energétique est elevé, l'accès à au moins 1 produit est généralement acquis.<br>
+                       La part en "vert" des ménages ayant accès à plus que l'accès moyen de produit pour chaque foyer et souvent inférieur à la part en jaune et rouge.
+                       Cela témoigne d'une non linéarité dans la distribution d'accès signifiant qu'un petit nombre à accès à un grand nombre de variétés et qu'un grand nombre 
+                       a accès à un petit nombre de produits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="true" aria-controls="panelsStayOpen-collapsefive">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°4 : Accès aux différentes catégories de produits par pays et par genre</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays et sur les différences d'accès aux produits entre les femmes 
+                        et les hommes<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                          <li>Il y a un visuel par pays divisé en 2 graphiques</li>
+                          <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par genre</li>
+                          <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtré par genre (axe y gauche en %) ainsi que les courbes d'écart entre homme/femme (axe y droit en %)</li>
+                          <li>Les courbes d'écart sont tracés Male-Female. Quand elles sont positives les hommes ont plus accès, quand elles sont négatives les femmes ont plus accès.</li>
+                      </ul>
+                    <b>Analyse</b><br>
+
+                    </p>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-7.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-8.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-9.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsesix" aria-expanded="true" aria-controls="panelsStayOpen-collapsesix">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°5 : Accès aux différentes catégories de produits par pays et par age</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsesix" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays et sur les différences d'accès aux produits entre les femmes 
+                        et les hommes<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                          <li>Il y a un visuel par pays divisé en 2 graphiques</li>
+                          <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par genre</li>
+                          <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtré par genre (axe y gauche en %) ainsi que les courbes d'écart entre homme/femme (axe y droit en %)</li>
+                          <li>Les courbes d'écart sont tracés Male-Female. Quand elles sont positives les hommes ont plus accès, quand elles sont négatives les femmes ont plus accès.</li>
+                      </ul>
+                    <b>Analyse</b><br>
+
+                    </p>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-7.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-8.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-9.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
   <div class="accordion-item">
     <h2 class="accordion-header">
