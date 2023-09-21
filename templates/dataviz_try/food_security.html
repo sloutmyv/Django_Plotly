@@ -29,15 +29,14 @@
         <div class="accordion-body">
           <div class="row sc-text-1-font">
               <div class="col">
-                  <p>Cette base de donnée concerne 3 pays : KI: Kiribati, SB: Solomon Islands, VU: Vanuatu. Elle regroupe une serie d'indictateurs sur 
-                    la propension des populations selon certains critères (age, sexe, lieu de résidence...) à accéder la nouriture et à quel type de produits. </p>
-                  <p>La base de données est composée de 18 colonnes et 9119 lignes.</p>
-                  <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
-                      que celles importantse pour l'extraction d'une information.
-                   </p>
+                  <p>Cette base de donnée concerne 3 pays : KI: Kiribati, SB: Solomon Islands, VU: Vanuatu. <br> 
+                     Elle regroupe une serie d'indictateurs sur la propension des populations, selon certains critères (age, sexe, lieu de résidence...), à accéder la nouriture avec une variété de produits.</p>
+                  <p>La base de données est composée de <b class="food-security-color-3">18</b> colonnes et <b class="food-security-color-3">9119</b> lignes.</p>
+                  <p>Le tableau ci-dessous expose les différentes colonnes et le type de donnée qu'elles contiennent.</p>
               </div>
           </div>
           <div class="row sc-text-1-font">
+              <div class='col-lg-1'></div>
               <div class="col">
                   <table class="table table-hover">
                       <thead>
@@ -57,13 +56,13 @@
                           </tr>
                           <tr>
                           <td>TIME_PERIOD: Time</td>
-                          <td>2 valeurs : 2012 (uniquement pour SB: Solomon Islands ), 2019 (uniquement pour KI: Kiribati et VU: Vanuatu).<br> 
-                            La colonne 'TIME_PERIOD: Time' ne regroupe qu'une année de mesure par pays étudié. Elle n'est, à ce titre, pas porteuse de données 
-                            particulières notamment pour une évolution dans le temps.</td>
+                          <td>2 valeurs : 2012 (uniquement pour SB: Solomon Islands ) et 2019 (uniquement pour KI: Kiribati et VU: Vanuatu).<br> 
+                            La colonne 'TIME_PERIOD: Time' ne regroupe donc qu'une année de mesure par pays étudié. Elle n'est, à ce titre, pas porteuse de données 
+                            particulières (notamment pour observer une évolution des indicateurs dans le temps).</td>
                           </tr>
                           <tr>
                           <td class="table-primary">GEO_PICT: Pacific Island Countries and territories</td>
-                          <td class="table-primary">23 valeurs, 3 pays et leur régions concernées :
+                          <td class="table-primary">23 valeurs, 3 pays divisés en régions :
                             <ul>  
                             <li>KI: Kiribati (KI-A: Northern Kiribati, KI-B: South Tarawa, KI-C: Central Kiribati, KI-D: Southern Kiribati, KI-E: Line & Phoenix)</li> 
                             <li>SB: Solomon Islands (SB-1: Choiseul, SB-2: Western, SB-3: Isabel, SB-4: Central, SB-5: Rennell-Bell, SB-6: Guadalcanal, SB-7: Malaita, SB-8: Makira-Ulawa, SB-9: Temotu, SB-10: Honiara)</li> 
@@ -167,7 +166,7 @@
                           </tr>
                           <tr>
                               <td class="table-primary">OBS_VALUE</td>
-                              <td class="table-primary">Valeur/quantité</td>
+                              <td class="table-primary">Valeur/quantité mesurée pour chaque indicateur</td>
                           </tr>
                           <tr>
                               <td td class="table-primary">UNIT_MEASURE: Unit of measure</td>
@@ -204,16 +203,15 @@
                       </tbody>
                     </table>
               </div>
-              <div class='col-lg-4'></div>
+              <div class='col-lg-1'></div>
           </div>
           <div class="row sc-text-1-font">
               <div class="col">
                   <br>
                   <p>Dans cette base de données, <b class="food-security-color-4">11</b> colonnes sont utiles. Elles sont surlignées en bleu dans le tableau ci-dessus.<br>
-                     Cette base de données est plus complexe que les autres, elles contient un nombre important de dimensions (<b class="food-security-color-4">10</b>) qui sont 
+                     Cette base de données est complexe, elle contient un nombre important de dimensions (<b class="food-security-color-4">10</b>) qui sont 
                      tout autant d'angles d'analyse différents.<br>
-                     De plus, la valeur mesurée est également dans plusieurs unités.<br>
-                     A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                     Les valeur mesurées sont dans plusieurs unités et a ce titre non toujours directement comparables.<br>
                   </p>
                   <p>Précisions suplémentaires sur la colonne <b class="food-security-color-4">INDICATOR: Indicator</b> : 
                     <ul>
@@ -238,7 +236,7 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-              <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°1 : Chiffres journaliers par pays et par ménages</b></h4>
+              <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°1 : Consommation, chiffres journaliers par pays et par ménages</b></h4>
           </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
@@ -248,26 +246,26 @@
                       <img src={% static 'img/food-security-1.png' %} class="img-fluid" alt="Responsive image">
                   </div>
                   <div class="col-lg-4 justify-content-center align-self-center">
-                      <p>Dans ces visuels, nous nous concentrons sur les 3 pays dans leur ensemble sans prendre en compte les différentes mailles 
-                        de catégories sociales (age, sex, situations...)<br>
-
-                        
+                      <p>Dans ces visuels, nous nous concentrons sur les 3 pays sans prendre en compte les différentes mailles 
+                        de catégories sociales (age, sex, situations...) ni les régions.<br>
+                        <br>
                         <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                         <ul>
-                            <li>[1] En haut à gauche l'indicateur : AVGDEC - Consommation énergétique alimentaire moyenne</li>
-                            <li>[2] En haut au milieu l'indicateur : AVGEQ - Quantité comestible moyenne (AQAA - pertes)</li>
-                            <li>[3] En haut à droite l'indicateur : AVGEXP - Dépenses moyennes</li>
+                            <li>[1] En haut à gauche : AVGDEC - Consommation énergétique alimentaire moyenne</li>
+                            <li>[2] En haut au milieu : AVGEQ - Quantité comestible moyenne (AQAA - pertes)</li>
+                            <li>[3] En haut à droite : AVGEXP - Dépenses moyennes</li>
                             <li>[4] En bas à gauche : la quantité energétique par gramme comestible</li>
                             <li>[5] En bas au milieu  : la quantité energétique par kcal/XPF</li>
                             <li>[6] En bas à droite : la quantité comestible par g/XPF</li>
                         </ul>
                         <b>Analyse</b><br>
-                         Les 3 pays étudiés ont une consommation énérgétique journalière relativement semblable avec une légère différentce pour les îles Salomon (-5%) cf [1].<br>
-                         En revanche la quantité comestible est assez différente entre les 3 pays [2] ce qui explique la relative "efficacité energétique" de Kiribati par rapport 
+                         Les 3 pays ont une consommation énérgétique journalière relativement semblable avec une légère différentce pour les îles Salomon (-5%) cf [1].<br>
+                         En revanche la quantité comestible est assez différente entre les 3 pays [2] ce qui témoigne d'une certaine "efficacité energétique" de Kiribati par rapport 
                          au Vanuatu [4].
                          Les aliments consommés à Kiribati sont plus "riches" en energie, la population en consomme moins pour un même apport final total.<br>
-                         Les dépenses liées à la nouriture sont également hétérogènes [3]. Les visuels [5] et [6] exposent l'energie et la quantité par Francs dépensés. Ici les 
-                         îles Salomon en ont plus pour leur argent ce qui leur permet au final de dépenser moins. Attention, d'autres facteurs peuvent influencer le montant des dépenses.
+                         Les dépenses liées à la nouriture sont également hétérogènes [3]. Les visuels [5] et [6] exposent l'energie (kcal/capita/day) et la quantité (g/capita/day) par Francs dépensés. On constate que les 
+                         îles Salomon en ont plus pour leur argent ce qui leur permet au final de dépenser moins.<br>
+                         Attention, d'autres facteurs peuvent influencer le montant des dépenses.
                          Rapellons également que les mesure pour les îles Salomon datent de 2012 contre 2019 pour les deux autres pays.<br>
                       </p>
                   </div>
@@ -279,15 +277,15 @@
   <div class="accordion-item">
     <h2 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsetree" aria-expanded="true" aria-controls="panelsStayOpen-collapsetree">
-            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°2 : Chiffres journaliers par pays et par ménages et par type de produit</b></h4>
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°2 : Consommation, chiffres journaliers par pays, par ménages et par types de produits</b></h4>
         </button>
     </h2>
     <div id="panelsStayOpen-collapsetree" class="accordion-collapse collapse">
         <div class="accordion-body">
             <div class="row sc-text-1-font">
                 <div class="col-lg-5 justify-content-center align-self-center">
-                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays dans leur ensemble sans prendre en compte les différentes mailles 
-                      de catégories sociales (age, sex, situations...)<br><br>
+                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays sans prendre en compte les différentes mailles 
+                      de catégories sociales (age, sex, situations...) et les régions.<br><br>
 
                       
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
@@ -296,16 +294,16 @@
                           <li>[2] Au milieu l'indicateur : AVGEQ - Quantité comestible moyenne (AQAA - pertes)</li>
                           <li>[3] En bas l'indicateur : AVGEXP - Dépenses moyennes</li>
                       </ul>
-                      Toutes les valeurs des visuels sont en % du total par pays. Cela signifie que la somme des valeurs de chaque colonne est 100.<br>
-                      Les type de produits sont classés par ordre décroissant sur le total de l'apport energétique sur l'ensemble des 3 pays. C'est à dire, par exemple, que "1 Cereals and cereal products" est le produit qui apporte
-                      le plus de kcal/capita/day pour l'ensemble des 3 pays. Ce classement sera gardé pour l'ensemble des visuels concernant les catégories de produits.<br>
+                      Toutes les valeurs des visuels sont en % du total par pays. Cela signifie que la somme des valeurs de chaque colonne est 100. Par exemple : en moyenne 46.6% de l'alimentation journalière au Kiribati provient de céréales.<br>
+                      Les type de produits sont classés par ordre décroissant par rapport à la part totale de leur apport energétique sur l'ensemble des 3 pays. C'est à dire, par exemple, que "1 Cereals and cereal products" est la catégorie de produit qui apporte
+                      le plus de kcal/capita/day pour l'ensemble des 3 pays. Afin d'avoir un point de comparaison, ce classement sera gardé pour l'ensemble des visuels concernant les catégories de produits.<br>
                       Il est facile de revenir aux valeurs réelles en multipliant les % par les valeurs de l'analyse n°1.<br><br>
                       <b>Analyse</b><br>
-                       Pour les 3 pays, il ressort que les <b class="food-security-color-3">"1 Cereals and cereal products"</b> et <b class="food-security-color-3">"2 Roots and tubers"</b> ressortent assez nettement comme produits de base dans l'alimentation des populations.<br>
+                       Pour les 3 pays, on constate que les <b class="food-security-color-3">"1 Cereals and cereal products"</b> et <b class="food-security-color-3">"2 Roots and tubers"</b> ressortent assez nettement comme produits de base dans l'alimentation des populations.<br>
                        Le Vanuatu semble diversifier un peu plus les types de produits.<br>
-                       <b class="food-security-color-3">"6 Vegetables and vegetable products"</b> n'arrive qu'en 6em place en terme d'apport energétique et représente quand même le 2em centre de coût en moyenne.<br>
+                       <b class="food-security-color-3">"6 Vegetables and vegetable products"</b> n'arrive qu'en 6em place en terme d'apport energétique mais représente le 2em centre de coût en moyenne.<br>
+                       Notons la place du Kava et du Tabac qui n'apportent biensur rien en valeur nutritionnelle mais qui représentent une part importante des dépenses d'un foyer en moyenne.
                        <br>
-                       <i class="fa-regular fa-lightbulb"></i> Les indicateurs calculés de l'analyse n°3 permettront de jauger l'efficacité energétique et financière des type de produit.<br>
                     </p>
                 </div>
                 <div class="col-lg-7 justify-content-center align-self-center">
@@ -342,24 +340,23 @@
                     </div>
                 </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays dans leur ensemble sans prendre en compte les différentes mailles 
-                      de catégories sociales (age, sex, situations...)<br><br>
+                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays sans prendre en compte les différentes mailles 
+                        de catégories sociales (age, sex, situations...) et les régions.<br><br>
 
-                      
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                       <ul>
-                          <li>[1] En haut l'indicateur : AVGNPRDCONS, le nombre moyen de produits consommés par catégorie et par ménages</li>
+                          <li>[1] En haut l'indicateur : AVGNPRDCONS, le nombre moyen de produits différents consommés par catégorie de produit et par ménages</li>
                           <li>[2] En bas l'indicateur : CONSGTAVG & CONSLTAVG, le % des ménages avant accès à respectivement plus ou moins le nombre moyen de produits AVGNPRDCONS, la courbe en noire est 
-                            la part de chaque catégories de produits en % dans l'apport energétique pour chaque pays (cf visuel n°1 de l'analyse n°2 ci-dessus).
+                            la part de chaque catégories de produits en % dans l'apport energétique journalier pour chaque pays (cf visuel n°1 de l'analyse n°2 ci-dessus).
                           </li>
                       </ul>
                       Pour information, CONSGTAVG + CONSLTAVG = CONSAL1 le % de ménage ayant accès a <b class="food-security-color-3">au moins 1</b> produit par catégorie.<br>
-                      <b class="food-security-color-3">NO ACCESS</b> = 1 - CONSAL1, les ménages n'ayant pas accès aux produits de cette catégorie en rouge ici.<br><br>
+                      On déduit logiquement <b class="food-security-color-3">NO ACCESS</b> = 1 - CONSAL1, le % des ménages n'ayant accès à aucun produit de cette catégorie (en rouge ici).<br><br>
                       <b>Analyse</b><br>
                        On constate, pour chaque pays, que la moyenne du nombre de produits consommés est généralement plus élevée pour les produits représentant une part importante 
                        de l'apport energétique (ce qui est une bonne nouvelle).<br>
                        On constate également que la où l'apport energétique est elevé, l'accès à au moins 1 produit est généralement acquis.<br>
-                       La part en "vert" des ménages ayant accès à plus que l'accès moyen de produit pour chaque foyer et souvent inférieur à la part en jaune et rouge.
+                       La part des ménages ayant accès à plus que l'accès moyen aux produits pour chaque foyer (en vert) est souvent inférieure à la part en jaune et rouge (cumulées).
                        Cela témoigne d'une non linéarité dans la distribution d'accès signifiant qu'un petit nombre à accès à un grand nombre de variétés et qu'un grand nombre 
                        a accès à un petit nombre de produits.
                     </p>
@@ -379,18 +376,24 @@
         <div class="accordion-body">
             <div class="row sc-text-1-font">
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays et sur les différences d'accès aux produits entre les femmes 
+                    <p>Dans ces visuels, nous nous concentrons pour les 3 pays aux les différences d'accès aux produits entre les femmes 
                         et les hommes<br><br>
 
-                      
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                       <ul>
-                          <li>Il y a un visuel par pays divisé en 2 graphiques</li>
-                          <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par genre</li>
-                          <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtré par genre (axe y gauche en %) ainsi que les courbes d'écart entre homme/femme (axe y droit en %)</li>
-                          <li>Les courbes d'écart sont tracés Male-Female. Quand elles sont positives les hommes ont plus accès, quand elles sont négatives les femmes ont plus accès.</li>
+                          <li>Il y a un visuel par pays, chacun divisé en 2 graphiques</li>
+                          <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtrés par genre</li>
+                          <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtré par genre (relatif à axe y gauche en %, bleu pour les femmes et orange pour les hommes) ainsi que les courbes d'écart entre homme/femme (axe y droit en %)</li>
+                          <li>En gris la courbe écart h/f pour CONSLTAVG (les foyers accédant à moins que la moyenne),  en noire la courbe écart h/f pour CONSGTAVG (les foyers accédant à plus que la moyenne)
+                          <li>Les courbes d'écart sont tracés Homme-Femme. Quand elles sont positives les hommes ont plus accès, quand elles sont négatives les femmes ont plus accès.</li>
+                          <li>Nous n'avons pas ici mis en couleur la part des hommes et femmes n'ayant accès à aucun produit de la catégorie. Cela reste cependant facilement visualisable puisqu'il 
+                            s'agit de l'écart entre le sommet des barres et le 100%.</li>
                       </ul>
                     <b>Analyse</b><br>
+                    L'accès aux différents produits d'une même catégorie est relativement similaire entre les hommes et les femmes même si quelques tendances ce dégagent. Par exemple, dans les 3 pays, les 
+                    femme ont un peu plus accès aux produits de la catégorie céréales, Celle qui représente la part d'apport nutritif la plus importante.<br>
+                    On constate également que les courbes d'écart h/f sont souvent de tendances opposées entre les foyers "plus riches" (CONSGTAVG) et "moins riches" CONSLTAVG.
+                    La catégorie Kava et Tabac est toujours assez remarquable.
 
                     </p>
                 </div>
@@ -418,76 +421,226 @@
     </h2>
     <div id="panelsStayOpen-collapsesix" class="accordion-collapse collapse">
         <div class="accordion-body">
+            
             <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-10.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-11.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-12.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Dans ces visuels, nous nous concentrons toujours sur les 3 pays et sur les différences d'accès aux produits entre les femmes 
-                        et les hommes<br><br>
+                    <p>Dans ces visuels, nous nous concentrons pour les 3 pays aux les différences d'accès aux produits entre les classes d'ages<br><br>
 
                       
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                       <ul>
-                          <li>Il y a un visuel par pays divisé en 2 graphiques</li>
-                          <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par genre</li>
-                          <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtré par genre (axe y gauche en %) ainsi que les courbes d'écart entre homme/femme (axe y droit en %)</li>
-                          <li>Les courbes d'écart sont tracés Male-Female. Quand elles sont positives les hommes ont plus accès, quand elles sont négatives les femmes ont plus accès.</li>
+                        <li>Il y a un visuel par pays, chacun divisé en 2 graphiques</li>
+                        <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par classes d'ages</li>
+                        <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtrés par classes d'ages (relatif à axe y gauche en %, vert pour les jeunes, jaunes pour les actifs et marron pour les plus agés) ainsi que les courbes d'écart type entre les 3 catégories (axe y droit en %)</li>
+                        <li>En gris la courbe écart h/f pour CONSLTAVG (les foyers accédant à moins que la moyenne),  en noire la courbe écart h/f pour CONSGTAVG (les foyers accédant à plus que la moyenne)
+                        <li>L'écart type étant la moyenne des écarts à la moyenne, les courbes d'écart type ont des valeurs élévées quand la dispersion est grande entre les catégories et faible quand les valeurs sont quasi similaires.</li>
+                        <li>Nous n'avons pas ici mis en couleur la part des classes d'ages n'ayant accès à aucun produit de la catégorie. Cela reste cependant facilement visualisable puisqu'il 
+                          s'agit de l'écart entre le sommet des barres et le 100%.</li>
                       </ul>
                     <b>Analyse</b><br>
-
+                    On constate directement plus d'écart entre les générations pour ce qui est de l'accès à une diversité de produit (cf graphique du haut) qu'on en avait
+                    constaté entre les hommes et les femmes.<br>
+                    Le écarts entre les générations sont en tendance plus elevés chez les populations "plus pauvre" (CONSLTAVG) sauf pour KIRIBATI où une tendance est plus dure à dégager.
+                    A KIRIBATI, les jeunes ont, en tendance, moins accès que les autres classes générationnelle. Ce n'est pas le cas pour les deux autres pays.
                     </p>
-                </div>
-                <div class="col-lg-8 justify-content-center align-self-center">
-                    <div class="row">
-                        <img src={% static 'img/food-security-7.png' %} class="img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="row">
-                        <img src={% static 'img/food-security-8.png' %} class="img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="row">
-                        <img src={% static 'img/food-security-9.png' %} class="img-fluid" alt="Responsive image">
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseseven" aria-expanded="true" aria-controls="panelsStayOpen-collapseseven">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°6 : Accès aux différentes catégories de produits par pays et par typologie d'habitat</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseseven" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-13.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-14.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-15.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons pour les 3 pays aux les différences d'accès aux produits entre les typologies d'habitats : urbain et rural<br><br>
 
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>Il y a un visuel par pays, chacun divisé en 2 graphiques</li>
+                        <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtrés par types d'urbanisation</li>
+                        <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtré par types d'urbanisation (relatif à axe y gauche en %, vert pour rural et bleu pour urbain) ainsi que les courbes d'écart type entre les 2 catégories (axe y droit en %)</li>
+                        <li>En gris la courbe écart h/f pour CONSLTAVG (les foyers accédant à moins que la moyenne),  en noire la courbe écart h/f pour CONSGTAVG (les foyers accédant à plus que la moyenne)
+                        <li>Les courbes d'écart sont tracés Urbain-Rural. Quand elles sont positives les urbains ont plus accès, quand elles sont négatives les ruraux ont plus accès.</li>
+                        <li>Nous n'avons pas ici mis en couleur la part foyers n'ayant accès à aucun produit de la catégorie. Cela reste cependant facilement visualisable puisqu'il 
+                          s'agit de l'écart entre le sommet des barres et le 100%.</li>
+                      </ul>
+                    <b>Analyse</b><br>
+                    On constate encore plus d'écart entre les typologies d'habitat pour ce qui est de l'accès à une diversité de produit (cf graphique du haut) qu'on en avait
+                    constaté entre catégories précédentes. Pas toujours dans le même sens, mais importantes en tendance.<br>
+                    Les courbes d'écarts grise et noire témoigne que quand il y a écart, l'écart est élevée.<br>
+                    Il semble qu'en tendance les urbains est toujours plus accès aux produits que les ruraux.
+                    Les différences d'accès aux céréales au KARIBATI (valeur nutritive numéro 1) sont remarquables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <div class="accordion-item">
+<div class="accordion-item">
     <h2 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsehuit" aria-expanded="true" aria-controls="panelsStayOpen-collapsehuit">
-            <h4 class="food-security-color-2 sc-text-1-font"><b>Conclusions</b></h4>
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°7 : Accès aux différentes catégories de produits par pays et par catégorisation de pauvreté</b></h4>
         </button>
     </h2>
     <div id="panelsStayOpen-collapsehuit" class="accordion-collapse collapse">
         <div class="accordion-body">
+            
             <div class="row sc-text-1-font">
-                <div class="col justify-content-center align-self-center">
-                        <p>Les 6 analyses graphiques ci-dessous nous ont permis de comprendre mieux le sujet de l'importation de nourriture dans les iles
-                            du pacifique. Voici un résumé des points principaux à retenir :
-                            <ul>
-                                <li>3 des 13 pays étudiés représente 80% des importations de la zone en quantité : La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle Calédonie.</li>
-                                <li>La moitié des tonnes échangées sont des céréales. 5 des 13 catégories de produits représente 80% des échanges.</li>
-                                <li>Toutes les iles du pacifique n'ont pas les mêmes habitudes d'importation en terme de produit. Mais dans la majorité des cas, un des types
-                                    de produit représente plus de 20-30% du total des importations.
-                                </li>
-                                <li>Sur 23 ans, la quantité importée à doublée.</li>
-                                <li>La volatilité des quantités importés est assez important d'une année à l'autre pour la majorité des pays. Ceci pourrait pottentiellement se justifier
-                                    par des evenement exogènes impactant la ressource locale.
-                                </li>
-                                <li>La quantité globale importée a doublée. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, fruits), d'autres 
-                                    ont diminué de moitié (tabac).
-                                </li>
-                                <li>La population a augmenté de 80% dans la région sur la période étudié. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
-                                    Toutefois, les pays importe en moyenne plus de 2018 qu'en 2015 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
-                                    mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier les chiffres sur les années covid.
-                                </li>
-                            </ul>
-                        </p>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons pour les 3 pays aux les différences d'accès aux produits par catégorisation de pauvreté.<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>Il y a un visuel par pays, chacun divisé en 2 graphiques</li>
+                        <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par catégories de pauvreté</li>
+                        <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtrés catégories de pauvreté (relatif à axe y gauche en %, rose pour les foyers catégorisés non pauvres et violet ceux catégorisés pauvres) ainsi que les courbes d'écart type entre les 2 catégories (axe y droit en %)</li>
+                        <li>En gris la courbe écart h/f pour CONSLTAVG (les foyers accédant à moins que la moyenne),  en noire la courbe écart h/f pour CONSGTAVG (les foyers accédant à plus que la moyenne)
+                        <li>Les courbes d'écart sont tracés Non Pauvres-Pauvres. Quand elles sont positives les foyers non pauvres ont plus accès, quand elles sont négatives les foyers pauvres ont plus accès.</li>
+                        <li>Nous n'avons pas ici mis en couleur la part foyers n'ayant accès à aucun produit de la catégorie. Cela reste cependant facilement visualisable puisqu'il 
+                          s'agit de l'écart entre le sommet des barres et le 100%.</li>
+                      </ul>
+                    <b>Analyse</b><br>
+                      La tendance semble évidente mais elle est prouvée par les chiffres : les foyers non pauvres ont plus accès à une diversité de produits que les foyer pauvres et ce 
+                      dans les 3 pays.<br>
+                      De même, les courbes d'écart montre une tendance d'accès plus important pour les foyers non pauvres quelque soit l'indicateur CONSLTAVG ou CONSGTAVG.<br>
+                      Les produits de la mer font excéption et cela caractérise bien ces îles du pacifique peuplées de pécheurs qui trouvent dans l'océan de quoi subvenir aux besoins.
+                    </p>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-16.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-17.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-18.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseneuf" aria-expanded="true" aria-controls="panelsStayOpen-collapseneuf">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°8 : Accès aux différentes catégories de produits par pays et par catégorisation d'insécurité alimentaire</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseneuf" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons pour 2 des 3 pays (KIRIBATI & VANUATU) aux les différences d'accès aux produits par catégorisation d'insécurité alimentaire.<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>Il y a un visuel par pays, chacun divisé en 2 graphiques</li>
+                        <li>Le graphique du haut avec l'indicateur AVGNPRDCONS filtré par catégories de d'insécurité alimentaire</li>
+                        <li>Le graphique du bas avec les indicateurs CONSGTAVG & CONSLTAVG filtrés catégories d'insécurité alimentaire (relatif à axe y gauche en %, jaune pour les foyers catégorisés sécurisés et violet ceux catégorisés en insécurité) ainsi que les courbes d'écart type entre les 2 catégories (axe y droit en %)</li>
+                        <li>En gris la courbe écart h/f pour CONSLTAVG (les foyers accédant à moins que la moyenne),  en noire la courbe écart h/f pour CONSGTAVG (les foyers accédant à plus que la moyenne)
+                        <li>Les courbes d'écart sont tracés sécurisés-insécurisés. Quand elles sont positives les foyers sécurisés ont plus accès, quand elles sont négatives les foyers insécurisés ont plus accès.</li>
+                        <li>Nous n'avons pas ici mis en couleur la part foyers n'ayant accès à aucun produit de la catégorie. Cela reste cependant facilement visualisable puisqu'il 
+                          s'agit de l'écart entre le sommet des barres et le 100%.</li>
+                      </ul>
+                    <b>Analyse</b><br>
+                      Les graphiques ne permettent pas de mettre en évidence des tendances notables ou du moins elles ne sont pas aussi flagrantes que celles auquelles on aurait pensée.
+                      La catégorie tabac et kava est toujours remarquables.
+                    </p>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-19.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-20.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsedix" aria-expanded="true" aria-controls="panelsStayOpen-collapsedix">
+            <h4 class="food-security-color-2 sc-text-1-font"><b>Analyse n°9 : Variation des indicateurs mesurées par régions </b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsedix" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous nous concentrons les régions des 3 pays.<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>Il y a un visuel en deux dimensions par pays</li>
+                        <li>Chaque ligne correspond à une région</li>
+                        <li>Chaque colonne reprend un indicateur</li>
+                        <li>En couleur, l'écart de l'indicateur par rapport à l'indicateur moyen du pays dans sa globalité</li>.
+                      </ul>
+                      Exemple : à SB-4 Centrale l'apport énérgétique journalier est 37% plus elevé que la moyenne du pays, à SB-10 Honiara la part des foyer ayant accès 
+                      à plus de produits que la moyenne de produits accéssibles par catégorie est 35% plus elevée que dans le pays dans son ensemble.<br><br>
+                    <b>Analyse</b><br>
+                      Ces graphiques ne sont pas simples et rapides à lire mais donne de façon condensée la situation de chaque région par rapport à la moyenne de son pays et donc les 
+                      unes par rapport aux autres.<br>
+                      On pourrait aller plus loin en étudiant par région, les différentes catégories de produits. 
+                    </p>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/food-security-21.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-22.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/food-security-23.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 {% endblock %}

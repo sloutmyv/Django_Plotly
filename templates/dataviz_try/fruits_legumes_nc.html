@@ -41,6 +41,7 @@
             </div>
         </div>
           <div class="row sc-text-1-font">
+            <div class='col-lg-1'></div>
               <div class="col">
                   <table class="table table-hover">
                       <thead>
@@ -113,7 +114,7 @@
                       </tbody>
                     </table>
               </div>
-              <div class='col-lg-4'></div>
+              <div class='col-lg-1'></div>
           </div>
           <div class="row sc-text-1-font">
               <div class="col">
@@ -121,7 +122,6 @@
                   <p>Dans <b class="fruits-color-2">FL_1</b>, ci-dessus, toutes les colonnes peuvent être utiles à l'analyse.<br>
                      Les dimensions d'analyses sont les colonnes : annee, mois, regroupement 1 et 2 et enventuellement dates quotas début et fin<br>
                      Les valeurs mesurées sont des quantités en poids ou une valorisation.<br>
-                     A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
                   </p>
                   <br>
               </div>
@@ -132,6 +132,7 @@
             </div>
         </div>
         <div class="row sc-text-1-font">
+            <div class='col-lg-1'></div>
             <div class="col">
                 <table class="table table-hover">
                     <thead>
@@ -196,7 +197,7 @@
                     </tbody>
                   </table>
             </div>
-            <div class='col-lg-4'></div>
+            <div class='col-lg-1'></div>
         </div>
         <div class="row sc-text-1-font">
             <div class="col">
@@ -204,7 +205,6 @@
                 <p>Dans <b class="fruits-color-2">FL_2</b>, ci-dessus, toutes les colonnes peuvent être utiles à l'analyse.<br>
                    Les dimensions d'analyses sont les colonnes : annee, mois, regroupement 2 et enventuellement dates quotas début et fin<br>
                    Les valeurs mesurées sont des quantités en poids, la valorisation ou des indices.<br>
-                   A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
                 </p>
                 <br>
             </div>
@@ -215,28 +215,225 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-              <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°1 : Importateurs & Quantités totales</b></h4>
+              <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°1 : evolution annuelle et mensuelle des quantités et prix de fruits et légumes en Nouvelle-Calédonie</b></h4>
           </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
               <div class="row sc-text-1-font">
-                  <div class="col-lg-8">
-                      <img src={% static 'img/food-trade-1.png' %} class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="col-lg-4 justify-content-center align-self-center">
-                      <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et du type de produits importés.<br>
-                         La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
-                         est de <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
-                         La Papouasie Nouvelle Guinée, Fidji et la Nouvelle-Calédonie représente à eux seul <b class="food-trade-color-4">80 %</b> du marché.<br>
-                      <br>
-                      <i class="fa-regular fa-lightbulb"></i> Il serait interessant par la suite de mettre en perspective les quantités importées par rapport à la population de ces pays.
-                      </p>
-                  </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-1.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-2.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Dans ces visuels, nous étudions l'évolution annuelle et mensuelle de la quantité totale de fruits et légumes (producteurs et MG) en tonnes 
+                        et du prix moyen au kg en francs<br><br>
+
+                      
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>En haut l'évolution annuelle</li>
+                        <li>En bas l'évolution mensuelle</li>
+                        <li>En bleu les légumes, en vert les fruits en Tonnes</li>
+                        <li>En jaune les légumes, en orange les fruits en XPF/KG</li>
+                      </ul>
+                    <b>Analyse</b><br>
+                      Sur l'évolutoion annuelle on observe une baisse des quantités en tendance et une augmentations significatives des prix notamment sur les 3-4 dernières années.<br>
+                      C'est une démonstration réelle de la loi de l'offre et de la demande.
+                      Sur l'évolution mensuelle on observe la saisonalité des productions. Les prix semblent inversement corrélés pour les légumes. L'observation est moins vraie pour les fruits.<br>
+
+                    </p>
+                </div>
               </div>
           </div>
       </div>
   </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTree" aria-expanded="true" aria-controls="panelsStayOpen-collapseTree">
+            <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°2 : quantité par type de légumes et variation annuelle</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTree" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+              <div class="col-lg-4 justify-content-center align-self-center">
+                  <p>Dans ces visuels, nous étudions sur 11 ans de la quantité totale légumes en tonnes par type de légumes<br><br>
+
+                    
+                    <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                    <ul>
+                      <li>En haut un histogramme en deux dimensions représentant l'évolution de la quantité en tonnes</li>
+                      <li>En bas le taux de variation des quantité sur 11 ans.</li>
+                      <li>Attention en haut, l'échelle est logarithmique pour plus de confort visuel (il y a beaucoup plus de salade que de persil)</li>
+                      <li>Comme l'année 2023 est incomplète, elle a été normalisée sur 12 mois</li>
+                    </ul>
+                  <b>Analyse</b><br>
+                    En tendance, par rapport à 2012 toute les quantités sont passées par un pic puis sont en baisses. La courbe noire du graphique du bas est la moyenne 
+                    du taux de variation pour les légumes, la baisse est de quasi 40% par rapport au référentiel 2012.<br>
+                    L'évolution du radis est remarquable, avec un taux de variation de 400% (x4) en 2018.
+                  </p>
+              </div>
+              <div class="col-lg-8 justify-content-center align-self-center">
+                <div class="row">
+                    <img src={% static 'img/fruits-legumes-3.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="row">
+                    <img src={% static 'img/fruits-legumes-4.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="true" aria-controls="panelsStayOpen-collapsefour">
+            <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°3 : quantité par type de fruits et variation annuelle</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+              <div class="col-lg-4 justify-content-center align-self-center">
+                  <p>Dans ces visuels, nous étudions sur 11 ans de la quantité totale fruits en tonnes par type de fruits<br><br>
+
+                    
+                    <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                    <ul>
+                      <li>En haut un histogramme en deux dimensions représentant l'évolution de la quantité en tonnes</li>
+                      <li>En bas le taux de variation des quantité sur 11 ans.</li>
+                      <li>Attention en haut, l'échelle est logarithmique pour plus de confort visuel (il y a beaucoup plus de banane que de pomme canelle)</li>
+                      <li>Comme l'année 2023 est incomplète, elle a été normalisée sur 12 mois</li>
+                    </ul>
+                  <b>Analyse</b><br>
+                    En tendance, contrairement aux légumes, par rapport à 2012 toutes les quantités ne sont pas passées par un pic. En revanche elles sont également en baisses. La courbe noire du graphique du bas est la moyenne 
+                    du taux de variation pour les fruits, la baisse est de quasi 60% par rapport au référentiel 2012.<br>
+                    L'évolution des taux de variation est moins spéctaculaire que pour les légumes.<br>
+                    On constate une certaines périodicité des quantités bien connues de certains jardiniers (notamment pour les letchis par exemple).
+                  </p>
+              </div>
+              <div class="col-lg-8 justify-content-center align-self-center">
+                <div class="row">
+                    <img src={% static 'img/fruits-legumes-5.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="row">
+                    <img src={% static 'img/fruits-legumes-6.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="true" aria-controls="panelsStayOpen-collapsefive">
+            <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°4 : taux de variation annuelle des prix</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-7.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-8.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+              <div class="col-lg-4 justify-content-center align-self-center">
+                  <p>Dans ces visuels, nous étudions sur 11 ans les taux de variations des prix des fruits et légumes<br><br>
+
+                    
+                    <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                    <ul>
+                      <li>En haut les fruits</li>
+                      <li>En bas les légumes</li>
+                      <li>Variation du prix en % par rapport à la référence 2012</li>
+                    </ul>
+                  <b>Analyse</b><br>
+                    L'augmentation est claire et limpide dans les deux cas. Quand le pic en quantité des légumes est passé par son maximum, les prix étaient logiquement 
+                    au plus bas.<br>
+                    Le prix des cocombres a plus que doublé en 10 ans.<br>
+                    Le persil et la pomme cannelle sont remarquables dans le sens ou ce sont les seules à voir baisser en prix sur la période.
+                  </p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsesix" aria-expanded="true" aria-controls="panelsStayOpen-collapsesix">
+            <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°5 : import fruits et légumes réalisés en tonnes</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapsesix" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-9.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-10.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+              <div class="col-lg-4 justify-content-center align-self-center">
+                  <p>Dans ces visuels, nous étudions sur 11 ans les quantités d'import réalisés de fruits et légumes en tonnes par année<br><br>
+
+                    
+                    <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                    <ul>
+                      <li>En haut les fruits</li>
+                      <li>En bas les légumes</li>
+                      <li>Variation du prix en % par rapport à la référence 2012</li>
+                    </ul>
+                  <b>Analyse</b><br>
+                    L'import est significatif après 2020 pour certains fruits et légumes. En comparant ces graphiques avec ceux de l'analyse n°4, on constate en 
+                    tendance que les quantités d'import sont corrélés avec une augmentation des prix (parfois brusques cf tomates).<br>
+                  </p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseseven" aria-expanded="true" aria-controls="panelsStayOpen-collapseseven">
+            <h4 class="fruits-color-2 sc-text-1-font"><b>Analyse n°6 : prix moyen au kg et indices</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapseseven" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/fruits-legumes-11.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+              <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Graphique très simple traçant les points reliant les prix au kg et les valeurs d'indice MG (en orange) et ISEE (en bleu).<br><br>
+                    
+                  <b>Analyse</b><br>
+                    L'observation est d'une logique absolue. Ce graphique permet juste de mettre en évidence la correlation entre l'évolution des prix et 
+                    la valeur des indices.
+                  </p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
 
   <div class="accordion-item">
     <h2 class="accordion-header">
