@@ -55,8 +55,8 @@
                               <td>Mesure des différents code des produits</td>
                           </tr>
                           <tr>
-                              <td>NOM</td>
-                              <td>Mesure designation des produits</td>
+                              <td class="table-danger">NOM</td>
+                              <td class="table-danger">Mesure designation des produits</td>
                           </tr>
                           <tr>
                             <td class="table-danger">SECTEUR_CONSO</td>
@@ -91,16 +91,16 @@
                               <td class="table-warning">Dimension marque du produit</td>
                           </tr>
                           <tr>
-                              <td class="table-danger">CONDITIONNEMENT</td>
-                              <td class="table-danger">Mesure conditionnement du produit</td>
+                              <td class="table-warning">CONDITIONNEMENT</td>
+                              <td class="table-warning">Mesure conditionnement du produit</td>
                           </tr>
                           <tr>
                               <td>COND_UNITE_LIBELLE_LONG</td>
                               <td>Unité de conditionnement en lettre</td>
                           </tr>
                           <tr>
-                              <td class="table-danger">COND_UNITE_LIBELLLE_COURT</td>
-                              <td class="table-danger">Unité de conditionnement</td>
+                              <td class="table-warning">COND_UNITE_LIBELLLE_COURT</td>
+                              <td class="table-warning">Unité de conditionnement</td>
                           </tr>
                           <tr>
                             <td>GENCODE</td>
@@ -155,8 +155,8 @@
                             <td>Complément d'adresse</td>
                         </tr>
                         <tr>
-                            <td class="table-danger">QUARTIER</td>
-                            <td class="table-danger">Quartier : 50 valeurs</td>
+                            <td class="table-warning">QUARTIER</td>
+                            <td class="table-warning">Quartier : 50 valeurs</td>
                         </tr>
                         <tr>
                             <td>CODE_POSTAL</td>
@@ -178,35 +178,46 @@
           <div class="row sc-text-1-font">
               <div class="col">
                   <br>
-                  <p>Le nombre important de colonne impose de faire des choix : 14 colonnes sont selectionnées. Elles sont surlignées en rouge dans le tableau ci-dessus.<br>
-                     Les 3 colonnes surlignés en jaune ne feront pas partie de l'analyse mais pourrait être étudiées également. Le reste n'est pas représentatif d'informations suplémentaires<br>
-                     Il y a beaucoup de dimensions et peu de mesure.<br>
-                     A nous de décortyquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.</p>
+                  <p>Le nombre important de colonne impose de faire des choix : 12 colonnes sont selectionnées. Elles sont surlignées en rouge dans le tableau ci-dessus.<br>
+                     Les 6 colonnes surlignés en jaune ne feront pas partie de l'analyse mais pourrait être étudiées également. Le reste n'est pas représentatif d'informations suplémentaires<br>
+                     Il y a beaucoup de dimensions et peu de mesures.<br>
+                     Lors de l'analyse, il est apparu que les données de l'année 2012 sont partimonieuses et donc difficilements comparables aux autres années. Le 
+                     choix à donc a été fait de ne pas inclure l'année 2012 dans les visuels suivants.</p>
                   <br>
               </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="accordion-item">
       <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-              <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°1 : Importateurs & Quantités totales</b></h4>
+              <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°1 : Répartition % départements et catégories sur la période 2013-2023</b></h4>
           </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col">
+                    <img src={% static 'img/prix-alim-1.png' %} class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
               <div class="row sc-text-1-font">
-                  <div class="col-lg-8">
-                      <img src={% static 'img/food-trade-1.png' %} class="img-fluid" alt="Responsive image">
-                  </div>
-                  <div class="col-lg-4 justify-content-center align-self-center">
-                      <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et du type de produits importés.<br>
-                         La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
-                         est de <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
-                         La Papouasie Nouvelle Guinée, Fidji et la Nouvelle-Calédonie représente à eux seul <b class="food-trade-color-4">80 %</b> du marché.<br>
-                      <br>
-                      <i class="fa-regular fa-lightbulb"></i> Il serait interessant par la suite de mettre en perspective les quantités importées par rapport à la population de ces pays.
+                  <div class="col justify-content-center align-self-center">
+                    <br>
+                    <p>Ce visuel expose la part en volume (quantité) et en valeur (XPF) des catégories et départements des transactions sur la période 2013-2023<br><br>
+
+                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                        <ul>
+                          <li>A gauche : la réprésentation en volume (la quantité totale de transactions)</li>
+                          <li>A droite : la représentation en valeur (la valeur totale des transactions)</li>
+                        </ul>
+                      <b>Analyse</b><br>
+                      <b class="prix-color-4">80 %</b> du volume des transactions concerne le département <b class="prix-color-4">Sec</b>. En comparant les proportions en volume et en valeur 
+                      on remarque déjà que les produits <b class="prix-color-4">Surgelés</b> et <b class="prix-color-4">Frais</b> sont plus onéreux.<br>
+                      Dans chacun des départements la part d'importation est très importante. De la même marnière en comparant quantité et valeur entre importation et 
+                      local on voit que les transactions locales sont en moyenne plus elevés (car représente une part plus elevée en valeur qu'en quantité). 
                       </p>
                   </div>
               </div>
@@ -216,39 +227,393 @@
 
   <div class="accordion-item">
     <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsehuit" aria-expanded="true" aria-controls="panelsStayOpen-collapsehuit">
-            <h4 class="prix-color-3 sc-text-1-font"><b>Conclusions</b></h4>
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTree" aria-expanded="true" aria-controls="panelsStayOpen-collapseTree">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°2 : Répartition % secteurs de consommation sur la période 2013-2023</b></h4>
         </button>
     </h2>
-    <div id="panelsStayOpen-collapsehuit" class="accordion-collapse collapse">
+    <div id="panelsStayOpen-collapseTree" class="accordion-collapse collapse">
         <div class="accordion-body">
             <div class="row sc-text-1-font">
-                <div class="col justify-content-center align-self-center">
-                        <p>Les 6 analyses graphiques ci-dessous nous ont permis de comprendre mieux le sujet de l'importation de nourriture dans les iles
-                            du pacifique. Voici un résumé des points principaux à retenir :
-                            <ul>
-                                <li>3 des 13 pays étudiés représente 80% des importations de la zone en quantité : La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle Calédonie.</li>
-                                <li>La moitié des tonnes échangées sont des céréales. 5 des 13 catégories de produits représente 80% des échanges.</li>
-                                <li>Toutes les iles du pacifique n'ont pas les mêmes habitudes d'importation en terme de produit. Mais dans la majorité des cas, un des types
-                                    de produit représente plus de 20-30% du total des importations.
-                                </li>
-                                <li>Sur 23 ans, la quantité importée à doublée.</li>
-                                <li>La volatilité des quantités importés est assez important d'une année à l'autre pour la majorité des pays. Ceci pourrait pottentiellement se justifier
-                                    par des evenement exogènes impactant la ressource locale.
-                                </li>
-                                <li>La quantité globale importée a doublée. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, prix), d'autres 
-                                    ont diminué de moitié (tabac).
-                                </li>
-                                <li>La population a augmenté de 80% dans la région sur la période étudié. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
-                                    Toutefois, les pays importe en moyenne plus de 2018 qu'en 2015 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
-                                    mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier les chiffres sur les années covid.
-                                </li>
-                            </ul>
-                        </p>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ces visuels exposent la part en volume (quantité) et en valeur (XPF) des secteurs de consommation sur la période 2013-2023<br><br>
+  
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>En haut deux cammenbert équivalent dans leur conception à ceux de l'analyse n°1</li>
+                        <li>En bas le coût moyen d'une transaction dans chaque secteur (histogramme) et le volume de transactions asscoiées (courbe)</li>
+                      </ul>
+                    <br>
+                    <b>Analyse</b><br>
+                    Sur les 10 ans de mesure, c'est les secteurs<b class="prix-color-4">épicerie salée</b> et <b class="prix-color-4">épicerie sucrée</b> qui représentent un très large portion des transactions.
+                    Ces deux secteurs sont aussi parmis les moins onéreuses en moyennes.<br>
+                    En comparant les deux cammenberts, on constate que la hierarchie des volumes et quantité est globalement la même à deux exceptions près : l'<b class="prix-color-4">épicerie sucrée</b> et les <b class="prix-color-4">surgelés</b> qui 
+                    gagnent une place en valeur. Ces secteurs de produits représentent un part plus importante du budget des Calédoniens à quantité égale.
+                    Les secteurs <b>boucherie, volaille, poissonnerie</b> et <b>traiteur</b> n'apparaissent pas dans les cammemberts de part leur volume très faible par rapport au reste.
+                    </p>
                 </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                  <div class="row">
+                      <img src={% static 'img/prix-alim-2.png' %} class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="row">
+                      <img src={% static 'img/prix-alim-3.png' %} class="img-fluid" alt="Responsive image">
+                  </div>
+              </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="true" aria-controls="panelsStayOpen-collapse4">
+                <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°3 : TOP 20 en part de volume (période 2013-2023)</b></h4>
+            </button>
+        </h2>
+        <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                <div class="row sc-text-1-font">
+                    <div class="col-lg-4 justify-content-center align-self-center">
+                        <p>Ce 5 visuels exposent la part en volume (quantité) pour les dimensions sous-secteur/famille/sous-famille/variété/produit sur la période 2013-2023<br><br>
+      
+                          <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ? (de haut en bas)</b><br>
+                          <ul>
+                            <li>[1] Sous secteurs : en violet % en valeur (import/export), en rose % en volume (import/export), la courbe noire prix moyen par sous secteur import 
+                                la courbe grose prix moyen par sous secteur local </li>
+                            <li>[2] Famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par famille</li>
+                            <li>[3] Sous famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par sous famille</li>
+                            <li>[4] Variété : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par varieté</li>
+                            <li>[5] Produit : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par Produit</li>
+                          </ul>
+                          Exemples : [1] presque 16% des transactions sont du sous-secteur <b class="prix-color-4">boissons sans alcool</b>.
+                          [4] 2.5% des transaction concernent la variété <b class="prix-color-4">biscuit fouré, nappé, chocolat</b>.
+                          [5] La référence de produit la plus achété en Calédonie sur les 10 ans est les <b class="prix-color-4">Sao Arnott's paquet 250g</b>
+                        <br>
+                        <br>
+                        <b>Analyse</b><br>
+                          Sur le graphique [1], on remarque une nouvelle fois la part très importante de l'import dans les 20 sous-secteurs concernés par les 
+                          plus gros volume. On constate également que l'écart moyen des prix (quand il existe) est assez important pour un même sous secteur 
+                          entre l'import et le local.<br>
+                          Chacun des graphiques démontrent aussi une tendance à l'achat de produit peu sain pour la santé (19 et 20 em place respective pour les 
+                          sous-secteur <b class="prix-color-4">fruit et légume frais</b> et <b class="prix-color-4">légume fruit surgelés</b> [1] surement achetés 
+                          de préférence sur les marchés). 
+                        </p>
+                    </div>
+                    <div class="col-lg-8 justify-content-center align-self-center">
+                      <div class="row">
+                          <img src={% static 'img/prix-alim-4.png' %} class="img-fluid" alt="Responsive image">
+                      </div>
+                      <div class="row">
+                          <img src={% static 'img/prix-alim-6.png' %} class="img-fluid" alt="Responsive image">
+                      </div>
+                      <div class="row">
+                        <img src={% static 'img/prix-alim-8.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-10.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-12.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                  </div>
+                  </div>
             </div>
+        </div>
+
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="true" aria-controls="panelsStayOpen-collapse5">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°4 : TOP 20 en part de valeur (période 2013-2023)</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-5.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-7.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                      <img src={% static 'img/prix-alim-9.png' %} class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="row">
+                      <img src={% static 'img/prix-alim-11.png' %} class="img-fluid" alt="Responsive image">
+                  </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ce 4 visuels exposent la part en valeur (XPF) pour les dimensions sous-secteur/famille/sous-famille/variété/produit sur la période 2013-2023<br>
+                       Cette analyse est équivalente à la précédente mais permet cette fois-ci de voir les centres de coût moyen des paniers Calédoniens<br>
+                        <br>
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ? (de haut en bas)</b><br>
+                      <ul>
+                        <li>[1] Sous secteurs : en violet % en valeur (import/export), en rose % en volume (import/export), la courbe noire prix moyen par sous secteur import 
+                            la courbe grose prix moyen par sous secteur local </li>
+                        <li>[2] Famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par famille</li>
+                        <li>[3] Sous famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par sous famille</li>
+                        <li>[4] Variété : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par varieté</li>
+                      </ul>
+                      Exemples : [2] Le <b class="prix-color-4">chocolat</b> est la famille de produit qui représente la plus grande zone de dépense par panier moyen (<b class="prix-color-4">5.7%</b> du total).
+                      [4] 1% des transaction en valeur concernent l'<b class="prix-color-4">eau plate</b>.
+                    <br>
+                    <br>
+                    <b>Analyse</b><br>
+                      On retroube sur ces graphiques beaucoup des items vues dans l'analyse n°3 ce qui indique qu'en générale la quantité en volume est équivalent 
+                      aux centres de coût. Pour autant, l'ordre hierarchique n'est pas concervé.
+                      Entrée remarquable des <b class="prix-color-4">crevettes surgelées</b> en 19em place du TOP 20 Variété [4] du fait de leur prix très elevé.
+                    </p>
+                </div>
+              </div>
         </div>
     </div>
 </div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse6" aria-expanded="true" aria-controls="panelsStayOpen-collapse6">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°5 : Evolution volume/valeur Import/Local sur la période 2013-2023</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-13.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ce visuel expose la proportion des transactions Import & Local par année<br>
+                        <br>
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>En vert la part en volume Import vs Local</li>
+                        <li>En vert la part en valeur Import vs Local</li>
+                        <li>Les courbes noires sont les taux de variation origine 2012 des proportions volume/valeur import</li>
+                        <li>Les courbes grises sont les taux de variation origine 2012 des proportions volume/valeur local</li>
+                      </ul>
+                    <br>
+                    <br>
+                    <b>Analyse</b><br>
+                      L'histogramme nous remontre une nouvelle fois la part très importante de l'importantion en quantité et en volume. Le fait que les ordres 
+                      de grandeurs soient les mêmes signifient que ni les imports ni les produits locaux ne se situent sur des niches. On pourrait être dans une 
+                      configuration où les produits locaux sont à fortes valeurs àjoutés par exemple. 
+                      La variation des courbes grises (qui sont par construction corrélés avec les courbes noires) indique que la part du local a baissée depuis 2013 
+                      même si elle remonte en tendance sur les 2 dernières années (Impact covid ?). Des questions sont à ce poser sur la résilience du territoire pour garantir 
+                      une alimentation à la population dans la durée avec une part d'import aussi important (constats partagés des analyses food trade et fruit et légume en NC)
+                    </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse7" aria-expanded="true" aria-controls="panelsStayOpen-collapse7">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°6 : Evolution volume/valeur des secteurs de consommation sur la période 2013-2023</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ces visuels exposent la part des sous secteurs dans les achats par année<br>
+                        <br>
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>En haut : heatmap en part de volume</li>
+                        <li>En bas : heatmap en part de valeur</li>
+                      </ul>
+                      Les visuels sont conçus de manière à ce que la somme de chaque ligne soit de 100%
+                    <br>
+                    <br>
+                    <b>Analyse</b><br>
+                      Il y a eu une certaine évolution des habitudes d'achats entre 2013 et 2023. En quantité (graphique du haut), la proportion du secteur 
+                      boisson à été divisé par <b class="prix-color-4">3</b> aux bénéfices des fruits et légumes et des surgélés (principalement) ce qui peut sembler être une bonne chose.
+                      A proportion de volume assez similaire pour le secteur épicerie salée, la part en valeur à bien augmenté ce qui est synonyme d'inflation ou d'achat de produit de meilleur qualité 
+                      (et donc plus chers). De même la variation de valeur des fruits et légume et des surgelés et plus rapide que la variation de volume : même conclusion, les produits semblent plus cher en 2023.
+                    </p>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-14.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-15.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse8" aria-expanded="true" aria-controls="panelsStayOpen-collapse8">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°7 : Variation des prix moyens sur la période 2013-2023</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ce visuel expose la variation des prix moyens et de volumes par année<br>
+                        <br>
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire le visuel ?</b><br>
+                      <ul>
+                        <li>En haut : la courbe noire est le taux de variation des prix moyen (référence 2013), l'histogramme représente le volume des 
+                            transaction en million
+                        </li>
+                        <li>En bas : le taux de variation du prix moyen de chaque variété de produit</li>
+                      </ul>
+                    <br>
+                    <b>Analyse</b><br>
+                      Les calculs démontrent que les prix moyen ne sont pas sensiblement plus elevés qu'en 2013 mais en revanche beaucoup plus elevé qu'en 2019.
+                      Le taux de variations des variétés montre la valeur moyenne de certaine variété a explosé et qu'en tendance les variétés ont évolué plus à la hausse 
+                      qu'à la baisses.
+                    </p>
+                    <br>
+                    TOP 10 des plus grandes variations à la hausse :
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Variétés</th>
+                            <th scope="col">max 10 ans taux de variation</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ananas</td>
+                                <td>1916 %</td>
+                            </tr>
+                            <tr>
+                                <td>fraise</td>
+                                <td>1135 %</td>
+                            </tr>
+                            <tr>
+                              <td>fromage blanc aux fruits, aromatisé </td>
+                              <td>1121 %</td>
+                            </tr>
+                            <tr>
+                                <td>calamar, poulpe, seiche</td>
+                                <td>1060 %</td>
+                            </tr>
+                            <tr>
+                                <td>melon</td>
+                                <td>727 %</td>
+                            </tr>
+                            <tr>
+                                <td>barre de céréales</td>
+                                <td>533 %</td>
+                            </tr>
+                            <tr>
+                                <td>pastèque</td>
+                                <td>489 %</td>
+                            </tr>
+                            <tr>
+                                <td>autre graisse végétale</td>
+                                <td>421 %</td>
+                            </tr>
+                            <tr>
+                                <td>fruit exotique : autres </td>
+                                <td>382 %</td>
+                            </tr>
+                            <tr>
+                                <td>conserve de poisson : crustacé </td>
+                                <td>370 %</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-16.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse9" aria-expanded="true" aria-controls="panelsStayOpen-collapse9">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°8 : Evolution des parts de marché du TOP 20 des supermarchés</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse9" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-17.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ce visuel exposent la part de marché des 20 plus gros supermarché en valeur de transactions de la base de donnée<br>
+                        <br>
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                        Chaque case indique le % de part de marché du magasin sur l'année considérée. 
+                        Exemple : en 2022 le CARREFOUR KENU IN représente <b class="prix-color-4">5.13%</b> de la valeur totale de transaction de l'année. Rappelons que la base de donnée 
+                        contient <b class="prix-color-4">753</b> raisons sociales différentes.
+                    <br>
+                    <br>
+                    <b>Analyse</b><br>
+                    Depuis 2018, on constate une répartition plus égale entre les 20 plus grandes enseignes. Sans surprise les 20 plus grand établissement se trouvent 
+                    dans Nouméa ou le Grand Nouméa, Païta, Dumbéa ou Mont-Dore.
+                    </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse10" aria-expanded="true" aria-controls="panelsStayOpen-collapse10">
+            <h4 class="prix-color-3 sc-text-1-font"><b>Analyse n°9 : Volume et valeur sur les communes de la Nouvelle-Calédonie</b></h4>
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="row sc-text-1-font">
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-18.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-20.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="row">
+                        <img src={% static 'img/prix-alim-19.png' %} class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-lg-4 justify-content-center align-self-center">
+                    <p>Ces visuels proposent d'étudier la géographie des transactions sur l'ensemble de la Nouvelle-Calédonie<br>
+                        <br>
+                      <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
+                      <ul>
+                        <li>[1] En haut : Une carte des 33 communes. La taille des cerles est proportionnel au nombre d'enseigne, la couleur des cercles au prix 
+                            moyen par enseigne (période 2013-2023)</li>
+                        <li>[2] Au milieu : La part du volume d'achat par commune (la somme de chaque ligne est 100%)</li>
+                        <li>[3] En bas : Le taux de viariation des prix moyen par commune et par an par rapport au prix moyen des transactions sur 10 ans</li>
+                      </ul>
+                    <br>
+                    <br>
+                    <b>Analyse</b><br>
+                      Le prix moyen est (beaucoup) plus elevé sur Nouméa/Grand Nouméa. Ceci est certainement un effet cumulé d'habitudes de consommation différentes et de prix plus elevés [1].<br>
+                      [2] b class="prix-color-4">50%</b> des achats sont faits à Nouméa. Des endroits comme La Foa, Koné ou Lifou voyent leur volume d'achat augmenté quand au Mont-Dore elle diminue. Ceci révèle les flux démographiques sous-jacents.<br>
+                      [3] L'évolution des prix n'est pas la même partout et des villes reste constamment en dessous du prix moyen d'une transaction. Les années 2021/2022 sont remarquables pour Pouembout.
+                    </p>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
 </div>
 {% endblock %}

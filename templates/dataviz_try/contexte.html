@@ -1,7 +1,284 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container">
-<h1 class="sc-text-1-font">CONTEXTE</h1>
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <br>
+        <h1 class="sc-text-1-font" size="20">Elements de contexte</h1>
+        <br>
+      </div>
+    </div>
+</div>
+<div class="row sc-text-1-font">
+    <div class="col">
+        <p><i class="fa-solid fa-utensils"></i> <b><span style="color: #F05500">l’alimentation</span></b></p>
+        <p> Le thème du Dataviz Challenge 2023 est l'alimentation. L'alimentation est un sujet vaste à enjeux multiples et regroupe aussi bien :
+            <ul>
+                <li>l'accès à la nourriture</li>
+                <li>la qualité des produits accéssibles</li>
+                <li>la quantité accéssible</li>
+                <li>l'apport energétique associé</li>
+                <li>la diversité des alliments</li>
+                <li>l'orgine des produits (production locale ou importations)</li>
+                <li>....</li>
+            </ul>
+        L'alimentation ou la capacité à garantir un apport nutritif constant est un des besoins physiologoques de base de chaque être humain 
+        et à ce titre à la base de la pyramide de maslow (cf figure). Une bonne alimentation est indispensable à la survie, à la santé puis au bien-être. 
+        Le corrolaire est qu'en ayant des difficultés à stabiliser une sécurité d'accès à la nourriture, un être humain, un foyer, une population ne 
+        peuvent se développer convenablement. Des tensions puis des conflits sont suceptiblent d'apparaître pouvant aboutir à la destabilisation d'un village, 
+        d'une région ou d'un pays.<br><br>  
+        En 2023, la mondialisation impose une interdépendance des flux massive mais aussi critique entre les pays. L'import/export de marchandise est
+         constant et à permis le développement d'une multitude de régions et réduisant les problématiques passées liées à l'insularité. Cela est 
+         particulièrement vrai pour les îles du pacifique et en particulier sur le secteur des produits alimentaires. Ces pays, qui autrefois vivaient 
+         principalement d'une agriculture vivière, de chasses et de pêche, comptent aujourd'hui beaucoup sur l'import de marchandise des grandes nations 
+         avoisinantes ou plus lointaines. Cette nouvelle dépendance est un risque notamment lorsque les chaînes d'approvisionnement ralentissent à causes 
+         d'évenements externes (guerres, épidémies...). De plus les flux et coûts d'approvisionnement sont très dépendant des coûts internatiaunaux des matières 
+         premières eux aussi dépendant d'évenements externes. En bout de chaîne, ce sont les populations qui payent dans le prix de leurs achat le côut des 
+         intrants fossiles nécéssaires à l'importation. La mondialisation a certes permis l'accélération du développement mais au prix de la résilience face aux 
+         crises.<br>
+        La mondialisation c'est aussi la sur pêche qui ne permet pas à la ressource marine une période de régénération et menace à terme un des stocks de 
+        nourriture des habitants des îles du pacifique. <br><br>
+        En 2023, le réchauffement climatique et surtout son impact direct sur la sécurité alimentaire est également un élément de contexte à prendre en compte 
+        dans l'interpretation de nos annalyses. Le pacifique depuis longtemps touché par les oscillations ENSO est et sera en première ligne face à 
+        l'intensification des sécheresses, des pluies ou des dépressions ce qui impactera à coup sur l'approvisionnement locale au bénéfice des importations. 
+        <br><br>
+        
+        Le sujet est vaste mais ces quelques lignes permettent déjà de saisir l'enjeux de l'accès à la nourriture. Les pays du pacifique ont chacun une 
+        stratégie face à ces enjeux qui dépend de leur situation et de leur ressources.<br><br>
+        </p> 
+      
+        <p><i class="fa-solid fa-sailboat"></i><b><span style="color: #F05500"> Les pays du pacifique</span></b></p>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 justify-content-center align-self-center">
+                <img src={% static 'img/contexte-carte.png' %} class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+        <br>
+        <p>Deux des bases de données fournies concernent un ensemble de pays du pacifiques et 2 autres en concernent en particulier la Nouvelle-Calédonie.<br> 
+            Nous rappelerons donc pour préciser le contexte quelques chiffres sur ces pays. Les pays sont volontairement classés par PIB/hab en ordre décroissant.</p><br>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 justify-content-center align-self-center">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Pays</th>
+                            <th scope="col">Population</th>
+                            <th scope="col">PIB (B$)</th>
+                            <th scope="col">PIB ($/hab)</th>
+                            <th scope="col">Superficie (km²)</th>
+                            <th scope="col">Densité (hab/km²)</th>
+                            <th scope="col">ZEE (km²)</th>
+                            <th scope="col">Ensemble culturel</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nouvelle-Calédonie</td>
+                                <td>298'328</td>
+                                <td>9.89</td>
+                                <td>33'151</td>
+                                <td>18'580</td>
+                                <td>16</td>
+                                <td>1'300'000</td>
+                                <td>Mélanésie</td>
+                            </tr>
+                            <tr>
+                                <td>Polynésie Française</td>
+                                <td>278'786</td>
+                                <td>5.61</td>
+                                <td>20'123</td>
+                                <td>4000</td>
+                                <td>70</td>
+                                <td>4'500'000</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Îles Cook</td>
+                                <td>15'554</td>
+                                <td>0.309</td>
+                                <td>19'866</td>
+                                <td>242</td>
+                                <td>64</td>
+                                <td>1'960'135</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Palaos</td>
+                                <td>18'056</td>
+                                <td>0.292</td>
+                                <td>16'172</td>
+                                <td>460</td>
+                                <td>39</td>
+                                <td>603'978</td>
+                                <td>Micronésie</td>
+                            </tr>
+                            <tr>
+                                <td>Wallis & Futuna</td>
+                                <td>11'421</td>
+                                <td>0.133</td>
+                                <td>11'645</td>
+                                <td>142</td>
+                                <td>80</td>
+                                <td>262'563</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Nauru</td>
+                                <td>11'047</td>
+                                <td>0.114</td>
+                                <td>10'320</td>
+                                <td>21</td>
+                                <td>526</td>
+                                <td>320'000</td>
+                                <td>Micronésie</td>
+                            </tr>
+                            <tr>
+                                <td>Tokelau</td>
+                                <td>1'871</td>
+                                <td>0.01</td>
+                                <td>5'345</td>
+                                <td>12</td>
+                                <td>156</td>
+                                <td>319'031</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Fidji</td>
+                                <td>917'884</td>
+                                <td>4.87</td>
+                                <td>5'306</td>
+                                <td>18270</td>
+                                <td>50</td>
+                                <td>1'282'978</td>
+                                <td>Mélanésie</td>
+                            </tr>
+                            <tr>
+                                <td>Niue</td>
+                                <td>1'935</td>
+                                <td>0.01</td>
+                                <td>5'168</td>
+                                <td>261</td>
+                                <td>7</td>
+                                <td>317'500</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Tonga</td>
+                                <td>106'858</td>
+                                <td>0.427</td>
+                                <td>3'996</td>
+                                <td>750</td>
+                                <td>142</td>
+                                <td>660'000</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Tuvalu</td>
+                                <td>111'312</td>
+                                <td>0.04</td>
+                                <td>3'881</td>
+                                <td>26</td>
+                                <td>435</td>
+                                <td>759'000</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Samoa</td>
+                                <td>222'382</td>
+                                <td>0.861</td>
+                                <td>3'872</td>
+                                <td>2840</td>
+                                <td>78</td>
+                                <td>405'830</td>
+                                <td>Polynésie</td>
+                            </tr>
+                            <tr>
+                                <td>Îles Marshall</td>
+                                <td>63'405</td>
+                                <td>0.199</td>
+                                <td>3'139</td>
+                                <td>181</td>
+                                <td>350</td>
+                                <td>1'990'530</td>
+                                <td>Micronésie</td>
+                            </tr>
+                            <tr>
+                                <td>Etats Fédérés de Micronésie</td>
+                                <td>115'111</td>
+                                <td>0.336</td>
+                                <td>2'919</td>
+                                <td>700</td>
+                                <td>164</td>
+                                <td>2'996'419</td>
+                                <td>Micronésie</td>
+                            </tr>
+                            <tr>
+                                <td>Vanuatu</td>
+                                <td>317'436</td>
+                                <td>0.864</td>
+                                <td>2'722</td>
+                                <td>12190</td>
+                                <td>26</td>
+                                <td>663'251</td>
+                                <td>Mélanésie</td>
+                            </tr>
+                            <tr>
+                                <td>Papousie Nouvelle Guinée</td>
+                                <td>9'587'716</td>
+                                <td>22.01</td>
+                                <td>2'296</td>
+                                <td>462840</td>
+                                <td>21</td>
+                                <td>2'403'327</td>
+                                <td>Mélanésie</td>
+                            </tr>
+                            <tr>
+                                <td>Îles Salomon</td>
+                                <td>706'758</td>
+                                <td>1.21</td>
+                                <td>1'712</td>
+                                <td>28900</td>
+                                <td>24</td>
+                                <td>1'589'477</td>
+                                <td>Mélanésie</td>
+                            </tr>
+                            <tr>
+                                <td>Kiribati</td>
+                                <td>126'762</td>
+                                <td>0.197</td>
+                                <td>1'554</td>
+                                <td>810</td>
+                                <td>156</td>
+                                <td>3'500'00</td>
+                                <td>Micronésie</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+        <br>
+        <p>On le constate aisement, les îles du pacifiques ont des caractéristiques très différentes que ce soit en terme de culture, de climat ou de richesse et ceci sera à garder en tête en 
+            lisant les différents visuels présentés.<br>
+            Le pacifique c'est 165.2 millions de km² en superficie. Les pays décrit ci-dessous semblent petit mais ont pour la plupart possèdent d'immenses zones maritimes associées représantant un vivier de 
+            ressources stratégiques. Outre son rôle d'autoroute maritime, le pacifique est devenu depuis quelques années un enjeu géostratégique important très prisé de grandes puissances de ce monde.</p>
+     
+      <p><b>Ressources :</b> 
+      <ul>
+        <li><a href="https://fr.wikipedia.org/wiki/Zone_%C3%A9conomique_exclusive">Wikipédia ZEE</a></li>
+        <li><a href="https://fr.wikipedia.org/wiki/Liste_des_pays_par_PIB_nominal">Wikipédia PIB</a></li>
+        <li><a href="https://www.donneesmondiales.com/">Autres données</a></li>
+        <li><a href="https://www.globe-trotting.com/post/iles-du-pacifique">Cartes îles du pacifique</a></li>
+      </ul>
+    </p>
 </div>
 {% endblock %}
+
+
+
