@@ -164,9 +164,9 @@ else:
     AWS_S3_FILE_OVERWRITE = False
     AWS_DEFAULT_ACL = None
 
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "staticfiles"),
-    ]  # for searching other statics somewhere in whole project a commenter en import github pour heroku, mais nécéssaire pour les collecstatic AWS
+    # STATICFILES_DIRS = [
+    #     os.path.join(BASE_DIR, "staticfiles"),
+    # ]  # for searching other statics somewhere in whole project a commenter en import github pour heroku, mais nécéssaire pour les collecstatic AWS
 
     AWS_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
