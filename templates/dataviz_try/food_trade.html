@@ -29,11 +29,16 @@
       <div class="accordion-body">
         <div class="row sc-text-1-font">
             <div class="col">
-                <p>Cette base de données enregistre pour 18 pays du pacifique, les quantités importées depuis l'ensemble Australie/Nouvelle-Zelande par type de produit 
-                    sur une période de 23 ans (de 1995 à 2018).</p>
-                <p>La base de données est composée de 13 colonnes et 6552 lignes.</p>
-                <p>Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
-                    que celles importantes pour l'extraction d'une information.
+                <p>
+                    Cette base de données enregistre pour 18 pays et territoires du pacifique, les quantités importées depuis l'ensemble 
+                    Australie/Nouvelle-Zelande par types de produits sur une période de 23 ans (de 1995 à 2018).<br>
+                    <br>
+                    La base de données est composée de <b class="food-trade-color-4">13</b> colonnes et <b class="food-trade-color-4">6552</b> lignes.<br>
+                    <br>
+                    Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans 
+                    l'analyse que celles importantes pour l'extraction d'une information.<br>
+                    <br>
+                    Le tableau ci-dessous expose les différentes colonnes et le type de donnée qu'elles contiennent :
                  </p>
             </div>
         </div>
@@ -50,15 +55,15 @@
                     <tbody>
                         <tr>
                             <td>DATAFLOW</td>
-                            <td>Composée d'une unique valeur "SPC:DF_TRADE_FOOD(1.0)"</td>
+                            <td>Composée d'une unique valeur : SPC:DF_TRADE_FOOD(1.0)</td>
                         </tr>
                         <tr>
                             <td>FREQ: Frequency</td>
-                            <td>Composée d'une unique valeur "A: Annual"</td>
+                            <td>Composée d'une unique valeur : A: Annual</td>
                         </tr>
                         <tr>
                         <td>INDICATOR: Indicator</td>
-                        <td>Composée d'une unique valeur "Q: Quantity"</td>
+                        <td>Composée d'une unique valeur : Q: Quantity</td>
                         </tr>
                         <tr>
                         <td class="table-success">IMPORTER: Importer</td>
@@ -71,7 +76,7 @@
                                 <li>MH: Marshall Islands</li>
                                 <li>NC: New Caledonia</li>
                                 <li>NR: Nauru</li>
-                                <li>NU: Niue'</li>
+                                <li>NU: Niue</li>
                                 <li>PG: Papua New Guinea</li>
                                 <li>PF: French Polynesia</li>
                                 <li>PW: Palau</li>
@@ -87,7 +92,7 @@
                         </tr>
                         <tr>
                             <td>EXPORTER: Exporter</td>
-                            <td>Composée d'une unique valeur "AU_NZ: Australia and New Zealand"</td>
+                            <td>Composée d'une unique valeur : AU_NZ: Australia and New Zealand</td>
                         </tr>
                         <tr>
                             <td class="table-success">COMMODITY: Commodity</td>
@@ -124,7 +129,7 @@
                         </tr>
                         <tr>
                             <td>UNIT_MEASURE: Unit of measure</td>
-                            <td>Unité de quantité en Tonnes</td>
+                            <td>Unité de la mesure en Tonnes</td>
                         </tr>
                         <tr>
                             <td>UNIT_MULT: Unit multiplier</td>
@@ -150,10 +155,12 @@
         <div class="row sc-text-1-font">
             <div class="col">
                 <br>
-                <p>Dans ce cas précis, 4 colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessus.<br>
-                    Les 3 dimensions importantes d'analyses sont : les importateurs, les types de produits importés, l'évolution au cours des années.<br>
-                    La valeur mesurée est : la quantité de produits importée en Tonnes.<br>
-                    A nous de décortiquer au maximum ces données pour dégager des tendances et proposer des pistes de reflexion.
+                <p>
+                    Dans ce cas précis, <b class="food-trade-color-4">4</b> colonnes sont utiles. Elles sont surlignées en vert dans le tableau ci-dessus.
+                    <ul>
+                        <li>3 dimensions importantes d'analyses: les importateurs, les types de produits importés, l'évolution au cours des années</li>
+                        <li>la valeur mesurée : la quantité de produits importée en Tonnes</li>
+                    </ul>
                 </p>
                 <br>
             </div>
@@ -197,7 +204,7 @@
         <div class="accordion-body">
             <div class="row sc-text-1-font">
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Dans cette partie, nous nous affranchissons de la dimension "temps" et des pays importateurs.<br>
+                    <p>Dans cette partie, nous nous affranchissons toujours de la dimension "temps" et des pays importateurs.<br>
                        La quantité totale exportée sur 23 ans par l'entité Australie/Nouvelle Zélande vers les îles du pacifique 
                        reste la même <b class="food-trade-color-4">16'553'168</b> Tonnes tous produits confondus.<br>
                        <br>
@@ -242,24 +249,25 @@
                        par <b>type de produits</b> et par <b>pays importateurs</b>.<br>
                        <br>
                        <b><i class="fa-solid fa-glasses"></i> Comment lire le visuel ?</b><br>
-                       <ul>
-                        <li>En ordonnée/verticalement : les types de produits</li>
-                        <li>En abscisse/horizontalement : les pays importateurs</li>
-                        <li>Pour faciliter la lecture, toutes les valeurs sont données en pourcentage du total d'import par pays.</li>
-                        <li>La première colonne est le % total par type de produits sommé pour tous les pays. Les valeurs sont donc indentiques à celles observées dans camembert de l'analyse précédente.</li>
-                        <li>Les types de produit sont classés par ordre décroissant (de haut en bas) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
-                        <li>Les pays importateurs sont classés par ordre décroissant (de gauche à droite) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
-                        <li>Le total de chaque colonne est logiquement égale à 100%</li>
-                       </ul>
+                        <ul>
+                            <li>En ordonnée/verticalement : les types de produits</li>
+                            <li>En abscisse/horizontalement : les pays importateurs</li>
+                            <li>Pour faciliter la lecture, toutes les valeurs sont données en pourcentage du total d'import par pays (le total de chaque colonne est donc logiquement égale à 100%)</li>
+                            <li>La première colonne est le % total, par type de produits, d'importation (tous pays confondus). Les valeurs sont donc indentiques à celles observées dans camembert de l'analyse précédente.</li>
+                            <li>Les types de produit sont classés par ordre décroissant (de haut en bas) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
+                            <li>Les pays importateurs sont classés par ordre décroissant (de gauche à droite) vis à vis de la quantité en tonnes importées sur 23 ans.</li>
+                        </ul>
                         <br>
                         <b>Analyse</b><br>
-                        <p>Aucun pays n'a la même répartition d'import que le classement moyen observé dans la première colonne et dans l'analyse précédente.<br>
-                        Pour la majorité des pays étudiés, <b class="food-trade-color-4">80%</b> des imports sont répartis sur <b class="food-trade-color-4">5</b> types de produits ou moins.<br>
-                        Le top 5 moyen des types de produits importés visualisés à l'analyse n°2 est fortement inflencé par les gros pays importateurs. Il n'est pas
-                        représentatif de l'ensemble des habitudes des autres îles du pacifiques.<br>
-                        La Polynésie Française ou le Vanuatu sont deux exemples de pays qui ont une distribution d'import plus varié et moins basé sur un monoproduit.
+                        <p>
+                            Aucun pays n'a la même répartition d'import que le classement moyen observé dans la première colonne et dans l'analyse précédente.<br>
+                            Pour la majorité des pays étudiés, <b class="food-trade-color-4">80%</b> des imports sont répartis sur <b class="food-trade-color-4">5</b> 
+                            types de produits ou moins.<br>
+                            Le top 5 moyen des types de produits importés visualisés à l'analyse n°2 est fortement inflencé par les gros pays importateurs. 
+                            Il n'est pas représentatif de l'ensemble des habitudes des autres îles du pacifiques.<br>
+                            La Polynésie Française ou le Vanuatu sont deux exemples de pays qui ont une distribution d'import plus varié et moins basé 
+                            sur un monoproduit.
                         </p>
-                        <br>
                         <br>
                        <i class="fa-regular fa-lightbulb"></i> Les 3 analyses précendes ne prennent pas en compte l'évolution des imports dans le temps. 
                     </p>
@@ -292,26 +300,29 @@
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                         <p>Sur le visuel du haut : 
                             <ul>
-                                <li>en jaune la quantité totale exportée par le groupe Australie/Nouvelle-Zelande par an.</li>
-                                <li>en vert l'écart à la moyenne en % par pays et par année.
+                                <li>en jaune : la quantité totale exportée par le groupe Australie/Nouvelle-Zelande par an.</li>
+                                <li>en vert : l'écart à la moyenne en % par pays et par année. On calcule la moyenne de importation sur 23 ans par pays et on 
+                                    regarde pour chaque année l'écart entre la valeur d'importation de l'année et la moyenne sur 23 ans</li>
                             </ul>
                         </p>
                         <p>Sur le visuel du bas : 
-                            <ul><li>la part de l'écart type dans la moyenne en % pour chaque importateur sur la période de 23 ans.</li></ul></p>
+                            <ul><li>la part de l'écart type dans la moyenne en % pour chaque importateur sur la période de 23 ans. On divise l'écart type calculé
+                                sur 23 ans par la moyenne d'import sur 23 ans.
+                            </li></ul></p>
                         <br>
                         <b>Analyse</b><br>
                         <p>Sur<b class="food-trade-color-4">23 ans</b>, la quantité échangée par an a <b class="food-trade-color-4">doublée</b>.<br>
-                           Cela signifie biensur qu'en moyenne, l'ensemble des pays importent plus, mais on constate également une dispertion plus importante des quantités 
-                           importées à mesure que le temps passe. En effet, en 1995 l'ensemble des pays sont plutôt proches de leur moyennes (courbes centrées/regroupées autour de 0), 
+                           Cela signifie qu'en moyenne, l'ensemble des pays importent plus. On constate également une dispertion plus importante des quantités 
+                           importées à mesure que le temps passe. En effet, en 1995 l'ensemble des pays sont plutôt proches de leur moyennes (courbes centrées et regroupées autour de 0), 
                             beaucoup moins en 2018. Les nombreux pics observés sont autant d'instabilités d'import significatives et témoignant potentiellement d'instabilités
-                            d'approvisionnement. Soit du coté importateurs, soit du coté exportateurs.<br>
+                            d'approvisionnement. Soit du coté importateurs (moins de commandes car plus de ressources en local), soit du coté exportateurs (moins de marchandises disponibles).<br>
                         <br>
-                        L'écart type est une representation de l'écart moyen à la moyenne. L'écart type / la moyenne représente en pourcentage la part de l'écart type
-                        dans la moyenne. Plus cette valeur est petite, plus l'importateur à tendance à être constant dans ses volumes d'importation. Palau à une politique 
-                        d'importation très volatile quand Samoa est beaucoup plus constant chaque année sur ses volumes importés.
+                        L'écart type est une representation de l'écart moyen à la moyenne. L'écart type divisé par la moyenne représente en pourcentage la part de l'écart type
+                        dans la moyenne. Plus cette valeur est petite, plus l'importateur à tendance à être constant dans ses volumes d'importation. Ici on observe par exemple que 
+                        Palau à une politique d'importation très <b class="food-trade-color-4">volatile</b> (voulu ou subi ?) quand Samoa est beaucoup plus constant chaque année sur ses volumes importés.
                         <br>
                         <br>
-                       <i class="fa-regular fa-lightbulb"></i> Il peut être interessant de comparer l'évolution démographique à l'évolution des quantités importées par année
+                       <i class="fa-regular fa-lightbulb"></i> Il pourra être interessant de comparer l'évolution démographique à l'évolution des quantités importées par année
                        pour potentielement y déceler une correlation. 
                     </p>
                 </div>
@@ -333,24 +344,24 @@
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                        <p>Sur le visuel du haut : 
                             <ul>
-                                <li>Pour chaque type de produit, le taux de variation depuis l'origine de la quantité dans les îles de pacifique par année.</li>
+                                <li>Pour chaque type de produit, le taux de variation depuis l'origine de la quantité importée dans les îles de pacifique par année.</li>
                             </ul>
                         </p>
                         <p>Sur le visuel du milieu : 
                             <ul>
-                                <li>Pour chaque type de produit, la quantité en tonnes d'export dans les îles de pacifique par année.</li>
+                                <li>Pour chaque type de produit, la quantité en tonnes d'import dans les îles de pacifique par année.</li>
                             </ul>
                         </p>
                         <p>Sur le visuel du bas : 
                                 <ul>
-                                    <li>Pour les Céréales seulement, la quantité importée par an par chaque pays étudiés.</li>
+                                    <li>Pour les Céréales seulement, la quantité importée par an pour chaque pays étudiés.</li>
                                 </ul>
                         </p>
                         <br>
                         <b>Analyse</b><br>
-                        <p> Sur la figure du haut, la courbe en pointillée noir montre un taux de variation d'import total de <b class="food-trade-color-4">100%</b>, c'est à dire un 
+                        <p> Sur la figure du haut, la courbe en pointillée noire montre un taux de variation d'import total de <b class="food-trade-color-4">100%</b>, c'est à dire un 
                             <b class="food-trade-color-4">doublement</b> de la quantité totale importée. Certain produit comme les céréales et les fruits 
-                            ont triplé en volume (taux de variation de 200%), d'autres comme le tabac ont chuté de 50-60% par rapport à l'origine.<br>
+                            ont même triplé en volume (taux de variation de 200%), d'autres comme le tabac ont chuté de 50-60% par rapport à l'origine.<br>
                             <br>
                             La figure du milieu met en évidence que l'évolution globale de la quantité exportée est dictée par
                             l'augmentation des échanges de <b class="food-trade-color-4">céréales</b>. L'évolution du reste des types de produits semble bien marginale même si observable
@@ -396,14 +407,14 @@
                 <div class="col-lg-4 justify-content-center align-self-center">
                         <p>Pour cette analyse, une seconde base de données à été utilisée. Il s'agit de la population totale par année et par pays 
                             disponible sur le site de la banque mondiale : <a href="https://donnees.banquemondiale.org/indicator/SP.POP.TOTL">ici</a>.<br>
-                            A savoir, les données ne sont pas disponibles pour : CK: Cook Islands, NU: Niue, WF: Wallis and Futuna Islands, TK: Tokelau. L'analyse
+                            A savoir : les données ne sont pas disponibles pour : CK: Cook Islands, NU: Niue, WF: Wallis and Futuna Islands, TK: Tokelau. L'analyse
                             est donc partielle par rapport au référentiel initial.</p>
                         <br>
                        <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                         <p>Le visuel du haut est composé de deux graphiques : 
                             <ul>
                                 <li>La population cumulée des îles du pacifique sur la période.</li>
-                                <li>Le taux de variation de la population par pays.</li>
+                                <li>Le taux de variation de la population par pays (référentiel 1995)</li>
                             </ul>
                         </p>
                         <p>Sur le visuel du bas : 
@@ -417,14 +428,14 @@
                         <br>
                         La carte de chaleur nous rèvele qu'il y a une forte disparitée dans la quantité d'importation par personne et par pays. Cela permet de comprendre 
                         que la Papousasie-Nouvelle-Guinée se classe premier importateur par son poids en population, alors que Fidji et la Nouvelle-Calédonie sont sur le podium également 
-                        par la grande quantité importée par personnes. 
+                        à cause de la grande quantité importée par personnes. 
                         <br>
                         <br>
                         <i class="fa-regular fa-lightbulb"></i> Cette analyse répond à certaines questions mais soulève également beaucoup d'interrogations annexes :
                         <ul>
-                            <li>Quel est l'impact du PIB par pays dans leur capacité à importer ?</li>
+                            <li>Quel est l'impact du PIB par pays dans leur capacité à importer ? (voir éléments de contexte)</li>
                             <li>Quelle stratégie de résilience pour les pays ayant d'enormes quantités importée par personne ?</li>
-                            <li>Quelle sont les part d'alimentation locale dans les différents pays ?</li>
+                            <li>Quelles sont les part d'alimentation locale dans les différents pays ?</li>
                         </ul>
                     </p>
                 </div>
@@ -446,21 +457,21 @@
                         <p>Les 6 analyses graphiques ci-dessous nous ont permis de comprendre mieux le sujet de l'importation de nourriture dans les iles
                             du pacifique. Voici un résumé des points principaux à retenir :
                             <ul>
-                                <li>3 des 13 pays étudiés représente 80% des importations de la zone en quantité : La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle Calédonie.</li>
-                                <li>La moitié des tonnes échangées sont des céréales. 5 des 13 catégories de produits représente 80% des échanges.</li>
-                                <li>Toutes les iles du pacifique n'ont pas les mêmes habitudes d'importation en terme de produit. Mais dans la majorité des cas, un des types
+                                <li>3 des 13 pays étudiés représentent 80% des importations de la zone en quantité : La Papouasie-Nouvelle-Guinée, Fidji et la Nouvelle Calédonie.</li>
+                                <li>La moitié des tonnes échangées sont des céréales. 5 des 13 catégories de produits représentent 80% des échanges.</li>
+                                <li>Toutes les iles du pacifique n'ont pas les mêmes habitudes d'importation en terme de produits. Dans la majorité des cas, un des types
                                     de produit représente plus de 20-30% du total des importations.
                                 </li>
                                 <li>Sur 23 ans, la quantité importée à doublée.</li>
-                                <li>La volatilité des quantités importés est assez important d'une année à l'autre pour la majorité des pays. Ceci pourrait pottentiellement se justifier
-                                    par des evenement exogènes impactant la ressource locale.
+                                <li>La volatilité des quantités importées est assez importante d'une année à l'autre pour la majorité des pays. Ceci pourrait potentiellement se justifier
+                                    par des évenements exogènes impactant la ressource locale.
                                 </li>
                                 <li>La quantité globale importée a doublé. Pour autant ce n'est pas le cas de tout les types de produits. Certains ont triplé (céréales, fruits), d'autres 
                                     ont diminué de moitié (tabac).
                                 </li>
-                                <li>La population a augmenté de 80% dans la région sur la période étudié. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
-                                    Toutefois, les pays importent en moyenne plus de 2018 qu'en 1995 certainnement au détriment des productions locales. Cela les rends donc automatiquement 
-                                    mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier les chiffres sur les années covid.
+                                <li>La population a augmenté de 80% dans la région sur la période étudiée. L'augmentation de la population est donc bien correlée avec l'augmentation des importations. 
+                                    Toutefois, les pays importent en moyenne plus en 2018 qu'en 1995 certainement au détriment des productions locales. Cela les rends donc automatiquement 
+                                    mois résilient aux événements internationaux impactant les échanges. Il aurait été interessant d'étudier ces chiffres sur les années covid.
                                 </li>
                             </ul>
                         </p>

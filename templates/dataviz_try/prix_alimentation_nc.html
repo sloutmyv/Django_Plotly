@@ -29,13 +29,15 @@
         <div class="accordion-body">
           <div class="row sc-text-1-font">
               <div class="col">
-                  <p>Cette base de donnée référence dans le détail l'ensemble des produits vendus dans les enseignent de <b class="prix-color-4">Nouvelle-Calédonie</b>.<br>
+                  <p>Cette base de donnée référence dans le détail l'ensemble des produits vendus dans les enseignes de <b class="prix-color-4">Nouvelle-Calédonie</b>.<br>
                     La base de données est composée de 12 fichiers ayant des colonnes identiques, un par année de 2012 à 2023.<br>
-                     L'ensemble de ces fichiers pèsent <b class="prix-color-4">16.7 Go</b> en format csv. Pour plus de facilité dans le traitement, nous allons fusionner l'ensemble dans un même 
-                     Dataframe et appliquer quelques traitement permettant d'alléger l'ensemble.<br>
+                     L'ensemble de ces fichiers pèsent <b class="prix-color-4">16.7 Go</b> en format csv. Pour plus de facilité dans le traitement, nous avons fusionné l'ensemble dans un même 
+                     Dataframe et appliqué quelques traitement permettant d'alléger l'ensemble.<br>
                      La base de données totale est composée de <b class="prix-color-4">30</b> colonnes et <b class="prix-color-4">51'882'946</b> lignes.<br>
-                     Toutes les colonnes ne sont pas utiles, il est donc important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
-                      que celles importantes pour l'extraction d'une information. 
+                     Toutes les colonnes ne sont pas utiles, comme la base de données est très grande, il est d'autant plus important d'analyser les valeurs composant les colonnes et de ne selectionner dans l'analyse
+                     que celles importantes pour l'extraction d'une information.<br>
+                    <br>
+                    Le tableau ci-dessous expose les différentes colonnes et le type de donnée qu'elles contiennent :
                    </p>
               </div>
           </div>
@@ -178,8 +180,8 @@
           <div class="row sc-text-1-font">
               <div class="col">
                   <br>
-                  <p>Le nombre important de colonne impose de faire des choix : 12 colonnes sont selectionnées. Elles sont surlignées en rouge dans le tableau ci-dessus.<br>
-                     Les 6 colonnes surlignés en jaune ne feront pas partie de l'analyse mais pourrait être étudiées également. Le reste n'est pas représentatif d'informations suplémentaires<br>
+                  <p>Le nombre important de colonnes impose de faire des choix : 12 colonnes sont selectionnées. Elles sont surlignées en rouge dans le tableau ci-dessus.<br>
+                     Les 6 colonnes surlignés en jaune ne feront pas partie de l'analyse mais pourraient être étudiées également. Le reste n'est pas représentatif d'informations suplémentaires<br>
                      Il y a beaucoup de dimensions et peu de mesures.<br>
                      Lors de l'analyse, il est apparu que les données de l'année 2012 sont partimonieuses et donc difficilements comparables aux autres années. Le 
                      choix à donc a été fait de ne pas inclure l'année 2012 dans les visuels suivants.</p>
@@ -216,7 +218,7 @@
                       <b>Analyse</b><br>
                       <b class="prix-color-4">80 %</b> du volume des transactions concerne le département <b class="prix-color-4">Sec</b>. En comparant les proportions en volume et en valeur 
                       on remarque déjà que les produits <b class="prix-color-4">Surgelés</b> et <b class="prix-color-4">Frais</b> sont plus onéreux.<br>
-                      Dans chacun des départements la part d'importation est très importante. De la même marnière en comparant quantité et valeur entre importation et 
+                      Dans chacun des départements la part d'importation est très importante. De la même marnière en comparant quantité et valeur entre import et 
                       local on voit que les transactions locales sont en moyenne plus elevés (car représente une part plus elevée en valeur qu'en quantité). 
                       </p>
                   </div>
@@ -239,16 +241,16 @@
   
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                       <ul>
-                        <li>En haut deux cammenbert équivalent dans leur conception à ceux de l'analyse n°1</li>
+                        <li>En haut deux camenbert équivalent dans leur conception à ceux de l'analyse n°1</li>
                         <li>En bas le coût moyen d'une transaction dans chaque secteur (histogramme) et le volume de transactions asscoiées (courbe)</li>
                       </ul>
                     <br>
                     <b>Analyse</b><br>
                     Sur les 10 ans de mesure, c'est les secteurs<b class="prix-color-4">épicerie salée</b> et <b class="prix-color-4">épicerie sucrée</b> qui représentent un très large portion des transactions.
-                    Ces deux secteurs sont aussi parmis les moins onéreuses en moyennes.<br>
-                    En comparant les deux cammenberts, on constate que la hierarchie des volumes et quantité est globalement la même à deux exceptions près : l'<b class="prix-color-4">épicerie sucrée</b> et les <b class="prix-color-4">surgelés</b> qui 
-                    gagnent une place en valeur. Ces secteurs de produits représentent un part plus importante du budget des Calédoniens à quantité égale.
-                    Les secteurs <b>boucherie, volaille, poissonnerie</b> et <b>traiteur</b> n'apparaissent pas dans les cammemberts de part leur volume très faible par rapport au reste.
+                    Ces deux secteurs sont aussi parmis les moins onéreux en moyennes.<br>
+                    En comparant les deux camenberts, on constate que la hierarchie des volumes et quantités est globalement la même à deux exceptions près : l'<b class="prix-color-4">épicerie sucrée</b> et les <b class="prix-color-4">surgelés</b> qui 
+                    gagnent une place en valeur. Ces secteurs de produits représentent une part plus importante du budget des Calédoniens à quantité égale.
+                    Les secteurs <b>boucherie, volaille, poissonnerie</b> et <b>traiteur</b> n'apparaissent pas dans les camemberts de part leur volume très faible par rapport au reste.
                     </p>
                 </div>
                 <div class="col-lg-8 justify-content-center align-self-center">
@@ -277,24 +279,24 @@
       
                           <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ? (de haut en bas)</b><br>
                           <ul>
-                            <li>[1] Sous secteurs : en violet % en valeur (import/export), en rose % en volume (import/export), la courbe noire prix moyen par sous secteur import 
-                                la courbe grose prix moyen par sous secteur local </li>
-                            <li>[2] Famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par famille</li>
-                            <li>[3] Sous famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par sous famille</li>
-                            <li>[4] Variété : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par varieté</li>
-                            <li>[5] Produit : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par Produit</li>
+                            <li>[1] Sous secteurs : en violet % en valeur (import/export), en rose % en volume (import/export), la courbe noire représente le prix moyen par sous secteur import 
+                                la courbe grise le prix moyen par sous secteur local </li>
+                            <li>[2] Famille : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par famille</li>
+                            <li>[3] Sous famille : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par sous famille</li>
+                            <li>[4] Variété : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par varieté</li>
+                            <li>[5] Produit : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par Produit</li>
                           </ul>
                           Exemples : [1] presque 16% des transactions sont du sous-secteur <b class="prix-color-4">boissons sans alcool</b>.
                           [4] 2.5% des transaction concernent la variété <b class="prix-color-4">biscuit fouré, nappé, chocolat</b>.
-                          [5] La référence de produit la plus achété en Calédonie sur les 10 ans est les <b class="prix-color-4">Sao Arnott's paquet 250g</b>
+                          [5] La référence de produit la plus achétée en Calédonie sur les 10 ans est les <b class="prix-color-4">Sao Arnott's paquet 250g</b>
                         <br>
                         <br>
                         <b>Analyse</b><br>
                           Sur le graphique [1], on remarque une nouvelle fois la part très importante de l'import dans les 20 sous-secteurs concernés par les 
                           plus gros volume. On constate également que l'écart moyen des prix (quand il existe) est assez important pour un même sous secteur 
                           entre l'import et le local.<br>
-                          Chacun des graphiques démontrent aussi une tendance à l'achat de produit peu sain pour la santé (19 et 20 em place respective pour les 
-                          sous-secteur <b class="prix-color-4">fruit et légume frais</b> et <b class="prix-color-4">légume fruit surgelés</b> [1] surement achetés 
+                          Chacun des graphiques démontrent aussi une tendance à l'achat de produit peu sain pour la santé (19 et 20 em place respectives pour les 
+                          sous-secteurs <b class="prix-color-4">fruit et légume frais</b> et <b class="prix-color-4">légume fruit surgelés</b> [1] surement achetés 
                           de préférence sur les marchés). 
                         </p>
                     </div>
@@ -346,23 +348,23 @@
                 </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
                     <p>Ce 4 visuels exposent la part en valeur (XPF) pour les dimensions sous-secteur/famille/sous-famille/variété/produit sur la période 2013-2023<br>
-                       Cette analyse est équivalente à la précédente mais permet cette fois-ci de voir les centres de coût moyen des paniers Calédoniens<br>
+                       Cette analyse est équivalente à la précédente mais permet cette fois-ci de voir les centres de coût moyens des paniers Calédoniens<br>
                         <br>
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ? (de haut en bas)</b><br>
                       <ul>
-                        <li>[1] Sous secteurs : en violet % en valeur (import/export), en rose % en volume (import/export), la courbe noire prix moyen par sous secteur import 
-                            la courbe grose prix moyen par sous secteur local </li>
-                        <li>[2] Famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par famille</li>
-                        <li>[3] Sous famille : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par sous famille</li>
-                        <li>[4] Variété : en violet % en valeur, en rose % en volume, la courbe noire prix moyen par varieté</li>
+                        <li>[1] Sous secteurs : en violet % en valeur (import/export), en rose % en volume (import/export), la courbe noire représente le prix moyen par sous secteur import 
+                            la courbe grise le prix moyen par sous secteur local </li>
+                        <li>[2] Famille : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par famille</li>
+                        <li>[3] Sous famille : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par sous famille</li>
+                        <li>[4] Variété : en violet % en valeur, en rose % en volume, la courbe noire représente le prix moyen par varieté</li>
                       </ul>
                       Exemples : [2] Le <b class="prix-color-4">chocolat</b> est la famille de produit qui représente la plus grande zone de dépense par panier moyen (<b class="prix-color-4">5.7%</b> du total).
                       [4] 1% des transaction en valeur concernent l'<b class="prix-color-4">eau plate</b>.
                     <br>
                     <br>
                     <b>Analyse</b><br>
-                      On retroube sur ces graphiques beaucoup des items vues dans l'analyse n°3 ce qui indique qu'en générale la quantité en volume est équivalent 
-                      aux centres de coût. Pour autant, l'ordre hierarchique n'est pas concervé.
+                      On retrouve sur ces graphiques beaucoup des items vues dans l'analyse n°3 ce qui indique qu'en générale la quantité en volume est équivalente 
+                      aux centres de coûts. Pour autant, l'ordre hierarchique n'est pas concervé.
                       Entrée remarquable des <b class="prix-color-4">crevettes surgelées</b> en 19em place du TOP 20 Variété [4] du fait de leur prix très elevé.
                     </p>
                 </div>
@@ -401,9 +403,9 @@
                       L'histogramme nous remontre une nouvelle fois la part très importante de l'importantion en quantité et en volume. Le fait que les ordres 
                       de grandeurs soient les mêmes signifient que ni les imports ni les produits locaux ne se situent sur des niches. On pourrait être dans une 
                       configuration où les produits locaux sont à fortes valeurs àjoutés par exemple. 
-                      La variation des courbes grises (qui sont par construction corrélés avec les courbes noires) indique que la part du local a baissée depuis 2013 
-                      même si elle remonte en tendance sur les 2 dernières années (Impact covid ?). Des questions sont à ce poser sur la résilience du territoire pour garantir 
-                      une alimentation à la population dans la durée avec une part d'import aussi important (constats partagés des analyses food trade et fruit et légume en NC)
+                      La variation des courbes grises (qui sont par construction corrélées avec les courbes noires) indique que la part du local a baissée depuis 2013 
+                      même si elle remonte en tendance sur les 2 dernières années (Impact covid ?). Des questions sont à se poser sur la résilience du territoire pour garantir 
+                      une alimentation à la population dans la durée avec une part d'import aussi importante (constats partagés des analyses food trade et fruit et légume en NC)
                     </p>
                 </div>
               </div>
@@ -428,13 +430,13 @@
                         <li>En haut : heatmap en part de volume</li>
                         <li>En bas : heatmap en part de valeur</li>
                       </ul>
-                      Les visuels sont conçus de manière à ce que la somme de chaque ligne soit de 100%
+                      Les visuels sont conçus de manière à ce que la somme de chaque ligne soit de 100%.
                     <br>
                     <br>
                     <b>Analyse</b><br>
                       Il y a eu une certaine évolution des habitudes d'achats entre 2013 et 2023. En quantité (graphique du haut), la proportion du secteur 
-                      boisson à été divisé par <b class="prix-color-4">3</b> aux bénéfices des fruits et légumes et des surgélés (principalement) ce qui peut sembler être une bonne chose.
-                      A proportion de volume assez similaire pour le secteur épicerie salée, la part en valeur à bien augmenté ce qui est synonyme d'inflation ou d'achat de produit de meilleur qualité 
+                      boisson à été divisée par <b class="prix-color-4">3</b> aux bénéfices des fruits et légumes et des surgélés (principalement) ce qui peut sembler être une bonne chose.
+                      A proportion de volume assez similaire pour le secteur épicerie salée, la part en valeur à bien augmentée ce qui est synonyme d'inflation ou d'achats de produits de meilleurs qualités
                       (et donc plus chers). De même la variation de valeur des fruits et légume et des surgelés et plus rapide que la variation de volume : même conclusion, les produits semblent plus cher en 2023.
                     </p>
                 </div>
@@ -466,14 +468,14 @@
                       <b><i class="fa-solid fa-glasses"></i> Comment lire le visuel ?</b><br>
                       <ul>
                         <li>En haut : la courbe noire est le taux de variation des prix moyen (référence 2013), l'histogramme représente le volume des 
-                            transaction en million
+                            transactions en million
                         </li>
-                        <li>En bas : le taux de variation du prix moyen de chaque variété de produit</li>
+                        <li>En bas : le taux de variation du prix moyen de chaque variété de produits</li>
                       </ul>
                     <br>
                     <b>Analyse</b><br>
-                      Les calculs démontrent que les prix moyen ne sont pas sensiblement plus elevés qu'en 2013 mais en revanche beaucoup plus elevé qu'en 2019.
-                      Le taux de variations des variétés montre la valeur moyenne de certaine variété a explosé et qu'en tendance les variétés ont évolué plus à la hausse 
+                      Les calculs démontrent que les prix moyens ne sont pas sensiblement plus elevés qu'en 2013 mais en revanche beaucoup plus elevé qu'en 2019.
+                      Le taux de variations des variétés montre la valeur moyenne de certaines variétés a explosé et qu'en tendance les variétés ont évolué plus à la hausse 
                       qu'à la baisses.
                     </p>
                     <br>
@@ -554,7 +556,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 justify-content-center align-self-center">
-                    <p>Ce visuel exposent la part de marché des 20 plus gros supermarché en valeur de transactions de la base de donnée<br>
+                    <p>Ce visuel exposent la part de marché des 20 plus gros supermarchés en valeur de transactions de la base de donnée<br>
                         <br>
                       <b><i class="fa-solid fa-glasses"></i> Comment lire les visuels ?</b><br>
                         Chaque case indique le % de part de marché du magasin sur l'année considérée. 
@@ -563,7 +565,7 @@
                     <br>
                     <br>
                     <b>Analyse</b><br>
-                    Depuis 2018, on constate une répartition plus égale entre les 20 plus grandes enseignes. Sans surprise les 20 plus grand établissement se trouvent 
+                    Depuis 2018, on constate une répartition plus égale entre les 20 plus grandes enseignes. Sans surprise les 20 plus grands établissements se trouvent 
                     dans Nouméa ou le Grand Nouméa, Païta, Dumbéa ou Mont-Dore.
                     </p>
                 </div>
@@ -605,9 +607,9 @@
                     <br>
                     <br>
                     <b>Analyse</b><br>
-                      Le prix moyen est (beaucoup) plus elevé sur Nouméa/Grand Nouméa. Ceci est certainement un effet cumulé d'habitudes de consommation différentes et de prix plus elevés [1].<br>
-                      [2] b class="prix-color-4">50%</b> des achats sont faits à Nouméa. Des endroits comme La Foa, Koné ou Lifou voyent leur volume d'achat augmenté quand au Mont-Dore elle diminue. Ceci révèle les flux démographiques sous-jacents.<br>
-                      [3] L'évolution des prix n'est pas la même partout et des villes reste constamment en dessous du prix moyen d'une transaction. Les années 2021/2022 sont remarquables pour Pouembout.
+                      Le prix moyen est (beaucoup) plus elevé sur Nouméa/Grand Nouméa. Ceci est certainement un effet cumulé d'habitudes de consommations différentes et de prix plus elevés [1].<br>
+                      [2] <b class="prix-color-4">50%</b> des achats sont faits à Nouméa. Des endroits comme La Foa, Koné ou Lifou voient leur volume d'achat augmenter quand au Mont-Dore il diminue. Ceci révèle les flux démographiques sous-jacents.<br>
+                      [3] L'évolution des prix n'est pas la même partout et des villes restent constamment en dessous du prix moyen d'une transaction. Les années 2021/2022 sont remarquables pour Pouembout.
                     </p>
                 </div>
               </div>
