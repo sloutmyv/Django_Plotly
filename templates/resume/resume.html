@@ -35,7 +35,7 @@
       <div class="col-12 col-md-10">
         <p class="fs-6 sc-text-1-font"><b>{{ exp.fonction }}</b> - {{ exp.entreprise|upper }}, <i>{{ exp.localisation }}</i></p>
         <div class="fs-6 sc-text-1-font">{{ exp.description|safe }}</div>
-        <p class="fs-6 sc-text-1-font">Secteurs : {% for tag in exp.secteurs.all %}{{tag}}{% endfor %}</p>
+        <p class="fs-6 sc-text-1-font">Secteurs : {% for tag in exp.secteurs.all %}{{tag}} {% endfor %}</p>
       </div>
     </div>
     {% endfor %}
