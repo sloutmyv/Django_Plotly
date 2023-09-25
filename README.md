@@ -345,6 +345,9 @@ django_heroku.settings(locals(), staticfiles=False)
 
 Sur le site [heroku](https://dashboard.heroku.com/apps) après avoir créer un compte :
 Créer une nouvelle application.
+
+Lors du push du répertoire sur github il faut commenter la ligne STATICFILE_DIR
+
 ### PostGres Database
 Aller dans ressource et chercher l'add-ons PostGres au projet.
 Modifier le fichier settings.py au niveau de l'input database avec :
@@ -378,7 +381,9 @@ Créer les variable caché dans settings.
 heroku config:set DISABLE_COLLECTSTATIC=1 pour éviter le bug du collectstatic
 
 ### Domain name
-
+Acheter un nom de domaine sur godaddy
+Faire un lien avec les DNS
+CNAME / www / DNS name fourni par heroku
 
 
 ## Le Challenge Dataviz 
